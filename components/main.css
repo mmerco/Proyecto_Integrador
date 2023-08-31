@@ -1,0 +1,20 @@
+.ingresos{
+    background-image: url("../img/funkos-banner.webp");
+    height: 288px;
+    background-position: center;
+    background-size: cover;
+    filter: blur(3px);
+    position:relative;
+}
+
+.ingresos::after{
+    position: absolute;
+    content:"";
+    inset:0;
+    background-color: rgba(0,0,0,.33);
+}
+
+.ingresos__shop{
+    position:relative;
+    color: #fff;
+}
