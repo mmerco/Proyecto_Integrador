@@ -6,3 +6,8 @@
     --fondo-clarito:#EAF2FD;
     --color-azul:#3472c9;
 }
+
+section, nav{
+    padding-left: calc((100% - 940px)/2);
+    padding-right: calc((100% - 940px)/2);
+}
