@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <picture>
+                <a href="../index.html">
+                    <img src="../img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop">
+                </a>
+            </picture>
+            <ul>
+                <li>
+                    <a href="../index.html">VER TIENDA</a>
+                </li>
+                <li>
+                    <a href="./admin.html">ADMIN</a>
+                </li>
+                <li>
+                    <a href="./login.html">SALIR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h1>EDITAR ITEM</h1>
+            </article>
+            <section>
+                <form method="post" action="https://formsubmit.co/amarrero86mr@gmail.com" id="edit">
+                    <article>
+                        <div>
+                            <label for="categoria">Categoría</label>
+                            <select id="categoria">
+                                <option value="Funkos">Funkos Pop</option>
+                                <option value="remeras">Remeras</option>
+                                <option value="llaveros">Llaveros</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="licencia">Licencia</label>
+                            <select name="licencia" id="licencia">
+                            <option value="naruto shippuden">Naruto Shippuden</option>
+                            </select>
+                        </div>
+                    </article>
+                    <article>
+                        <label for="nombre-prducto">Nombre del Producto:</label>
+                        <input type="text" id="nombre-prducto" required>
+                    </article>
+                    <article>
+                        <textarea name="description" id="" cols="50" rows="7" required></textarea>
+                    </article>
+                    <article>
+                        <div>
+                            <label for="cod">SKU:</label>
+                            <input type="text" id="cod"  required>
+                        </div>
+                        <div>
+                            <label for="Precio">Precio:</label>
+                            <input type="text" id="Precio" required>
+                        </div>
+                        <div>
+                            <label for="stock">Stock:</label>
+                            <input type="number" id="stock" required>
+                        </div>
+                    </article>
+                    <article>
+                        <div>
+                            <label for="off">Descuento:</label>
+                            <input type="number" id="off" >
+                        </div>
+                        <div>
+                            <label for="cuotas">Cuotas:</label>
+                            <select name="cuotas" id="cuotas">
+                                <option value="3">3 Cuotas sin interés</option>
+                                <option value="6">6 Cuotas sin interés</option>
+                                <option value="9">9 Cuotas sin interés</option>
+                            </select>
+                        </div>
+                    </article>
+                    <article>
+                        <div>
+                            <label for="Imgs">Imágenes:</label>
+                            <input type="file" accept="image/*" name="archivossubidos[2]" multiple>
+                        </div>
+                        <div>
+                            <picture>
+                                <img src="../img/naruto-shippuden/Kakashi Shippuden frente.png" height="300px" alt="Kakashi Shippuden Funko Pop">
+                                <label for="">Frente</label>
+                            </picture>
+                            <picture>
+                                <img src="../img/naruto-shippuden/Kakashi Shippuden dorso.png" height="300" alt="Kakashi Shippuden Funko Pop Caja">
+                                <label for="">Dorso</label>
+                            </picture>
+                        </div>
+                    </article>
+                    <article>
+                        <button type="submit" value="Modificar Profucto">Modificar Producto</button>
+                    </article>
+                </form>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./shop.html">SHOP</a>
+                    </li>
+                    <li>
+                        <a href="./register.html">REGISTRARSE</a>
+                    </li>
+                    <li>
+                        <a href="./login.html">INGRESAR</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html">CONTACTO</a>
+                    </li>
+                </ul>
+                <picture>
+                    <a href="../index.html">
+                        <img src="../img/branding/isotype.svg" alt="Logo Funkoshop">
+                    </a>
+                </picture>
+            </nav>
+        </div>
+        <p>All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
+    
+</body>
+</html>
