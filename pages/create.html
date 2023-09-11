@@ -29,10 +29,10 @@
     <main>
         <section>
             <article>
-                <h1>EDITAR ITEM</h1>
+                <h1>CREAR NUEVO ITEM</h1>
             </article>
             <section>
-                <form method="POST" action="https://formsubmit.co/amarrero86mr@gmail.com">                    
+                <form method="post" action="https://formsubmit.co/amarrero86mr@gmail.com" id="edit" name="form-edit">
                     <div>
                         <label for="categoria">Categoría:<input list="categorias" name="categoria" id="categoria" placeholder="nuevo u opción" required></label>
                         <datalist name="categoria" id="categorias">
@@ -55,49 +55,44 @@
                         <input type="text" name="nombre de prducto" id="nombre-prducto" required>
                     </div>
                     <div>
-                        <textarea name="descripción" id="descriptionTex" cols="50" rows="7" required></textarea>
+                        <textarea name="description" id="descriptionTex" cols="50" rows="7" required></textarea>
                     </div>
                     <div>
                         <label for="cod">SKU:</label>
                         <input type="text" name="codigo" id="cod" pattern="^[A-Z]{3}\d{6}$" required>
                     </div>
                     <div>
-                        <label for="Precio">Precio: $</label>
+                        <label for="Precio">Precio: </label>
                         <input type="text" name="precio" id="Precio" pattern="^\d+(\.\d+)?$" required>
                     </div>
                     <div>
                         <label for="stock">Stock:</label>
                         <input type="number" name="stock" id="stock" pattern="^\d+$" required>
-                    </div>           
+                    </div>
                     <div>
                         <label for="off">Descuento:</label>
                         <input type="number" min="0" step="5" name="descuento" pattern="^\d+$" id="off" >
                     </div>
                     <div>
                         <label for="cuotas">Cuotas:</label>
-                        <select name="cuotasCant" id="cuotas" >
-                            <option value="3">3 Cuotas sin interés</option>
-                            <option value="6">6 Cuotas sin interés</option>                                <option value="9">9 Cuotas sin interés</option>
+                        <select name="cuotas" id="cuotas">
+                            <option value="3 s/interes">3 Cuotas sin interés</option>
+                            <option value="6 s/interes">6 Cuotas sin interés</option>
+                            <option value="9 s/interes">9 Cuotas sin interés</option>
                         </select>
-                    </div> 
+                    </div>
                     <div>
-                        <!-- comentado - interfiere en el testing del form -
+                    <!-- comentado - interfiere en el testing del form -
+                    <div>
                         <label for="Imgs">Imágenes:</label>
-                        <input type="file" accept="image/*" name="archivossubidos[2]" multiple>
-                        -->
+                        <input type="file" accept="image/*" name="archivossubidos[]" multiple>
+                    </div>
+                    -->
                     </div>
                     <div>
-                        <picture>
-                            <img src="../img/naruto-shippuden/Kakashi Shippuden frente.png" height="300px" alt="Kakashi Shippuden Funko Pop">
-                        </picture>
-                        <p>Frente</p>
-                        <picture>
-                            <img src="../img/naruto-shippuden/Kakashi Shippuden dorso.png" height="300" alt="Kakashi Shippuden Funko Pop Caja">
-                        </picture>
-                        <p>Dorso</p>
-                    </div>
-                    <div>
-                        <button type="submit" >Modificar Producto</button>
+                        <button type="submit" value="Agregar Producto">Agregar Producto</button>
+                        <a href="edit.html"><button value="limpiar">Limpiar</button>
+                        </a>
                     </div>
                 </form>
             </section>
