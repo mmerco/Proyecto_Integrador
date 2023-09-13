@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <picture>
+                <a href="../index.html">
+                    <img src="../img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop">
+                </a>
+            </picture>
+            <ul>
+                <li>
+                    <a href="../index.html">VER TIENDA</a>
+                </li>
+                <li>
+                    <a href="./admin.html">ADMIN</a>
+                </li>
+                <li>
+                    <a href="./login.html">SALIR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h1>EDITAR ITEM</h1>
+            </article>
+            <section>
+                <form method="POST" action="https://formsubmit.co/amarrero86mr@gmail.com">                    
+                    <div>
+                        <label for="categoria">Categoría:<input list="categorias" name="categoria" id="categoria" placeholder="nuevo u opción" required></label>
+                        <datalist name="categoria" id="categorias">
+                            <option value="Funko Pop"></option>
+                            <option value="Remeras"><option>
+                            <option value="Llaveros"></option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="licencia">Licencia:<input type="text" list="licencias" name="licencia" id="licencia" placeholder="nuevo u opción" required></label>
+                        <datalist name="licencia" id="licencias">
+                            <option value="Naruto Shippuden"></option>
+                            <option value="Star Wars"></option>
+                            <option value="Pokemon"></option>
+                            <option value="Harry Potter"></option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="nombre-prducto">Nombre del Producto:</label>
+                        <input type="text" name="nombre de prducto" id="nombre-prducto" required>
+                    </div>
+                    <div>
+                        <textarea name="descripción" id="descriptionTex" cols="50" rows="7" required></textarea>
+                    </div>
+                    <div>
+                        <label for="cod">SKU:</label>
+                        <input type="text" name="codigo" id="cod" pattern="^[A-Z]{3}\d{6}$" required>
+                    </div>
+                    <div>
+                        <label for="Precio">Precio: $</label>
+                        <input type="text" name="precio" id="Precio" pattern="^\d+(\.\d+)?$" required>
+                    </div>
+                    <div>
+                        <label for="stock">Stock:</label>
+                        <input type="number" name="stock" id="stock" pattern="^\d+$" required>
+                    </div>           
+                    <div>
+                        <label for="off">Descuento:</label>
+                        <input type="number" min="0" step="5" name="descuento" pattern="^\d+$" id="off" >
+                    </div>
+                    <div>
+                        <label for="cuotas">Cuotas:</label>
+                        <select name="cuotasCant" id="cuotas" >
+                            <option value="3">3 Cuotas sin interés</option>
+                            <option value="6">6 Cuotas sin interés</option>                                <option value="9">9 Cuotas sin interés</option>
+                        </select>
+                    </div> 
+                    <div>
+                        <!-- comentado - interfiere en el testing del form -
+                        <label for="Imgs">Imágenes:</label>
+                        <input type="file" accept="image/*" name="archivossubidos[2]" multiple>
+                        -->
+                    </div>
+                    <div>
+                        <picture>
+                            <img src="../img/naruto-shippuden/Kakashi Shippuden frente.png" height="300px" alt="Kakashi Shippuden Funko Pop">
+                        </picture>
+                        <p>Frente</p>
+                        <picture>
+                            <img src="../img/naruto-shippuden/Kakashi Shippuden dorso.png" height="300" alt="Kakashi Shippuden Funko Pop Caja">
+                        </picture>
+                        <p>Dorso</p>
+                    </div>
+                    <div>
+                        <button type="submit" >Modificar Producto</button>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./shop.html">SHOP</a>
+                    </li>
+                    <li>
+                        <a href="./register.html">REGISTRARSE</a>
+                    </li>
+                    <li>
+                        <a href="./login.html">INGRESAR</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html">CONTACTO</a>
+                    </li>
+                </ul>
+                <picture>
+                    <a href="../index.html">
+                        <img src="../img/branding/isotype.svg" alt="Logo Funkoshop">
+                    </a>
+                </picture>
+            </nav>
+        </div>
+        <p>All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
+    
+</body>
+</html>
