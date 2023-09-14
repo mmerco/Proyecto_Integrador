@@ -136,10 +136,24 @@
     font-family: var(--inter);
 }
 
-.lanzamientos__lista__ancla--img{
-    width: 350px;
+.lanzamientos__lista__ancla__pic{
+    position: relative;
 }
 
+.lanzamientos__lista__ancla__pic--img{
+    width: 350px;  
+}
+
+.lanzamientos__lista__ancla__pic--p{
+    position: absolute;
+    top: -320px;
+    right: 0;
+    background-color: rgb(235, 58, 58);
+    padding:  .4rem 1rem;
+    color: #fff;
+    font-size: .9rem;
+    font-family: var(--inter);
+}
 
 .lanzamientos__lista__ancla__div--des{
     font-weight: 400;
