@@ -1,0 +1,208 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: var(--base-font);
+    color: var(--dark-solid);
+}
+
+a {
+    text-decoration: none;
+    font-family: inherit;
+    color: inherit;
+}
+
+header, footer{
+    font-family: var(--alternative-font);
+    color: var(--light-font-solid);
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+p {
+    font-size: var(--font-xxsmall);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+.header {
+    background-color: var(--dark-bg-solid);
+    height: 144px;
+    padding: var(--spacing-36);
+}
+
+.nabvar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nabvar__logo{
+    max-width: 300px;
+}
+
+.nabvar__menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-20);
+}
+
+.nabvar__link{
+    font-size: var(--font-medium);
+    display: inline-block;
+    padding: var(--spacing-8) var(--spacing-16);
+    transition: background-color 0.4s ease-in-out;
+}
+
+.nabvar__link:hover{
+    background-color: var(--primary-900);
+}
+/* finde header y nav (sin menu desplegable)*/
+
+/* MAIN inicio*/
+.main {
+    padding: var(--spacing-36) 0;
+    width: 1440px;
+    height: 1150px;
+}
+
+h3 {
+    font-size: var(--font-display);
+}
+
+.main__form{
+    display:block;
+    padding-top: var(--spacing-20);
+    font-size: var(--font-medium);
+}
+
+.form__cat_lic {
+    display: block;
+}
+
+.form__cat_lic_items {
+    display: inline;
+    gap: var(--spacing-36);
+}
+
+#categoria, #licencia, #cuotas {
+    width: 244px;
+    height: 44px;
+    font-size: var(--font-xxsmall);
+    margin: var(--spacing-16);
+    border: 1px solid var(--dark-solid);
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.form__nombre {
+    display: inline;
+    gap: var(--spacing-36);
+    justify-content: center;
+}
+#nombre-producto, #cod, #Precio, #stock, #off {
+    width: 350px;
+    height: 35px;
+    flex-shrink: 0;
+    font-size: var(--font-xxsmall);
+    margin: var(--spacing-8);
+    border-style: none;
+    position: relative bottom;
+    border-bottom: 1px solid red;
+    justify-content: center;
+    text-align: center;
+}
+
+#description_text {
+    width: 1012px;
+    height: 195px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid var(--dark-bg-solid);
+}
+
+.form__sku_precio_stock, .form__decuento_cuotas {
+    display: inline-flex;
+    gap: var(--spacing-36);
+    justify-content: center;
+    align-items: center;
+}
+
+#cod, #Precio {
+    width: 150px;
+}
+#stock, #off {
+    width: 55px;
+}
+
+#cuotas{
+    width: 345px;
+}
+.form__img{
+    display: inline;
+    gap: var(--spacing-8);
+}
+.form__img_charge{
+    font-size: var(--font-xxsmall);
+}
+
+.form__imges{
+    display: flex;
+    gap: 30px;
+}
+
+.form__imges_items{
+    display: block;
+    margin-top: var(--spacing-20);
+    margin-bottom: var(--spacing-20);
+    text-align: center;    
+}
+
+.form__imges_items img {
+    max-width: 150px;
+    height: 173px;
+    display: block;
+    border-bottom: 1px solid red;
+}
+
+.form__imges_items p{
+    margin-top: var(--spacing-8);
+}
+
+.form__button{
+    width: 175px;
+    height: 44px;
+    border: none;
+    color: var(--light-font-solid);
+    font-size: 14px;
+    background-color: var(--primary-solid);
+
+}
+
+/* fin de main*/
+
+
+
+/* FOOTER inicio*/
+.footer {
+    background-color: var(--dark-bg-solid);
+    padding: var(--spacing-68);
+}
+
+.footer__copy {
+    margin-top: var(--spacing-36);
+    text-align: center;
+}

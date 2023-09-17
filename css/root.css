@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&family=Overpass&family=Poppins:wght@500&family=REM&family=Raleway:wght@300;400;500;600;700&display=swap');
 
 :root {
     /* Paleta */
@@ -33,6 +33,7 @@
     --font-medium: 1.8em;
     --font-small: 1.6em;
     --font-xsmall: 1.4em;
+    --font-xxsmall: 0.8em;
 
     /* spacing*/
     --spacing-128: 12.8rem;
@@ -45,3 +46,4 @@
     --spacing-12: 1.2rem;
     --spacing-8: 0.8rem;
 }
+
