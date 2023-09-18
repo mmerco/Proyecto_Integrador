@@ -125,3 +125,33 @@
     display: flex;
     justify-content: center;
 }
+
+#frm {
+    background-color: var(--fondo-clarito);
+    border-radius: 10px;
+    max-width: 720px;
+    margin: 25px auto;
+    text-align: center;
+    font-family: var(--raleway);
+    display: flex;
+    flex-direction: column;
+
+}
+
+form div {
+    margin: 15px auto;
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+#btn-registrar {
+    width: 500px;
+    margin: auto;
+}
+
+#form-check-div {
+    justify-content: center;
+    text-align: center;
+}
