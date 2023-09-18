@@ -155,3 +155,8 @@ form div {
     justify-content: center;
     text-align: center;
 }
+
+#btn-ingresar {
+    width: 500px;
+    margin: auto;
+}
