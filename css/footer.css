@@ -1,3 +1,37 @@
+.footer{
+    margin-top:5rem ;
+    background-color: var(--color-gris);
+    height: 257px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.footer div{
+    width: 1350px;
+    margin: 0 auto;
+}
+
+.footer__nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.footer__nav__ul{
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+
+.footer__nav__ul__li--a{
+    text-decoration: none;
+    color: #fff;
+    font-family: var(--raleway);
+    font-size: 1.1rem;
+}
+
 
 .footer--copy{
     text-align: center;
