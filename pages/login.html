@@ -1,11 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Funkoshop</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+
+    <header class="header">
+        <nav class="header__nav">
+            <picture>
+                <a href="../index.html">
+                    <img src="../img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop">
+                </a>
+            </picture>
+            <ul class="header__nav__ul">
+                <li>
+                    <a href="../index.html" class="header__nav__ul--a">VER TIENDA</a>
+                </li>
+                <li>
+                    <a href="./admin.html" class="header__nav__ul--a">ADMIN</a>
+                </li>
+                <li>
+                    <a href="./login.html" class="header__nav__ul--a">SALIR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <!-- si se necesita probar cambien la api que usan y su mail--> 
+        <form method="post" action="https://formsubmit.co/amarrero86mr@gmail.com" id="frm">
+            <div>
+                <h1>INGRESA A TU CUENTA</h1>
+                <p>Inicia sesión para seguir siendo parte del mundo de los Funkos</p>
+            </div>
+
+            <div class="input-group mb-3 w-50">
+                <span class="input-group-text" id="inputGroup-sizing-default">Email:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="johndoe@correo.com" pattern="^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required />
+            </div>
+
+            <div class="input-group mb-3 w-50">
+                <span class="input-group-text" id="inputGroup-sizing-default">Contraseña:</span>
+                <input id="password" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="·········" minlength="8" pattern="^[^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$" required />
+            </div>
+              
+            <button type="button" id="btn-ingresar" class="btn btn-primary input-group mb-3 w-50" onclick="">Ingresar</button>
+            
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div>
+            <nav class="footer__nav">
+                <ul class="footer__nav__ul">
+                    <li>
+                        <a href="./shop.html" class="footer__nav__ul--a">SHOP</a>
+                    </li>
+                    <li>
+                        <a href="./register.html" class="footer__nav__ul--a">REGISTRARSE</a>
+                    </li>
+                    <li>
+                        <a href="./login.html" class="footer__nav__ul--a">INGRESAR</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html" class="footer__nav__ul--a">CONTACTO</a>
+                    </li>
+                </ul>
+                <picture>
+                    <a href="../index.html">
+                        <img src="../img/branding/isotype.svg" alt="Logo Funkoshop">
+                    </a>
+                </picture>
+            </nav>
+        </div>
+        <p id="derechos-reservados">All Rights Reserved 2023 - Funkoshop &copy;</p>
+    </footer>
 </body>
+
 </html>
