@@ -2,7 +2,6 @@
 
 .ingresos{
     background-image: url("../img/funkos-banner.webp");
-    background-size: cover;
     background-repeat: no-repeat;
     height: 400px;
     background-attachment: fixed;
@@ -54,7 +53,6 @@
 
 .articulo{
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 1220px;
@@ -123,7 +121,50 @@
 
 .lanzamientos__lista{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.lanzamientos__lista__ancla{
+    color: #000;
+    text-decoration: none;
+}
+
+.lanzamientos__lista__ancla__div{
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    font-family: var(--inter);
+}
+
+.lanzamientos__lista__ancla__pic{
+    position: relative;
+}
+
+.lanzamientos__lista__ancla__pic--img{
+    width: 350px;  
+}
+
+.lanzamientos__lista__ancla__pic--p{
+    position: absolute;
+    top: -320px;
+    right: 0;
+    background-color: rgb(235, 58, 58);
+    padding:  .4rem 1rem;
+    color: #fff;
+    font-size: .9rem;
+    font-family: var(--inter);
+}
+
+.lanzamientos__lista__ancla__div--des{
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+.lanzamientos__lista__ancla__div--cuota{
+    color: #1D84B5;
+    font-family: var(--inter);
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 #frm {
