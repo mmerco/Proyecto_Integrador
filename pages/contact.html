@@ -6,6 +6,105 @@
     <title>Contacto | Funkoshop</title>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <picture>
+                <a href="../index.html">
+                    <img src="../img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop">
+                </a>
+            </picture>
+            <ul>
+                <li>
+                    <a href="../index.html">VER TIENDA</a>
+                </li>
+                <li>
+                    <a href="./admin.html">ADMIN</a>
+                </li>
+                <li>
+                    <a href="./login.html">SALIR</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <section>
+            <div>
+                <h1>CONTACTO</h1>
+            </div>
+            <div>
+                <div>
+                    <img width="20" src="../img/icons/icons8-marcador-50.png" alt="icono ubicación">
+                    <p>Av. 9 de Julio s/n, C1043 CABA</p>
+                </div>
+                <div>
+                    <img width="20" src="../img/icons/icons8-whatsapp-50.png" alt="icono whatsapp">
+                    <p>+55-555-555-5555</p>
+                </div>
+                <div>
+                    <img width="20" src="../img/icons/icons8-post-50.png" alt="icono correo">
+                    <p>contacto@funcocontacto.com</p>
+                </div>
+            </div>
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d976.349045063621!2d-58.38251123335577!3d-34.60331064447509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1694472979200!5m2!1ses-419!2sar" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+        <section>
+            <h2>Completa el formulario para contactarnos o enviarnos tu consulta</h2>
+        </section>
+        <section>
+            <!-- si se necesita probar cambien la api que usan y su mail--> 
+            <form method="post" action="https://formsubmit.co/amarrero86mr@gmail.com" id="frm">
+            <div>
+                <label for="name" >Nombre:</label>
+                <input type="text" name="name" placeholder="John" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required >
+            </div>
+            <div>
+                <label for="lastName">Apellido:</label>
+                <input type="text" name="lastName" placeholder="Doe" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" >
+            </div>
+            <div>
+                <label for="e-mail">Email:</label>
+                <input type="email" name="e-mail" placeholder="johndoe@correo.com" pattern="^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required >
+            </div>
+            <div>
+                <label for="telefono">Telefono</label>
+                <input type="number" id="telefono" name="telefono" placeholder="+55-555-555-5555" minlength="12">
+            </div>
+            <textarea name="consulta" id="consulta" cols="50" rows="7" placeholder="Escribenos tu consula aqui..." required></textarea>
+            <div>
+                
+                <button type="submit">Enviar</button>
+            
+            </div>
+            </form>
+        </section>
+    </body>
+    <footer>
+        <div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./shop.html">SHOP</a>
+                    </li>
+                    <li>
+                        <a href="./register.html">REGISTRARSE</a>
+                    </li>
+                    <li>
+                        <a href="./login.html">INGRESAR</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html">CONTACTO</a>
+                    </li>
+                </ul>
+                <picture>
+                    <a href="../index.html">
+                        <img src="../img/branding/isotype.svg" alt="Logo Funkoshop">
+                    </a>
+                </picture>
+            </nav>
+        </div>
+        <p>All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
 </body>
 </html>
