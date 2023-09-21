@@ -1,0 +1,63 @@
+.lanzamientos__lista__ancla__pic--p{
+    top: -290px;
+}
+
+.lanzamientos__lista__ancla__pic--img{
+    width: 300px;
+}
+
+.shop{
+    margin: 3rem 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.shop__form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.shop__form--title{
+    font-family: var(--inter);
+    font-weight: 600;
+    font-size: 1.10rem;
+    margin-bottom: .7rem;
+}
+
+.shop__form__price{
+    display: flex;
+    gap: 0 .9rem;
+    align-items: center
+}
+
+.shop__form__price__minmax{
+    display: flex;
+    gap: 0 .8rem;
+    align-items: center;
+}
+
+.form-label{
+    margin: 0;
+}
+
+.shop__form__price__minmax--m{
+    width: 50px;
+}
+
+.shop__container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,400px);
+    gap: 4rem 0;
+}
+
+
+
+
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
