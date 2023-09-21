@@ -1,10 +1,11 @@
 :root{
     --color-gris: #30343F;
-    --cor-de-link: #000;
+    --color-btn: #30343F;
     --inter:'Inter', sans-serif;;
     --raleway:'Raleway', sans-serif;
     --fondo-clarito:#EAF2FD;
     --color-azul:#3472c9;
+    --color-rojo:#d62811;
 }
 
 section, nav{
