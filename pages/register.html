@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro | Funkoshop</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     
     <script type="text/javascript">
         function validarPasswords(){
@@ -19,82 +28,90 @@
         }
     }
     </script>
+
 </head>
+
 <body>
-    <header>
-        <nav>
+
+    <header class="header">
+        <nav class="header__nav">
             <picture>
                 <a href="../index.html">
                     <img src="../img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop">
                 </a>
             </picture>
-            <ul>
+            <ul class="header__nav__ul">
                 <li>
-                    <a href="../index.html">VER TIENDA</a>
+                    <a href="../index.html" class="header__nav__ul--a">VER TIENDA</a>
                 </li>
                 <li>
-                    <a href="./admin.html">ADMIN</a>
+                    <a href="./admin.html" class="header__nav__ul--a">ADMIN</a>
                 </li>
                 <li>
-                    <a href="./login.html">SALIR</a>
+                    <a href="./login.html" class="header__nav__ul--a">SALIR</a>
                 </li>
             </ul>
         </nav>
     </header>
-    <body>
-        <section>
-            <h1>CREA TU CUENTA</h1>
-            <p>Completa el formulario para ser parte del mundo de los Funkos</p>
-        </section>
+    <main>
         <section>
             <!-- si se necesita probar cambien la api que usan y su mail--> 
             <form method="post" action="https://formsubmit.co/amarrero86mr@gmail.com" id="frm">
             <div>
-                <label for="name" >Nombre:</label>
-                <input type="text" name="name" placeholder="John" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required >
+                <h1>CREA TU CUENTA</h1>
+                <p>Completa el formulario para ser parte del mundo de los Funkos</p>
             </div>
-            <div>
-                <label for="lastName">Apellido:</label>
-                <input type="text" name="lastName" placeholder="Doe" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required >
+
+            <div class="input-group mb-3 w-50">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nombre:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="John" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required />
             </div>
-            <div>
-                <label for="e-mail">Email:</label>
-                <input type="email" name="e-mail" placeholder="johndoe@correo.com" pattern="^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required >
+            
+            <div class="input-group mb-3 w-50">
+                <span class="input-group-text" id="inputGroup-sizing-default">Apellido:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Doe" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required />
             </div>
-            <div>
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" name="password" placeholder="·········" minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$" required>
+
+            <div class="input-group mb-3 w-50">
+                <span class="input-group-text" id="inputGroup-sizing-default">Email:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="johndoe@correo.com" pattern="^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required />
             </div>
-            <div>
-                <label for="passwordRepit">Contraseña</label>
-                <input type="password" id="passwordRepit" name="passwordRepit" placeholder="·········" minlength="8" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$" required>
+
+            <div class="input-group mb-3 w-50">
+                <span class="input-group-text" id="inputGroup-sizing-default">Contraseña:</span>
+                <input id="password" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="·········" minlength="8" pattern="^[^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$" required />
             </div>
-            <div>
-                
-                <input type="button" onclick="validarPasswords();" value="Registar">
-                <label>
-                <input type="checkbox"  id='acepto' required>
-                    Acepto <a href="#">Términos Y Condiciones</a>
+              
+            <div class="input-group mb-3 w-50">
+                <span class="input-group-text" id="inputGroup-sizing-default">Repetir Contraseña:</span>
+                <input id="passwordRepit" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="·········" minlength="8" pattern="^[^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$" required />
+            </div>
+
+            <div id="form-check-div" class="form-check input-group mb-3 w-50">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    <a href="#">Acepto Términos y Condiciones</a>
                 </label>
-            </div>
-            </form>
-        </section>
-    </body>
-    <footer>
+            </div>        
+            <button type="button" id="btn-registrar" class="btn btn-primary input-group mb-3 w-50" onclick="validarPasswords()">Registar</button>
+        </form>
+    </section>
+
+    <footer class="footer">
         <div>
-            <nav>
-                <ul>
+            <nav class="footer__nav">
+                <ul class="footer__nav__ul">
                     <li>
-                        <a href="./shop.html">SHOP</a>
+                        <a href="./shop.html" class="footer__nav__ul--a">SHOP</a>
                     </li>
                     <li>
-                        <a href="./register.html">REGISTRARSE</a>
+                        <a href="./register.html" class="footer__nav__ul--a">REGISTRARSE</a>
                     </li>
                     <li>
-                        <a href="./login.html">INGRESAR</a>
+                        <a href="./login.html" class="footer__nav__ul--a">INGRESAR</a>
                     </li>
                     <li>
-                        <a href="./contact.html">CONTACTO</a>
+                        <a href="./contact.html" class="footer__nav__ul--a">CONTACTO</a>
                     </li>
                 </ul>
                 <picture>
@@ -104,7 +121,8 @@
                 </picture>
             </nav>
         </div>
-        <p>All rights reserved 2023 - Funkoshop &copy;</p>
+        <p id="derechos-reservados">All Rights Reserved 2023 - Funkoshop &copy;</p>
+
     </footer>
 </body>
 </html>
