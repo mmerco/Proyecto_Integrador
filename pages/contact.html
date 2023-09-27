@@ -4,107 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Funkoshop</title>
+    <link rel="stylesheet" href="../css/contact.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <picture>
+    <header class="header">
+        <nav class="navbar container">
+            <picture class="navbar__logo">
                 <a href="../index.html">
                     <img src="../img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop">
                 </a>
             </picture>
-            <ul>
-                <li>
-                    <a href="../index.html">VER TIENDA</a>
+            <ul class="navbar__menu">
+                <li class="navbar__item whith-submenu">
+                    <a class="navbar__link whith-icon" href="./shop.html">SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+                    <ul class="submenu">
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Funkos</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Remeras</a>
+                        </li>
+                        <li class="submenu__item">
+                            <a href="" class="submenu__link">Llaveros</a>
+                        </li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="./admin.html">ADMIN</a>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./contact.html">CONTACTO</a>
                 </li>
-                <li>
-                    <a href="./login.html">SALIR</a>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./login.html">LOGIN</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__cart" href="./cart.html">
+                        <img src="../img/icons/cart-icon.svg" alt="Icono Carrito">
+                    </a>
                 </li>
             </ul>
         </nav>
     </header>
-    <body>
-        <section>
-            <div>
-                <h1>CONTACTO</h1>
-            </div>
-            <div>
-                <div>
-                    <img width="20" src="../img/icons/icons8-marcador-50.png" alt="icono ubicación">
-                    <p>Av. 9 de Julio s/n, C1043 CABA</p>
+    <main class="main-container">
+        <section class="contact__main container">
+            <form class="contact__form" action="">
+                <h2 class="form__header">CONTACTENOS</h2>
+                <div class="form__item">
+                    <label class="item__label" for="name">
+                        Nombre <span>*</span>
+                    </label>
+                    <input class="item__input" type="text" name="name" required>
                 </div>
-                <div>
-                    <img width="20" src="../img/icons/icons8-whatsapp-50.png" alt="icono whatsapp">
-                    <p>+55-555-555-5555</p>
+                <div class="form__item">
+                    <label class="item__label" for="email">
+                        Email <span>*</span>
+                    </label>
+                    <input class="item__input" type="email" name="email" required>
                 </div>
-                <div>
-                    <img width="20" src="../img/icons/icons8-post-50.png" alt="icono correo">
-                    <p>contacto@funcocontacto.com</p>
+                <div class="form__item">
+                    <label class="item__label" for="phone">
+                        Teléfono
+                    </label>
+                    <input class="item__input" type="text" name="phone">
                 </div>
-            </div>
-            <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d976.349045063621!2d-58.38251123335577!3d-34.60331064447509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1694472979200!5m2!1ses-419!2sar" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </section>
-        <section>
-            <h2>Completa el formulario para contactarnos o enviarnos tu consulta</h2>
-        </section>
-        <section>
-            <!-- si se necesita probar cambien la api que usan y su mail--> 
-            <form method="post" action="https://formsubmit.co/amarrero86mr@gmail.com" id="frm">
-            <div>
-                <label for="name" >Nombre:</label>
-                <input type="text" name="name" placeholder="John" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" required >
-            </div>
-            <div>
-                <label for="lastName">Apellido:</label>
-                <input type="text" name="lastName" placeholder="Doe" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,48}" >
-            </div>
-            <div>
-                <label for="e-mail">Email:</label>
-                <input type="email" name="e-mail" placeholder="johndoe@correo.com" pattern="^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required >
-            </div>
-            <div>
-                <label for="telefono">Telefono</label>
-                <input type="number" id="telefono" name="telefono" placeholder="+55-555-555-5555" minlength="12">
-            </div>
-            <textarea name="consulta" id="consulta" cols="50" rows="7" placeholder="Escribenos tu consula aqui..." required></textarea>
-            <div>
-                
-                <button type="submit">Enviar</button>
-            
-            </div>
+                <div class="form__item">
+                    <label class="item__label" for="msj">
+                        Mensaje <span>*</span>
+                    </label>
+                    <textarea class="item__textarea" name="msj" cols="30" rows="5" required></textarea>
+                </div>
+                <div class="form__submit">
+                    <input class="submit__button" type="submit" value="ENVIAR">
+                </div>
             </form>
-        </section>
-    </body>
-    <footer>
-        <div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="./shop.html">SHOP</a>
-                    </li>
-                    <li>
-                        <a href="./register.html">REGISTRARSE</a>
-                    </li>
-                    <li>
-                        <a href="./login.html">INGRESAR</a>
-                    </li>
-                    <li>
-                        <a href="./contact.html">CONTACTO</a>
-                    </li>
-                </ul>
-                <picture>
-                    <a href="../index.html">
-                        <img src="../img/branding/isotype.svg" alt="Logo Funkoshop">
+            <section class="contact__info">
+                <article class="info__links">
+                    <a class="info__link" href="">
+                        <iconify-icon icon="entypo-social:facebook-with-circle" style="color: var(--dark-bg-900)"; width="60" height="60"></iconify-icon>
                     </a>
-                </picture>
-            </nav>
-        </div>
-        <p>All rights reserved 2023 - Funkoshop &copy;</p>
+                    <a class="info__link" href="">
+                        <iconify-icon icon="entypo-social:instagram-with-circle" style="color: var(--dark-bg-900)"; width="60" height="60"></iconify-icon>
+                    </a>
+                    <a class="info__link" href="">
+                        <iconify-icon icon="entypo-social:pinterest-with-circle" style="color: var(--dark-bg-900)"; width="60" height="60"></iconify-icon>
+                    </a>
+                    <a class="info__link" href="">
+                        <iconify-icon icon="entypo-social:twitter-with-circle" style="color: var(--dark-bg-900)"; width="60" height="60">
+                        </iconify-icon>
+                    </a>
+                </article>
+                <article class="info__content">
+                    <h4 class="content__title">TELEFONO</h4>
+                    <p class="content__data">(011) 4555-3333</p>
+                </article>
+                <article class="info__content">
+                    <h4 class="content__title">EMAIL</h4>
+                    <div class="info__subcontent">
+                        <h6 class="content__subtitle">CONSULTAS</h6>
+                        <p class="content__data">consultas@funkoshop.com.ar</p>
+                    </div>
+                    <div class="info__subcontent">
+                        <h6 class="content__subtitle">VENTAS</h6>
+                        <p class="content__data">ventas@funkoshop.com.ar</p>
+                    </div>
+                    <div class="info__subcontent">
+                        <h6 class="content__subtitle">PEDIDOS</h6>
+                        <p class="content__data">pedidos@funkoshop.com.ar</p>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </main>
+    <footer class="footer">
+        <nav class="navbar container">
+            <ul class="navbar__items">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./register.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./login.html">INGRESAR</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>
+                <a href="../index.html">
+                    <img src="../img/branding/isotype.svg" alt="Logo Funkoshop">
+                </a>
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
+    
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </body>
 </html>
