@@ -1,39 +1,49 @@
-jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity__value input');
+const quantity = document.querySelector('#value');
+const add = document.querySelector('#add');
+const subtract = document.querySelector('#subtract');
+
+const min = Number(quantity.min);
+const max = Number(quantity.max);
+
+
+
+add.addEventListener('click', () => {
+  
+  let value = Number(quantity.value);
+  
+  if (isNaN(value)) {
+    value = 0;
+  }
+
+  if (value >= max) {
+    quantity.value = max;
+  } else {
     
-    jQuery('.quantity__value').each(function() {
-      var spinner = jQuery(this),
-        input = spinner.find('input[type="number"]'),
-        btnUp = spinner.find('.quantity-up'),
-        btnDown = spinner.find('.quantity-down'),
-        min = input.attr('min'),
-        max = input.attr('max');
+    if (value < min) {
+      quantity.value = min;
+    } else {
+      quantity.value = value + 1;
+    }
+  }
+});
 
-      btnUp.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (isNaN(oldValue)) {
-          oldValue = 0;
-        }
-        if (oldValue >= max) {
-          var newVal = oldValue;
-        } else {
-          var newVal = oldValue + 1;
-        }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-      });
 
-      btnDown.click(function() {
-        var oldValue = parseFloat(input.val());
-        if (isNaN(oldValue)) {
-          oldValue = 0;
-        }
-        if (oldValue <= min) {
-          var newVal = oldValue;
-        } else {
-          var newVal = oldValue - 1;
-        }
-        spinner.find("input").val(newVal);
-        spinner.find("input").trigger("change");
-      });
+subtract.addEventListener('click', () => {
+  
+  let value = Number(quantity.value);
 
-    });
+  if (isNaN(value)) {
+    value = 0;
+  }
+
+  if (value <= min) {
+    quantity.value = min;
+  } else {
+    
+    if (value > max) {
+      quantity.value = max;
+    } else {
+      quantity.value = value - 1;
+    }
+  }
+});
