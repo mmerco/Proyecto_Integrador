@@ -203,8 +203,16 @@ img {
 }
 
 .item__input {
+    font-family: var(--base-font);
     font-size: var(--font-medium);
     height: var(--spacing-36);
+    color: var(--dark-500);
+}
+
+.item__textarea {
+    font-family: var(--base-font);
+    font-size: var(--font-medium);
+    color: var(--dark-500);
 }
 
 .item__textarea:focus {
