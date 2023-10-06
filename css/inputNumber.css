@@ -1,80 +1,45 @@
-/* Stylized Input Number */
+.quantity__value {
+  position: relative;
+}
 
-  .quantity__value {
-    position: relative;
-  }
-  
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button
-  {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  
-  input[type=number]
-  {
-    appearance: textfield;
-  }
-  
-  .quantity__value input {
-    width: 10.7rem;
-    height: 3.8rem;
-    text-align: center;
-    float: left;
-    display: block;
-    border: 0.5px solid #C9C9C9;
-    font-size: 2.8em;
-    color: #747474;
-  }
-  
-  .quantity__value input:focus {
-    outline: 0;
-  }
-  
-  .quantity-nav {
-    float: left;
-    position: relative;
-    height: 3.8rem;
-  }
-  
-  .quantity-button {
-    position: relative;
-    cursor: pointer;
-    width: 2.0rem;
-    text-align: center;
-    color: #333;
-    font-size: 1.2em;
-    line-height: 0.8;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-  }
-  
-  .quantity-button.quantity-up {
-    position: absolute;
-    height: 45.5%;
-    width: 2rem;
-    top: 0;
-    left: 2.8rem;
-    background-color: #4F4F4F;
-    color: #FFFFFF;
-    font-size: 1.8em;
-    font-weight: 400;
-    border: none;
-  }
-  
-  .quantity-button.quantity-down {
-    position: absolute;
-    bottom: 0;
-    left: 2.8rem;
-    width: 2rem;
-    height: 45.5%;
-    background-color: #4F4F4F;
-    color: #FFFFFF;
-    font-size: 1.8em;
-    font-weight: 400;
-  }
+.quantity__value input {
+  appearance: textfield;
+  width: 10.7rem;
+  height: 3.8rem;
+  text-align: center;
+  display: block;
+  float: left;
+  border: 0.5px solid #C9C9C9;
+  font-size: 2.8em;
+  color: #747474;
+}
+
+.quantity__value input:focus {
+  outline: 0;
+}
+
+.quantity__value button {
+  position: absolute;
+  padding-bottom: .1em;
+  cursor: pointer;
+  width: 2rem;
+  height: 45%;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 400;
+  color: #FFFFFF;
+  background-color: #4F4F4F;
+  border: none;
+  line-height: 0.8;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  right: -5rem;
+}
+
+#add {
+  top: 0;
+}
+
+#subtract {
+  bottom: 0;
+}

@@ -1,0 +1,203 @@
+/* Ingresos */
+
+.ingresos{
+    background-image: url("../img/funkos-banner.webp");
+    background-repeat: no-repeat;
+    height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.ingresos::after{
+    position: absolute;
+    content:"";
+    inset:0;
+    filter: blur(3px);
+    background-color: rgba(0,0,0,.33);
+}
+
+.ingresos__shop{
+    color: #fff;
+    z-index: 1000;
+}
+
+.ingresos__shop:first-child{
+    font-size: 2.3rem;
+    font-family: var(--raleway);
+    font-weight: bold;
+}
+
+.ingresos__shop:nth-child(2){
+    font-size: 1rem;   
+    font-family: var(--raleway);
+    font-weight: 300;
+}
+
+.ingresos__shop:last-child{
+    text-decoration: none;
+    background-color: #fff;
+    position: absolute;
+    top: 270px;
+    color: #000;
+    border-radius: 2rem;
+    padding: 1rem 4rem;
+}
+
+/* Articulo */
+
+.articulo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1220px;
+    padding: 0;
+    margin: auto;
+}
+
+.articulo__info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .8rem;
+}
+
+
+.articulo__info--title{
+    font-family: var(--raleway);
+    font-size: 2.8rem;
+}
+
+.articulo__info--des{
+    color: #4F4F4F;
+    font-size: 1.3rem;
+    font-family: var(--raleway);
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.articulo__info--des::after{
+    content: "";
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 600px;
+    border: red solid 2px;
+}
+
+.articulo__info--btn{
+    background-color: var(--color-btn);
+    padding: 1.2rem 3.3rem;
+    border-radius: 3rem;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--inter);
+    font-size: 1rem;
+}
+
+.articulo:nth-child(3){
+    flex-direction: row-reverse;
+}
+
+
+/* Lanzamientos */
+
+.lanzamientos{
+    padding: 0;
+    width: 1220px;
+    margin: auto;
+}
+
+.lanzamientos--title{
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: var(--raleway);
+}
+
+.lanzamientos__lista{
+    display: flex;
+    justify-content: space-between;
+}
+
+.lanzamientos__lista__ancla{
+    color: #000;
+    text-decoration: none;
+}
+
+.lanzamientos__lista__ancla__div{
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    font-family: var(--inter);
+}
+
+.lanzamientos__lista__ancla__pic{
+    position: relative;
+}
+
+.lanzamientos__lista__ancla__pic--img{
+    width: 350px;  
+}
+
+.lanzamientos__lista__ancla__pic--p{
+    position: absolute;
+    top: -320px;
+    right: 0;
+    background-color: rgb(235, 58, 58);
+    padding:  .4rem 1rem;
+    color: #fff;
+    font-size: .9rem;
+    font-family: var(--inter);
+}
+
+.lanzamientos__lista__ancla__div--des{
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+.lanzamientos__lista__ancla__div--cuota{
+    color: #1D84B5;
+    font-family: var(--inter);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+#frm {
+    background-color: var(--fondo-clarito);
+    border-radius: 10px;
+    max-width: 720px;
+    margin: 25px auto;
+    text-align: center;
+    font-family: var(--raleway);
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+#btn-registrar {
+    width: 500px;
+    margin: auto;
+}
+
+#form-check-div {
+    justify-content: center;
+    text-align: center;
+}
+
+#btn-ingresar {
+    width: 500px;
+    margin: auto;
+}
+
+
