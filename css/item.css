@@ -53,12 +53,12 @@
     font-size: var(--font-small);
 }
 
-.item__title {
+.item__name {
     font-size: var(--font-jumbo);
     font-weight: 700;
 }
 
-.item__text {
+.item__description {
     font-size: var(--font-large);
     font-weight: 400;
 }

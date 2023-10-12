@@ -11,15 +11,18 @@
     --secondary-500: rgba(29, 132, 181, 0.5);
     --secondary-300: rgba(29, 132, 181, 0.3);
 
-    --dark-solid: #1f1f1f;
+    --dark-solid: #1F1F1F;
     --dark-900: rgba(31, 31, 31, 0.9);
     --dark-500: rgba(31, 31, 31, 0.5);
     --dark-300: rgba(31, 31, 31, 0.3);
+
+    --grey-solid: #747474;
 
     --dark-bg-solid: #30343f;
     --dark-bg-900: rgba(79, 79, 79, 0.9);
     --dark-bg-500: rgba(79, 79, 79, 0.5);
     --dark-bg-300: rgba(79, 79, 79, 0.3);
+    
     --light-bg-solid: #FAFAFF;
     --light-font-solid: #FFFFFF;
     

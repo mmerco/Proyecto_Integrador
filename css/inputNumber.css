@@ -4,14 +4,15 @@
 
 .quantity__value input {
   appearance: textfield;
+  font-family: var(--base-font);
   width: 10.7rem;
   height: 3.8rem;
   text-align: center;
   display: block;
   float: left;
-  border: 0.5px solid #C9C9C9;
+  border: 0.5px solid #c9c9c9;
   font-size: 2.8em;
-  color: #747474;
+  color: var(--grey-solid);
 }
 
 .quantity__value input:focus {
@@ -27,7 +28,7 @@
   text-align: center;
   font-size: 1.8em;
   font-weight: 400;
-  color: #FFFFFF;
+  color: var(--light-font-solid);
   background-color: #4F4F4F;
   border: none;
   line-height: 0.8;
@@ -36,10 +37,10 @@
   right: -5rem;
 }
 
-#add {
+.add {
   top: 0;
 }
 
-#subtract {
+.subtract {
   bottom: 0;
 }

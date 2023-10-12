@@ -1,22 +1,20 @@
-const quantity = document.querySelector('#value');
-const add = document.querySelector('#add');
-const subtract = document.querySelector('#subtract');
+/* FUNCTIONS */
 
-const min = Number(quantity.min);
-const max = Number(quantity.max);
+const add = (element) => {
 
-
-
-add.addEventListener('click', () => {
-  
+  let id = '#' + element.name;
+  let quantity = document.querySelector(id);
+  let min = Number(quantity.min);
+  let max = Number(quantity.max);
   let value = Number(quantity.value);
-  
+
   if (isNaN(value)) {
     value = 0;
   }
 
   if (value >= max) {
     quantity.value = max;
+  
   } else {
     
     if (value < min) {
@@ -25,11 +23,14 @@ add.addEventListener('click', () => {
       quantity.value = value + 1;
     }
   }
-});
+}
 
+const subtract = (element) => {
 
-subtract.addEventListener('click', () => {
-  
+  let id = '#' + element.name;
+  let quantity = document.querySelector(id);
+  let min = Number(quantity.min);
+  let max = Number(quantity.max);
   let value = Number(quantity.value);
 
   if (isNaN(value)) {
@@ -38,12 +39,35 @@ subtract.addEventListener('click', () => {
 
   if (value <= min) {
     quantity.value = min;
+  
   } else {
     
     if (value > max) {
       quantity.value = max;
     } else {
       quantity.value = value - 1;
+    }
+  }
+}
+
+
+/* LISTENER */
+
+document.addEventListener('click', event => {
+  
+  let element = event.target;
+
+  if ( !element.matches('.add') && !element.matches('.subtract') ) {
+    return
+  
+  } else {
+
+    if ( element.matches('.add') ) {
+      add(element);
+    }
+
+    if ( element.matches('.subtract') ) {
+      subtract(element);
     }
   }
 });

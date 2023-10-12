@@ -1,0 +1,204 @@
+.cart__tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--base-font);
+    font-size: var(--font-xxsmall);
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    font-weight: 600;
+    background-color: var(--primary-solid);
+    color: var(--light-font-solid);
+    padding: var(--spacing-8);
+    position: absolute;
+    right: -1rem;
+    top: -.7rem;
+}
+
+.cart__main {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-128) 0;
+}
+
+.cart-products,
+.cart-summary {
+    display: flex;
+    flex-direction: column;
+}   
+
+.cart-products__title,
+.cart-summary__title {
+    font-family: var(--alternative-font);
+    font-size: var(--font-display);
+    font-weight: 700;
+    border-bottom: 5px solid var(--primary-solid);
+    width: fit-content;
+    padding-bottom: var(--spacing-8);
+}
+
+.cart-products__detail {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-28);
+    padding-top: var(--spacing-52);
+}
+
+.cart-product {
+    display: grid;
+    grid-template-columns: 4fr 2fr 2fr 1fr;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-bg-solid);
+    filter: drop-shadow(0 0 .4rem rgba(0, 0, 0, 0.25));
+    border-radius: 25px;
+}
+
+.cart-products__header {
+    border-radius: 10px;
+    padding: var(--spacing-16);
+}
+
+.header__category {
+    font-size: var(--font-small);
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.cart-product__section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-38) var(--spacing-20);
+    gap: var(--spacing-24);
+}
+
+.cart-product .item__section {
+    justify-content: flex-start;
+}
+
+.cart-product__link {
+    display: inline-block;
+}
+
+.cart-product__section img {
+    max-height: 118px;
+    max-width: 118px;
+}
+
+.cart-product__section .item__content {
+    gap: var(--spacing-8);
+}
+
+.cart-item__name {
+    font-size: var(--font-large);
+    font-weight: 700;
+}
+
+.cart-item__collection {
+    font-size: var(--font-xsmall);
+    font-weight: 500;
+}
+
+.cart-item__price {
+    font-size: var(--font-xsmall);
+    font-weight: 400;
+    padding-top: var(--spacing-16);
+}
+
+.cart-product__section .quantity__value input {
+    width: 9rem;
+    color: var(--dark-solid);
+    font-weight: 700;
+    font-size: var(--font-large);
+}
+
+.cart-product__section .quantity__value button {
+    background-color: #F24E1E;
+    width: 1.8rem;
+    height: 45%;
+    right: -4.3rem;
+}
+
+.cart-product__delete {
+    border: none;
+    background-color: var(--light-bg-solid);
+    color: #F24E1E;
+    display: inline-block;
+    margin-left: var(--spacing-68);
+    transition: all .2s ease-in-out;
+}
+
+.cart-product__delete:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+}
+
+.cart-summary {
+    align-items: flex-end;
+    gap: var(--spacing-24);
+    padding-top: var(--spacing-68);
+}
+
+.cart-summary__detail {
+    width: 57.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-20);
+    background-color: var(--light-bg-solid);
+    filter: drop-shadow(0 0 .4rem rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+    padding: var(--spacing-24);
+}
+
+.cart-summary__section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary__header {
+    font-weight: 600;
+    font-size: var(--font-small);
+    text-transform: uppercase;
+}
+
+.summary__data {
+    font-weight: 700;
+    font-size: var(--font-small);
+    color: var(--grey-solid);
+}
+
+.cart-summary__total {
+    border-top: 2px solid var(--primary-solid);
+    padding-top: var(--spacing-8);
+}
+
+.cart-summary__total .summary__header,
+.cart-summary__total .summary__data {
+    font-size: var(--font-large);
+    font-weight: 700;
+}
+
+.cart-summary__pay {
+    width: 57.2rem;
+    padding-top: var(--spacing-16);
+}
+
+.pay__button {
+    width: 100%;
+    background-color: var(--primary-solid);
+    color: var(--light-font-solid);
+    font-family: var(--base-font);
+    font-weight: 700;
+    font-size: var(--font-xlarge);
+    border: none;
+    padding: var(--spacing-16) 0;
+    transition: background .3s ease-in-out;
+}
+
+.pay__button:hover {
+    background-color: var(--secondary-900);
+    cursor: pointer;
+}
