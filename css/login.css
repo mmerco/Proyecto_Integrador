@@ -1,0 +1,114 @@
+.login__main {
+    text-align: center;
+    padding: var(--spacing-68) 0;
+}
+
+.login__title {
+    text-align: center;
+    font-family: var(--alternative-font);
+    font-weight: 700;
+    font-size: var(--font-display);
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: var(--spacing-68);
+}
+
+.login__data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-38);
+    padding: var(--spacing-16) 0;
+}
+
+.login-data__section {
+    width: 35%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login__data label {
+    font-size: var(--font-large);
+    font-weight: 400;
+}
+
+.login__data input {
+    border: none;
+    border-bottom: 2px solid var(--primary-solid);
+    font-family: var(--base-font);
+    font-size: var(--font-small);
+    font-weight: 400;
+    padding-bottom: var(--spacing-8);
+    padding-left: var(--spacing-8);
+    color: var(--grey-900);
+}
+
+.login__data input[type=password]::placeholder {
+    font-size: var(--font-medium-20);
+    color: var(--grey-900);
+}
+
+.login__submit {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-38);
+    margin: 0 auto;
+    padding: var(--spacing-52) 0;
+}
+
+.login__submit button {
+    border: none;
+    background-color: var(--primary-solid);
+    padding: var(--spacing-16) var(--spacing-36);
+    font-family: var(--base-font);
+    color: var(--light-font-solid);
+    font-weight: 400;
+    font-size: var(--font-xxsmall);
+    transition: background .3s ease-in-out;
+}
+
+.login__submit button:hover {
+    cursor: pointer;
+    background-color: var(--secondary-solid);
+}
+
+.login__remember {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+}
+
+.login__submit label {
+    font-size: var(--font-medium);
+    font-weight: 400;
+}
+
+.login__checkbox {
+    appearance: none;
+    width: var(--spacing-16);
+    height: var(--spacing-16);
+    border: 2px solid var(--dark-solid);
+    border-radius: 3px;
+}
+
+.login__checkbox:checked {
+    appearance: auto;
+}
+
+.reset__pass {
+    display: inline-block;
+    text-align: center;
+    font-size: var(--font-xsmall);
+    font-weight: 400;
+    color: var(--secondary-solid);
+}
+
+.reset__pass:hover {
+    color: var(--primary-500);
+}
