@@ -1,0 +1,139 @@
+.admin__main section {
+    padding-top: var(--spacing-38);
+}
+
+.search-product__form {
+    display: flex;
+    gap: var(--spacing-12);
+}
+
+.search-product__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: inherit;
+}
+
+.search-product__button:hover {
+    cursor: pointer;
+}
+
+.search-product__input {
+    border: 2px solid var(--dark-bg-solid);
+    border-radius: 6px;
+    width: 53rem;
+    font-family: var(--base-font);
+    font-weight: 500;
+    font-size: var(--font-medium);
+    color: var(--grey-500);
+    padding-left: var(--spacing-20);
+}
+
+.admin__products-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-20);
+}
+
+.products-list__section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: var(--spacing-38);
+}
+
+.products-list__title {
+    font-family: var(--alternative-font);
+    font-weight: 700;
+    font-size: var(--font-display);
+    text-transform: uppercase;
+}
+
+.add__title {
+    font-size: var(--font-large);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.products-list__add {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-28);
+    padding-right: var(--spacing-20);
+}
+
+.add__link button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--spacing-38);
+    height: var(--spacing-38);
+    background-color: var(--primary-solid);
+    color: var(--light-font-solid);
+    border: none;
+    border-radius: 5px;
+    font-family: var(--base-font);
+    font-weight: 600;
+    font-size: var(--font-jumbo);
+    transition: background .3s ease-in-out;
+}
+
+.add__link button:hover {
+    cursor: pointer;
+    background-color: var(--secondary-900);
+}
+
+.products-list__table {
+    width: 100%;
+    font-size: var(--font-large);
+    font-weight: 500;
+    border-spacing: var(--spacing-16);
+    text-align: left;
+    padding-bottom: var(--spacing-38);
+}
+
+.table__header {
+    padding-bottom: var(--spacing-16);
+}
+
+.table__id {
+    text-align: center;
+}
+
+.table__code {
+    padding-left: var(--spacing-16);
+}
+
+.table__edit,
+.table__delete {
+    text-align: right;
+}
+
+.table__edit {
+    padding-left: var(--spacing-38);
+}
+
+.table__delete {
+    padding-left: var(--spacing-16);
+}
+
+.table__link img,
+.search-product__button img {
+    display: flex;
+    transition: all .2s ease-in-out;
+}
+
+.table__link img:hover,
+.search-product__button img:hover {
+    transform: scale(1.25);
+}
+
+.table__row .table__code,
+.table__row .table__category {
+    text-transform: uppercase;
+}
+
+.table__row .table__product {
+    text-transform: capitalize;
+}

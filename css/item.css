@@ -88,6 +88,8 @@
 }
 
 .quantity__add {
+    font-family: var(--base-font);
+    font-weight: 400;
     background-color: var(--primary-solid);
     font-size: var(--font-medium);
     color: var(--light-font-solid);

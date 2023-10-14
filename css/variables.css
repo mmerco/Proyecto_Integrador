@@ -17,6 +17,9 @@
     --dark-300: rgba(31, 31, 31, 0.3);
 
     --grey-solid: #747474;
+    --grey-900: rgba(116, 116, 116, 0.9);
+    --grey-500: rgba(116, 116, 116, 0.5);
+    --grey-300: rgba(116, 116, 116, 0.3);
 
     --dark-bg-solid: #30343f;
     --dark-bg-900: rgba(79, 79, 79, 0.9);
@@ -35,6 +38,7 @@
     --font-jumbo: 3.8em;
     --font-xlarge: 3em;
     --font-large: 2.4em;
+    --font-medium-20: 2em;
     --font-medium: 1.8em;
     --font-small: 1.6em;
     --font-xsmall: 1.4em;
