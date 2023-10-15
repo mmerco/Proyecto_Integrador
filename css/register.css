@@ -1,0 +1,25 @@
+.register__main {
+    text-align: center;
+    padding: var(--spacing-52) 0;
+}
+
+.register__subtitle {
+    font-family: var(--alternative-font);
+    font-weight: 500;
+    font-size: var(--font-xlarge);
+    letter-spacing: .04em;
+    padding-top: var(--spacing-36);
+}
+
+.register__main .register__form {
+    padding-top: var(--spacing-38);
+}
+
+.terms {
+    display: inline-block;
+    color: var(--secondary-solid);
+}
+
+.terms:hover {
+    color: var(--primary-500);
+}

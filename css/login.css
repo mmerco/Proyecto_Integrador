@@ -8,13 +8,14 @@
     font-family: var(--alternative-font);
     font-weight: 700;
     font-size: var(--font-display);
+    text-transform: uppercase;
 }
 
 .login__form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: var(--spacing-68);
+    padding-top: var(--spacing-52);
 }
 
 .login__data {
@@ -26,7 +27,7 @@
 }
 
 .login-data__section {
-    width: 35%;
+    width: 40%;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -59,7 +60,7 @@
     align-items: center;
     gap: var(--spacing-38);
     margin: 0 auto;
-    padding: var(--spacing-52) 0;
+    padding: var(--spacing-38) 0;
 }
 
 .login__submit button {
