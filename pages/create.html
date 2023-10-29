@@ -3,72 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EDIT</title>
+    <title>CREATE</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/edit.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <picture>
+    <header class="header">
+        <nav class="navbar container">
+            <picture class="navbar__logo">
                 <a href="../index.html">
                     <img src="../img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop">
                 </a>
             </picture>
-            <ul>
-                <li>
-                    <a href="../index.html">VER TIENDA</a>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="../index.html" class="navbar__link" >VER TIENDA</a>
                 </li>
-                <li>
-                    <a href="./admin.html">ADMIN</a>
+                <li class="navbar__item">
+                    <a href="./admin.html" class="navbar__link" >ADMIN</a>
                 </li>
-                <li>
-                    <a href="./login.html">SALIR</a>
+                <li class="navbar__item">
+                    <a href="./login.html" class="navbar__link" >SALIR</a>
                 </li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-            <article>
-                <h1>CREAR NUEVO ITEM</h1>
-            </article>
-            <section>
-                <form method="post" action="https://formsubmit.co/amarrero86mr@gmail.com" id="edit" name="form-edit">
-                    <div>
-                        <label for="categoria">Categoría:<input list="categorias" name="categoria" id="categoria" placeholder="nuevo u opción" required></label>
-                        <datalist name="categoria" id="categorias">
-                            <option value="Funko Pop"></option>
-                            <option value="Remeras"><option>
-                            <option value="Llaveros"></option>
-                        </datalist>
-                    </div>
-                    <div>
-                        <label for="licencia">Licencia:<input type="text" list="licencias" name="licencia" id="licencia" placeholder="nuevo u opción" required></label>
-                        <datalist name="licencia" id="licencias">
-                            <option value="Naruto Shippuden"></option>
-                            <option value="Star Wars"></option>
-                            <option value="Pokemon"></option>
-                            <option value="Harry Potter"></option>
-                        </datalist>
-                    </div>
-                    <div>
+    <main class="main__create container">
+        <section class="main__title">
+            <h3>CREAR NUEVO ITEM</h3>
+        </section>
+        <form method="post" action="https://formsubmit.co/amarrero86mr@gmail.com" id="edit" name="form-edit" class="main__form">
+            <section class="form__cat_lic">
+                <div class="form__cat_lic_items">
+                    <label for="categoria">Categoría:<input list="categorias" name="categoria" id="categoria" placeholder="nuevo u opción" required></label>
+                    <datalist name="categoria" id="categorias">
+                        <option value="Funko Pop"></option>
+                        <option value="Remeras"><option>
+                        <option value="Llaveros"></option>
+                    </datalist>
+                </div>
+                <div class="form__cat_lic_items">
+                    <label for="licencia">Licencia:<input type="text" list="licencias" name="licencia" id="licencia" placeholder="nuevo u opción" required></label>
+                    <datalist name="licencia" id="licencias">
+                        <option value="Naruto Shippuden"></option>
+                        <option value="Star Wars"></option>
+                        <option value="Pokemon"></option>
+                        <option value="Harry Potter"></option>
+                    </datalist>
+                </div>
+            </section>
+            <section class="form__cat_lic">
+                    <div class="form__nombre">
                         <label for="nombre-prducto">Nombre del Producto:</label>
-                        <input type="text" name="nombre de prducto" id="nombre-prducto" required>
+                        <input type="text" name="nombre de prducto" id="nombre-producto" required>
                     </div>
                     <div>
-                        <textarea name="description" id="descriptionTex" cols="50" rows="7" required></textarea>
+                        <textarea name="description" id="description_text" cols="50" rows="7" required></textarea>
                     </div>
-                    <div>
+            </section>
+            <section class="form__sku_precio_stock">
+                    <div class="form__sku_precio_stock_items">
                         <label for="cod">SKU:</label>
                         <input type="text" name="codigo" id="cod" pattern="^[A-Z]{3}\d{6}$" required>
                     </div>
-                    <div>
+                    <div class="form__sku_precio_stock_items">
                         <label for="Precio">Precio: </label>
                         <input type="text" name="precio" id="Precio" pattern="^\d+(\.\d+)?$" required>
                     </div>
-                    <div>
+                    <div class="form__sku_precio_stock_items">
                         <label for="stock">Stock:</label>
                         <input type="number" name="stock" id="stock" pattern="^\d+$" required>
                     </div>
+            </section>
+            <section class="form__decuento_cuotas">
                     <div>
                         <label for="off">Descuento:</label>
                         <input type="number" min="0" step="5" name="descuento" pattern="^\d+$" id="off" >
@@ -76,53 +83,52 @@
                     <div>
                         <label for="cuotas">Cuotas:</label>
                         <select name="cuotas" id="cuotas">
-                            <option value="3 s/interes">3 Cuotas sin interés</option>
-                            <option value="6 s/interes">6 Cuotas sin interés</option>
-                            <option value="9 s/interes">9 Cuotas sin interés</option>
+                            <option value="3">3 Cuotas sin interés</option>
+                            <option value="6">6 Cuotas sin interés</option>
+                            <option value="9">9 Cuotas sin interés</option>
                         </select>
                     </div>
+            </section>
+            <section>
                     <div>
-                    <!-- comentado - interfiere en el testing del form -
-                    <div>
+                    <!-- comentado - interfiere en el testing del form  -->
+                    <div class="form__img">
                         <label for="Imgs">Imágenes:</label>
-                        <input type="file" accept="image/*" name="archivossubidos[]" multiple>
+                        <input type="file" accept="image/*" name="archivossubidos[]" multiple class="form__img_charge">
                     </div>
-                    -->
-                    </div>
-                    <div>
-                        <button type="submit" value="Agregar Producto">Agregar Producto</button>
-                        <a href="edit.html"><button value="limpiar">Limpiar</button>
+            </section>
+            <section>
+                    <div class="form__btn">
+                        <button type="submit" value="Agregar Producto" class="form__button">Agregar Producto</button>
+                        <a href="edit.html"><button value="limpiar" class="form__button">Limpiar</button>
                         </a>
                     </div>
-                </form>
             </section>
-        </section>
+        </form>
     </main>
-    <footer>
-        <div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="./shop.html">SHOP</a>
-                    </li>
-                    <li>
-                        <a href="./register.html">REGISTRARSE</a>
-                    </li>
-                    <li>
-                        <a href="./login.html">INGRESAR</a>
-                    </li>
-                    <li>
-                        <a href="./contact.html">CONTACTO</a>
-                    </li>
-                </ul>
-                <picture>
-                    <a href="../index.html">
-                        <img src="../img/branding/isotype.svg" alt="Logo Funkoshop">
-                    </a>
-                </picture>
-            </nav>
-        </div>
-        <p>All rights reserved 2023 - Funkoshop &copy;</p>
+    <footer class="footer">
+        <nav class="navbar container">
+            <ul class="navbar__items">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./register.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./login.html">INGRESAR</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>
+                <a href="../index.html">
+                    <img src="../img/branding/isotype.svg" alt="Logo Funkoshop">
+                </a>
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
     
 </body>
