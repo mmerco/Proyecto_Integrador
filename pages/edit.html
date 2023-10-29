@@ -5,39 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDIT</title>
     <!--stylesheets: reset - edit -->
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/root.css">
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/edit.css">
-    <link rel="stylesheet" href="../css/footer.css">
+   
 </head>
 <body>
     <header class="header">
-        <nav class="header__nav">
-            
+        <nav class="navbar container">
+            <picture class="navbar__logo">
                 <a href="../index.html">
                     <img src="../img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop">
                 </a>
-            
-            <ul class="header__nav__ul">
-                <li>
-                    <a href="../index.html" class="header__nav__ul--a" >VER TIENDA</a>
+            </picture>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="../index.html" class="navbar__link" >VER TIENDA</a>
                 </li>
-                <li>
-                    <a href="./admin.html" class="header__nav__ul--a" >ADMIN</a>
+                <li class="navbar__item">
+                    <a href="./admin.html" class="navbar__link" >ADMIN</a>
                 </li>
-                <li>
-                    <a href="./login.html" class="header__nav__ul--a" >SALIR</a>
+                <li class="navbar__item">
+                    <a href="./login.html" class="navbar__link" >SALIR</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main class="main container">
-            <article class="main__title">
+            <section class="main__title">
                 <h3>EDITAR ITEM</h3>
-            </article>
+            </section>
                 <form method="POST" action="https://formsubmit.co/amarrero86mr@gmail.com" class="main__form">                    
                     <section class="form__cat_lic">
                         <div class="form__cat_lic_items">
@@ -58,13 +54,15 @@
                             </datalist>
                         </div>
                     </section>
-                    <div class="form__nombre">
-                        <label for="nombre-producto">Nombre del Producto:</label>
-                        <input type="text" name="nombre de prducto" id="nombre-producto" placeholder="Kakashi Hatake Shippuden Saga" required>
-                    </div>
-                    <div>
-                        <textarea name="descripción" id="description_text" required></textarea>
-                    </div>
+                    <section>
+                        <div class="form__nombre">
+                            <label for="nombre-producto">Nombre del Producto:</label>
+                            <input type="text" name="nombre de prducto" id="nombre-producto" placeholder="Kakashi Hatake Shippuden Saga" required>
+                        </div>
+                        <div>
+                            <textarea name="descripción" id="description_text" required></textarea>
+                        </div>
+                    </section>
                     <section class="form__sku_precio_stock">
                         <div class="form__sku_precio_stock_items">
                             <label for="cod">SKU:</label>
@@ -112,36 +110,34 @@
                         </div>
                     </div>
                     </section>
-                    <div>
+                    <section>
                         <button type="submit" class="form__button">Modificar Producto</button>
-                    </div>
+                    </section>
                 </form>        
     </main>
     <footer class="footer">
-        <div>
-            <nav class="footer__nav">
-                <ul class="footer__nav__ul">
-                    <li class="footer__nav__ul__li">
-                        <a class="footer__nav__ul__li--a" href="./shop.html">SHOP</a>
-                    </li>
-                    <li class="footer__nav__ul__li">
-                        <a class="footer__nav__ul__li--a" href="./register.html">REGISTRARSE</a>
-                    </li>
-                    <li class="footer__nav__ul__li">
-                        <a class="footer__nav__ul__li--a" href="./login.html">INGRESAR</a>
-                    </li>
-                    <li class="footer__nav__ul__li">
-                        <a class="footer__nav__ul__li--a" href="./contact.html">CONTACTO</a>
-                    </li>
-                </ul>
-                <picture>
-                    <a href="../index.html">
-                        <img src="../img/branding/isotype.svg" alt="Logo Funkoshop">
-                    </a>
-                </picture>
-            </nav>
-        </div>
-        <p class="footer--copy">All rights reserved 2023 - Funkoshop &copy;</p>
+        <nav class="navbar container">
+            <ul class="navbar__items">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./register.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./login.html">INGRESAR</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>
+                <a href="../index.html">
+                    <img src="../img/branding/isotype.svg" alt="Logo Funkoshop">
+                </a>
+            </picture>
+        </nav>
+        <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
     
 </body>
