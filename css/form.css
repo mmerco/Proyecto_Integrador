@@ -1,0 +1,150 @@
+.admin-form {
+    max-width: 97rem;
+}
+
+.admin-form__section {
+    display: flex;
+    gap: var(--spacing-68);
+    padding-top: var(--spacing-38);
+}
+
+.admin-form .space-between {
+    justify-content: space-between;
+}
+
+.admin-form label {
+    font-weight: 400;
+    font-size: var(--font-large);
+    letter-spacing: .04em;
+}
+
+.admin-form__select .light-label {
+    font-weight: 300;
+}
+
+.admin-form__select {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-20);
+}
+
+.stylized-select {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.stylized-select select{
+    appearance: none;
+    background-color: inherit;
+    border: 2px solid var(--dark-solid);
+    font-family: var(--base-font);
+    font-weight: 500;
+    font-size: var(--font-medium-20);
+    border-radius: 6px;
+    padding: .6rem var(--spacing-8);
+    min-width: 28rem;
+    display: inline-block;
+    z-index: 1;
+    color: var(--grey-900);
+}
+
+.stylized-select__arrow {
+    position: absolute;
+    right: 1rem;
+    display: block;
+}
+
+.admin-form__section textarea {
+    width: 100%;
+    height: 19rem;
+    border: 1px solid var(--dark-solid);
+    border-radius: 4px;
+    font-family: var(--base-font);
+    font-weight: 400;
+    font-size: var(--font-medium);
+    letter-spacing: .04em;
+    outline: 0;
+    padding: var(--spacing-12);
+}
+
+.admin-form__section textarea::placeholder,
+.admin-form__text input::placeholder {
+    color: var(--grey-900);
+}
+
+.admin-form__text,
+.admin-form__file {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12);
+}
+
+.admin-form__text input {
+    border: none;
+    border-bottom: 2px solid var(--primary-solid);
+    font-family: var(--base-font);
+    font-weight: 400;
+    font-size: var(--font-medium);
+    letter-spacing: .04em;
+    outline: 0;
+}
+
+.admin-form__text .input-text__large {
+    min-width: 35rem;
+}
+
+.admin-form__text .input-text__medium {
+    width: 15rem;
+}
+
+.admin-form__text .input-text__small {
+    width: 6rem;
+    text-align: center;
+}
+
+.admin-files__section {
+    justify-content: space-between;
+}
+
+.admin-form__buttons {
+    display: flex;
+    gap: var(--spacing-36);
+}
+
+.admin__button {
+    border: none;
+    width: 17.5rem;
+    background-color: var(--primary-solid);
+    padding: var(--spacing-16) 0;
+    font-family: var(--base-font);
+    color: var(--light-font-solid);
+    font-weight: 600;
+    font-size: var(--font-xsmall);
+    transition: background .3s ease-in-out;
+}
+
+.admin__button:hover {
+    cursor: pointer;
+    background-color: var(--secondary-solid);
+}
+
+.admin-form__figure img {
+    width: 15rem;
+    height: 15rem;
+    border: 0;
+    display: flex;
+}
+
+.admin-form__figure figcaption {
+    min-width: 15rem;
+    border-top: 1px solid var(--primary-solid);
+    text-align: center;
+    font-family: var(--alternative-font);
+    font-weight: 500;
+    font-size: var(--font-medium-20);
+}
+
+.admin-form__figure {
+    display: none;
+}
