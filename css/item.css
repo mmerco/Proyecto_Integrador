@@ -1,14 +1,4 @@
-/* HEADER */
-
-.header {
-    background-color: var(--dark-bg-solid);
-    padding: var(--spacing-36);
-}
-
-
-/* ITEM MAIN */
-
-.main-container {
+.item__main {
     display: flex;
     flex-direction: column;
 }
@@ -104,17 +94,4 @@
 .quantity__add:hover {
     cursor: pointer;
     background-color: var(--secondary-900);
-}
-
-
-/* FOOTER */
-
-.footer {
-    background-color: var(--dark-bg-solid);
-    padding: var(--spacing-68);
-}
-
-.footer__copy {
-    text-align: center;
-    margin-top: var(--spacing-36);
 }

@@ -1,0 +1,12 @@
+.create__main {
+    padding: var(--spacing-52) 0;
+}
+
+.admin__title {
+    font-family: var(--alternative-font);
+    font-weight: 700;
+    font-size: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    padding: var(--spacing-8) 0;
+}
