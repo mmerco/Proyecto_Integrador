@@ -13,6 +13,10 @@
     text-transform: uppercase;
 }
 
+.slider__items {
+    display: flex;
+}
+
 .glide__arrow--chevron {
     color: var(--dark-bg-solid);
     font-size: var(--font-small);

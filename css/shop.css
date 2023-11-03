@@ -1,61 +1,98 @@
-.lanzamientos__lista__ancla__pic--p{
-    top: -290px;
+.shop__main {
+    display: grid;
+    grid-template-columns: 28rem auto;
+    padding: var(--spacing-68) 0;
+    gap: var(--spacing-8);
 }
 
-.lanzamientos__lista__ancla__pic--img{
-    width: 300px;
-}
-
-.shop{
-    margin: 3rem 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-.shop__form{
+.aside__form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: var(--spacing-38);
 }
 
-
-.shop__form--title{
-    font-family: var(--inter);
-    font-weight: 600;
-    font-size: 1.10rem;
-    margin-bottom: .7rem;
-}
-
-.shop__form__price{
+.aside-form__section {
     display: flex;
-    gap: 0 .9rem;
-    align-items: center
+    flex-direction: column;
+    gap: var(--spacing-16);
 }
 
-.shop__form__price__minmax{
+.aside-form__label {
+    font-weight: 500;
+    font-size: var(--font-large);
+}
+
+.aside-form__input,
+.form-price__input {
+    font-family: var(--base-font);
+    border: 2px solid var(--dark-bg-solid);
+    border-radius: 6px;
+    font-size: var(--font-medium-20);
+    padding: .6rem var(--spacing-8);
+    color: var(--grey-900);
+    outline: 0;
+}
+
+.aside-form__price {
     display: flex;
-    gap: 0 .8rem;
     align-items: center;
+    gap: var(--spacing-20);
 }
 
-.form-label{
-    margin: 0;
+.form-price__section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-12);
 }
 
-.shop__form__price__minmax--m{
-    width: 50px;
+.form-price__label,
+.form-price__divider {
+    font-weight: 500;
+    font-size: var(--font-small);
 }
 
-.shop__container{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3,400px);
-    gap: 4rem 0;
+.form-price__input {
+    appearance: textfield;
+    text-align: center;
+    width: 7rem;
 }
 
+.aside-form__checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-12);
+    padding-left: var(--spacing-16);
+}
 
+.form-checkbox__section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-8);
+}
 
+.form-checkbox__input {
+    appearance: none;
+    border: 2px solid var(--dark-bg-solid);
+    border-radius: 6px;
+    width: var(--spacing-24);
+    height: var(--spacing-24);
+    cursor: pointer;
+}
 
+.form-checkbox__input:checked {
+    appearance: auto;
+}
+
+.form-checkbox__label {
+    font-weight: 500;
+    font-size: var(--font-medium);
+}
+
+.shop__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-38);
+}
 
 .pagination{
     display: flex;

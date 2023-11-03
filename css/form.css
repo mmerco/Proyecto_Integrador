@@ -47,6 +47,7 @@
     display: inline-block;
     z-index: 1;
     color: var(--grey-900);
+    cursor: pointer;
 }
 
 .stylized-select__arrow {
@@ -69,7 +70,8 @@
 }
 
 .admin-form__section textarea::placeholder,
-.admin-form__text input::placeholder {
+.admin-form__text input::placeholder,
+.aside-form__section input::placeholder {
     color: var(--grey-900);
 }
 
