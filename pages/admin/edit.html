@@ -4,139 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/pages/edit.css">
+    <link rel="stylesheet" href="../../css/index.css">
     <title>Edit | Funkoshop</title>
 </head>
 <body>
     <header class="header">
-        <nav class="nabvar container">
-            <picture class="nabvar__logo">
+        <nav class="navbar container">
+            <picture class="navbar__logo">
                 <a href="../../index.html">
                     <img src="../../img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop">
                 </a>
             </picture>
-            <ul class="nabvar__menu">
-                <li class="nabvar__item">
-                    <a href="../shop/shop.html" class="nabvar__link" >VER TIENDA</a>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../shop/shop.html">Ver tienda</a>
                 </li>
                 <li class="navbar__item">
-                    <a href="./admin.html" class="navbar__link" >ADMIN</a>
+                    <a class="navbar__link" href="./admin.html">admin</a>
                 </li>
                 <li class="navbar__item">
-                    <a href="./login.html" class="navbar__link" >SALIR</a>
+                    <a class="navbar__link" href="./login.html">salir</a>
                 </li>
             </ul>
         </nav>
     </header>
-    <main class="main__edit container">
-            <section class="main__title">
-                <h3>EDITAR ITEM</h3>
-            </section>
-                <form method="POST" action="https://formsubmit.co/amarrero86mr@gmail.com" class="main__form">                    
-                    <section class="form__cat_lic">
-                        <div class="form__cat_lic_items">
-                            <label for="categoria">Categoría:<input list="categorias" name="categoria" id="categoria" placeholder="nuevo u opción" required></label>
-                            <datalist name="categoria" id="categorias">
-                                <option value="Funko Pop"></option>
-                                <option value="Remeras"><option>
-                                <option value="Llaveros"></option>
-                            </datalist>
-                        </div>
-                        <div class="form__cat_lic_items">
-                            <label for="licencia">Licencia:<input type="text" list="licencias" name="licencia" id="licencia" placeholder="nuevo u opción" required></label>
-                            <datalist name="licencia" id="licencias">
-                                <option value="Naruto Shippuden"></option>
-                                <option value="Star Wars"></option>
-                                <option value="Pokemon"></option>
-                                <option value="Harry Potter"></option>
-                            </datalist>
-                        </div>
-                    </section>
-                    <section>
-                        <div class="form__nombre">
-                            <label for="nombre-producto">Nombre del Producto:</label>
-                            <input type="text" name="nombre de prducto" id="nombre-producto" placeholder="Kakashi Hatake Shippuden Saga" required>
-                        </div>
-                        <div>
-                            <textarea name="descripción" id="description_text" required></textarea>
-                        </div>
-                    </section>
-                    <section class="form__sku_precio_stock">
-                        <div class="form__sku_precio_stock_items">
-                            <label for="cod">SKU:</label>
-                            <input type="text" name="codigo" id="cod" pattern="^[A-Z]{3}\d{6}$" placeholder="NAR001012" required>
-                        </div>
-                        <div class="form__sku_precio_stock_items">
-                            <label for="Precio">Precio: $</label>
-                            <input type="text" name="precio" id="Precio" pattern="^\d+(\,\d+)?$" placeholder="1799,00" required>
-                        </div>
-                        <div class="form__sku_precio_stock_items">
-                            <label for="stock">Stock:</label>
-                            <input type="number" name="stock" id="stock" pattern="^\d+$" placeholder="10" required>
-                        </div>   
-                    </section>
-                    <section class="form__decuento_cuotas">
-                    <div>
-                        <label for="off">Descuento:</label>
-                        <input type="number" min="0" step="5" name="descuento" pattern="^\d+$" id="off" placeholder="10%" >
-                    </div>
-                    <div>
-                        <label for="cuotas">Cuotas:</label>
-                        <select name="cuotasCant" id="cuotas" >
-                            <option value="3">3 Cuotas sin interés</option>
-                            <option value="6">6 Cuotas sin interés</option>                                <option value="9">9 Cuotas sin interés</option>
+    <main class="create__main container">
+        <h1 class="admin__title">EDITAR ITEM</h1>
+        <form method="POST" class="admin-form">
+            <section class="admin-form__section space-between">
+                <div class="admin-form__select">
+                    <label for="category" class="light-label">Categoría:</label>
+                    <div class="stylized-select">
+                        <select name="category" id="category">
+                            <option value="select" class="default__option">Seleccionar</option>
+                            <option value="figuras">Figuras</option>
+                            <option value="remeras">Remeras</option>
+                            <option value="llaveros">Llaveros</option>
                         </select>
-                    </div> 
-                    </section>
-                    <section>
-                    <div class="form__img">
-                        <label for="Imgs">Imágenes:</label>
-                        <input type="file" accept="image/*" name="archivossubidos[]" multiple class="form__img_charge">
-                    </div>
-                    <div class="form__imges">
-                        <div class="form__imges_items">
-                            <picture >
-                                <img src="../../img/naruto-shippuden/kakashi_hatake_front.png" width="150px" alt="Kakashi Shippuden Funko Pop">
-                            </picture>
-                            <p>Frente</p>
-                        </div>
-                        <div class="form__imges_items">
-                            <picture>
-                                <img src="../../img/naruto-shippuden/kakashi_hatake_back.png" width="300" alt="Kakashi Shippuden Funko Pop Caja">
-                            </picture>
-                            <p>Dorso</p>
+                        <div class="stylized-select__arrow">
+                            <iconify-icon icon="iconamoon:arrow-down-2-fill" width="30px" height="30px"></iconify-icon>
                         </div>
                     </div>
-                    </section>
-                    <section>
-                        <button type="submit" class="form__button">Modificar Producto</button>
-                    </section>
-                </form>        
+                </div>
+                <div class="admin-form__select">
+                    <label for="license" class="light-label">Licencia:</label>
+                    <div class="stylized-select">
+                        <select name="license" id="license">
+                            <option value="select" class="default__option">Seleccionar</option>
+                            <option value="Naruto Shippuden">Naruto Shippuden</option>
+                            <option value="Star Wars">Star Wars</option>
+                            <option value="Pokemon">Pokemon</option>
+                            <option value="Harry Potter">Harry Potter</option>
+                        </select>
+                        <div class="stylized-select__arrow">
+                            <iconify-icon icon="iconamoon:arrow-down-2-fill" width="30px" height="30px"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="admin-form__section">
+                <div class="admin-form__text">
+                    <label for="name">Nombre del Producto:</label>
+                    <input type="text" name="name" class="input-text__large" placeholder="Kakashi Hatake Shippuden Saga" required>
+                </div>
+            </section>
+            <section class="admin-form__section">
+                <textarea name="description" id="description" placeholder="Descripción del producto" required></textarea>
+            </section>
+            <section class="admin-form__section">
+                <div class="admin-form__text">
+                    <label for="code">SKU:</label>
+                    <input type="text" name="code" class="input-text__medium" pattern="^[A-Z]{3}\d{6}$" placeholder="SSK111AB001" required>
+                </div>
+                <div class="admin-form__text">
+                    <label for="price">Precio: $</label>
+                    <input type="text" name="price" class="input-text__medium price" pattern="^\d+(\.\d+)?$" placeholder="0.000,00" required>
+                </div>
+                <div class="admin-form__text">
+                    <label for="stock">Stock:</label>
+                    <input type="text" name="stock" class="input-text__small" pattern="^\d+$" placeholder="0" required>
+                </div>
+            </section>
+            <section class="admin-form__section">
+                <div class="admin-form__text">
+                        <label for="off">Descuento:</label>
+                        <input type="text" name="off" class="input-text__small off" pattern="^\d+$" placeholder="0">
+                        <label for="off">%</label>
+                </div>
+                <div class="admin-form__select">
+                    <label for="payment">Cuotas:</label>
+                    <div class="stylized-select">
+                        <select name="payment" id="payment">
+                            <option value="1">1 Cuota</option>
+                            <option value="3" selected>3 Cuotas sin interés</option>
+                            <option value="6">6 Cuotas sin interés</option>
+                            <option value="9">9 Cuotas sin interés</option>
+                        </select>
+                        <div class="stylized-select__arrow">
+                            <iconify-icon icon="iconamoon:arrow-down-2-fill" width="30px" height="30px"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section section class="admin-form__section admin-files__section">
+                <div class="admin-form__file">
+                    <label for="Imgs">Imágenes:</label>
+                    <input type="file" accept="image/*" name="archivossubidos[]" multiple class="admin-file__front">
+                </div>
+            </section>
+            <section class="admin-form__section">
+                <div class="form__imges">
+                    <div class="form__imges_items">
+                        <picture >
+                            <img class="form__imges_items-img" src="../../img/naruto-shippuden/kakashi_hatake_front.png" width="150px" alt="Kakashi Shippuden Funko Pop">
+                        </picture>
+                        <p>Frente</p>
+                    </div>
+                    <div class="form__imges_items">
+                        <picture>
+                            <img class="form__imges_items-img" src="../../img/naruto-shippuden/kakashi_hatake_back.png" width="300" alt="Kakashi Shippuden Funko Pop Caja">
+                        </picture>
+                        <p>Dorso</p>
+                    </div>
+                </div>
+            </section>
+            <section class="admin-form__section">
+                <div class="admin-form__buttons">
+                    <button type="submit" class="admin__button">Modificar Producto</button>
+                </div>
+            </section>
+        </form>        
     </main>
     <footer class="footer">
-            <nav class="nabvar">
-                <ul class="nabvar__item">
-                    <li class="nabvar__item">
-                        <a class="nabvar__link" href="../shop/shop.html">SHOP</a>
-                    </li>
-                    <li class="nabvar__item">
-                        <a class="nabvar__link" href="./register.html">REGISTRARSE</a>
-                    </li>
-                    <li class="nabvar__item">
-                        <a class="nabvar__link" href="./login.html">INGRESAR</a>
-                    </li>
-                    <li class="nabvar__item">
-                        <a class="nabvar__link" href="../shop/contact.html">CONTACTO</a>
-                    </li>
-                </ul>
-                <picture>
-                    <a href="../../index.html">
-                        <img src="../../img/branding/isotype.svg" alt="Logo Funkoshop">
-                    </a>
-                </picture>
-            </nav>
+        <nav class="navbar container">
+            <ul class="navbar__items">
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../shop/shop.html">SHOP</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./register.html">REGISTRARSE</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="./login.html">INGRESAR</a>
+                </li>
+                <li class="navbar__item">
+                    <a class="navbar__link" href="../shop/contact.html">CONTACTO</a>
+                </li>
+            </ul>
+            <picture>
+                <a href="../../index.html">
+                    <img src="../../img/branding/isotype.svg" alt="Logo Funkoshop">
+                </a>
+            </picture>
+        </nav>
         <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="../../js/adminForm.js"></script>
 </body>
 </html>
