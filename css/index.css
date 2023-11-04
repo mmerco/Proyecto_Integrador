@@ -7,32 +7,32 @@
 
 /* MISC */
 
-@import url('./variables.css');
-@import url('./normalize.css');
-@import url('./animations.css');
+@import url('./misc/variables.css');
+@import url('./misc/normalize.css');
+@import url('./misc/animations.css');
 
 
-/* SECTIONS */
+/* PARTIALS */
 
-@import url('./header.css');
-@import url('./footer.css');
+@import url('./partials/header.css');
+@import url('./partials/footer.css');
 
 /* COMPONENTS */
 
-@import url('./inputNumber.css');
-@import url('./card.css');
-@import url('./slider.css');
-@import url('./form.css');
+@import url('./components/inputNumber.css');
+@import url('./components/card.css');
+@import url('./components/slider.css');
+@import url('./components/form.css');
 
 
 /* PAGES */
 
-@import url('./home.css');
-@import url('./shop.css');
-@import url('./item.css');
-@import url('./contact.css');
-@import url('./cart.css');
-@import url('./admin.css');
-@import url('./login.css');
-@import url('./register.css');
-@import url('./create.css');
+@import url('./pages/home.css');
+@import url('./pages/shop.css');
+@import url('./pages/item.css');
+@import url('./pages/contact.css');
+@import url('./pages/cart.css');
+@import url('./pages/admin.css');
+@import url('./pages/login.css');
+@import url('./pages/register.css');
+@import url('./pages/create.css');
