@@ -131,14 +131,16 @@
     background-color: var(--secondary-solid);
 }
 
-.admin-form__figure img {
+.admin-form__figure img,
+.admin-form__figure--edit img {
     width: 15rem;
     height: 15rem;
     border: 0;
     display: flex;
 }
 
-.admin-form__figure figcaption {
+.admin-form__figure figcaption ,
+.admin-form__figure--edit figcaption {
     min-width: 15rem;
     border-top: 1px solid var(--primary-solid);
     text-align: center;

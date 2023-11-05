@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../css/pages/edit.css">
     <title>Edit | Funkoshop</title>
 </head>
+
 <body>
     <header class="header">
         <nav class="navbar container">
@@ -65,20 +66,24 @@
             <section class="admin-form__section">
                 <div class="admin-form__text">
                     <label for="name">Nombre del Producto:</label>
-                    <input type="text" name="name" class="input-text__large" placeholder="Kakashi Hatake Shippuden Saga" required>
+                    <input type="text" name="name" class="input-text__large" placeholder="Kakashi Hatake Shippuden Saga"
+                        required>
                 </div>
             </section>
             <section class="admin-form__section">
-                <textarea name="description" id="description" placeholder="Descripción del producto" required></textarea>
+                <textarea name="description" id="description" placeholder="Descripción del producto"
+                    required></textarea>
             </section>
             <section class="admin-form__section">
                 <div class="admin-form__text">
                     <label for="code">SKU:</label>
-                    <input type="text" name="code" class="input-text__medium" pattern="^[A-Z]{3}\d{6}$" placeholder="SSK111AB001" required>
+                    <input type="text" name="code" class="input-text__medium" pattern="^[A-Z]{3}\d{6}$"
+                        placeholder="SSK111AB001" required>
                 </div>
                 <div class="admin-form__text">
                     <label for="price">Precio: $</label>
-                    <input type="text" name="price" class="input-text__medium price" pattern="^\d+(\.\d+)?$" placeholder="0.000,00" required>
+                    <input type="text" name="price" class="input-text__medium price" pattern="^\d+(\.\d+)?$"
+                        placeholder="0.000,00" required>
                 </div>
                 <div class="admin-form__text">
                     <label for="stock">Stock:</label>
@@ -87,9 +92,9 @@
             </section>
             <section class="admin-form__section">
                 <div class="admin-form__text">
-                        <label for="off">Descuento:</label>
-                        <input type="text" name="off" class="input-text__small off" pattern="^\d+$" placeholder="0">
-                        <label for="off">%</label>
+                    <label for="off">Descuento:</label>
+                    <input type="text" name="off" class="input-text__small off" pattern="^\d+$" placeholder="0">
+                    <label for="off">%</label>
                 </div>
                 <div class="admin-form__select">
                     <label for="payment">Cuotas:</label>
@@ -106,34 +111,32 @@
                     </div>
                 </div>
             </section>
-            <section section class="admin-form__section admin-files__section">
+            <section class="admin-form__section admin-files__section">
                 <div class="admin-form__file">
-                    <label for="Imgs">Imágenes:</label>
-                    <input type="file" accept="image/*" name="archivossubidos[]" multiple class="admin-file__front">
+                    <label for="images">Imágen Frente:</label>
+                    <input type="file" accept="image/*" name="images" class="admin-file__front" required>
+                </div>
+                <div class="admin-form__file">
+                    <label for="images">Imágen Dorso:</label>
+                    <input type="file" accept="image/*" name="images" class="admin-file__back" required>
                 </div>
             </section>
             <section class="admin-form__section">
-                <div class="form__imges">
-                    <div class="form__imges_items">
-                        <picture >
-                            <img class="form__imges_items-img" src="../../img/naruto-shippuden/kakashi_hatake_front.png" width="150px" alt="Kakashi Shippuden Funko Pop">
-                        </picture>
-                        <p>Frente</p>
-                    </div>
-                    <div class="form__imges_items">
-                        <picture>
-                            <img class="form__imges_items-img" src="../../img/naruto-shippuden/kakashi_hatake_back.png" width="300" alt="Kakashi Shippuden Funko Pop Caja">
-                        </picture>
-                        <p>Dorso</p>
-                    </div>
-                </div>
+                <figure class="admin-form__figure--edit admin-figure__front">
+                    <img src="../../img/naruto-shippuden/kakashi_hatake_front.png" alt="" class="admin-img__front">
+                    <figcaption>Frente</figcaption>
+                </figure>
+                <figure class="admin-form__figure--edit admin-figure__back">
+                    <img src="../../img/naruto-shippuden/kakashi_hatake_back.png" alt="" class="admin-img__back">
+                    <figcaption>Dorso</figcaption>
+                </figure>
             </section>
             <section class="admin-form__section">
                 <div class="admin-form__buttons">
                     <button type="submit" class="admin__button">Modificar Producto</button>
                 </div>
             </section>
-        </form>        
+        </form>
     </main>
     <footer class="footer">
         <nav class="navbar container">
@@ -163,4 +166,5 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="../../js/adminForm.js"></script>
 </body>
+
 </html>
