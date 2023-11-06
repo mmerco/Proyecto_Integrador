@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/index.css">
-    <title>Create | Funkoshop</title>
+    <title>Edit | Funkoshop</title>
 </head>
+
 <body>
     <header class="header">
         <nav class="navbar container">
@@ -22,14 +24,14 @@
                     <a class="navbar__link" href="./admin.html">admin</a>
                 </li>
                 <li class="navbar__item">
-                    <a class="navbar__link" href="./login.html">salir</a>
+                    <a class="navbar__link" href="../auth/login.html">salir</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main class="create__main container">
-        <h1 class="admin__title">CREAR NUEVO ITEM</h1>
-        <form method="post" class="admin-form">
+        <h1 class="admin__title">EDITAR ITEM</h1>
+        <form method="POST" class="admin-form">
             <section class="admin-form__section space-between">
                 <div class="admin-form__select">
                     <label for="category" class="light-label">Categoría:</label>
@@ -64,20 +66,24 @@
             <section class="admin-form__section">
                 <div class="admin-form__text">
                     <label for="name">Nombre del Producto:</label>
-                    <input type="text" name="name" class="input-text__large" placeholder="Kakashi Hatake Shippuden Saga" required>
+                    <input type="text" name="name" class="input-text__large" placeholder="Kakashi Hatake Shippuden Saga"
+                        required>
                 </div>
             </section>
             <section class="admin-form__section">
-                <textarea name="description" id="description" placeholder="Descripción del producto" required></textarea>
+                <textarea name="description" id="description" placeholder="Descripción del producto"
+                    required></textarea>
             </section>
             <section class="admin-form__section">
                 <div class="admin-form__text">
                     <label for="code">SKU:</label>
-                    <input type="text" name="code" class="input-text__medium" pattern="^[A-Z]{3}\d{6}$" placeholder="SSK111AB001" required>
+                    <input type="text" name="code" class="input-text__medium" pattern="^[A-Z]{3}\d{6}$"
+                        placeholder="SSK111AB001" required>
                 </div>
                 <div class="admin-form__text">
                     <label for="price">Precio: $</label>
-                    <input type="text" name="price" class="input-text__medium price" pattern="^\d+(\.\d+)?$" placeholder="0.000,00" required>
+                    <input type="text" name="price" class="input-text__medium price" pattern="^\d+(\.\d+)?$"
+                        placeholder="0.000,00" required>
                 </div>
                 <div class="admin-form__text">
                     <label for="stock">Stock:</label>
@@ -116,19 +122,18 @@
                 </div>
             </section>
             <section class="admin-form__section">
-                <figure class="admin-form__figure admin-figure__front">
-                    <img src="" alt="" class="admin-img__front">
+                <figure class="admin-form__figure--edit admin-figure__front">
+                    <img src="../../img/naruto-shippuden/kakashi_hatake_front.png" alt="" class="admin-img__front">
                     <figcaption>Frente</figcaption>
                 </figure>
-                <figure class="admin-form__figure admin-figure__back">
-                    <img src="" alt="" class="admin-img__back">
+                <figure class="admin-form__figure--edit admin-figure__back">
+                    <img src="../../img/naruto-shippuden/kakashi_hatake_back.png" alt="" class="admin-img__back">
                     <figcaption>Dorso</figcaption>
                 </figure>
             </section>
             <section class="admin-form__section">
                 <div class="admin-form__buttons">
-                    <button type="submit" class="admin__button">Agregar Producto</button>
-                    <button class="admin__button clear-button">Limpiar</button>
+                    <button type="submit" class="admin__button">Modificar Producto</button>
                 </div>
             </section>
         </form>
@@ -140,10 +145,10 @@
                     <a class="navbar__link" href="../shop/shop.html">SHOP</a>
                 </li>
                 <li class="navbar__item">
-                    <a class="navbar__link" href="./register.html">REGISTRARSE</a>
+                    <a class="navbar__link" href="../auth/register.html">REGISTRARSE</a>
                 </li>
                 <li class="navbar__item">
-                    <a class="navbar__link" href="./login.html">INGRESAR</a>
+                    <a class="navbar__link" href="../auth/login.html">INGRESAR</a>
                 </li>
                 <li class="navbar__item">
                     <a class="navbar__link" href="../shop/contact.html">CONTACTO</a>
@@ -161,4 +166,5 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="../../js/adminForm.js"></script>
 </body>
+
 </html>

@@ -15,14 +15,14 @@ const form = document.querySelector('.admin-form');
 inputFront.addEventListener('change', () => {
     let archivos = inputFront.files;
 
-    if ( !archivos || !archivos.length ) {
+    if (!archivos || !archivos.length) {
         imgFront.src = "";
-        
+
         return;
     }
 
     let url = URL.createObjectURL(archivos[0]);
-    
+
     imgFront.src = url;
     figureFront.style.display = "block";
 });
@@ -31,14 +31,14 @@ inputFront.addEventListener('change', () => {
 inputBack.addEventListener('change', () => {
     let archivos = inputBack.files;
 
-    if ( !archivos || !archivos.length ) {
+    if (!archivos || !archivos.length) {
         imgBack.src = "";
-        
+
         return;
     }
 
     let url = URL.createObjectURL(archivos[0]);
-    
+
     imgBack.src = url;
     figureBack.style.display = "block";
 });
