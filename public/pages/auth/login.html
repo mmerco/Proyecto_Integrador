@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/index.css">
     <title>Login | Funkoshop</title>
 </head>
+
 <body>
     <header class="header">
         <nav class="navbar container">
@@ -19,7 +21,7 @@
                     <a class="navbar__link" href="../shop/shop.html">Ver tienda</a>
                 </li>
                 <li class="navbar__item">
-                    <a class="navbar__link" href="./admin.html">admin</a>
+                    <a class="navbar__link" href="../admin/admin.html">admin</a>
                 </li>
                 <li class="navbar__item">
                     <a class="navbar__link" href="./login.html">salir</a>
@@ -29,15 +31,18 @@
     </header>
     <main class="login__main container">
         <h1 class="login__title">INGRESAR A MI CUENTA</h1>
-        <form  class="login__form" method="post" action="">
+        <form class="login__form" method="post" action="">
             <section class="login__data">
                 <div class="login-data__section">
                     <label for="email">Email:</label>
-                    <input type="email" name="email" placeholder="johndoe@correo.com" pattern="^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required />
+                    <input type="email" name="email" placeholder="johndoe@correo.com"
+                        pattern="^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required />
                 </div>
                 <div class="login-data__section">
                     <label for="pass">Contraseña:</label>
-                    <input type="password" name="pass" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" minlength="8" pattern="^[^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$" required />
+                    <input type="password" name="pass"
+                        placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" minlength="8"
+                        pattern="^[^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$" required />
                 </div>
             </section>
             <section class="login__submit">
@@ -75,4 +80,5 @@
         <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
 </body>
+
 </html>
