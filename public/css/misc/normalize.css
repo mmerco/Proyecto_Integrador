@@ -42,3 +42,8 @@ img {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+.underlined {
+    border-bottom: 5px solid var(--primary-solid);
+    width: fit-content;
+}

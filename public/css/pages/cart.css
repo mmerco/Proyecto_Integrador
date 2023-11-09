@@ -33,8 +33,6 @@
     font-family: var(--alternative-font);
     font-size: var(--font-display);
     font-weight: 700;
-    border-bottom: 5px solid var(--primary-solid);
-    width: fit-content;
     padding-bottom: var(--spacing-8);
 }
 
