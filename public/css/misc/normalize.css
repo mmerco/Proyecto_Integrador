@@ -25,6 +25,10 @@ footer {
     color: var(--light-font-solid);
 }
 
+main {
+    min-height: 55rem;
+}
+
 ul,
 ol {
     list-style-type: none;
