@@ -1,0 +1,35 @@
+.faqs__main {
+    padding: var(--spacing-52) 0;
+}
+
+.faqs__section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: var(--spacing-68);
+}
+
+.faqs-topic__link {
+    font-size: var(--font-small);
+    font-weight: 400;
+    margin-bottom: var(--spacing-28);
+}
+
+.faqs-topic__title {
+    text-transform: capitalize;
+    font-size: var(--font-medium-20);
+    font-weight: 600;
+    margin-bottom: var(--spacing-20);
+}
+
+.faqs__topic {
+    padding-left: var(--spacing-68);
+}
+
+.faqs-topic__link:hover {
+    text-decoration: underline;
+    color: var(--primary-solid);
+}
+
+.faqs-topic__title:hover {
+    text-decoration-thickness: 2px;
+}
