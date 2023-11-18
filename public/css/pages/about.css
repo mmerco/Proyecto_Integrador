@@ -1,0 +1,16 @@
+.about__main {
+    padding-top: var(--spacing-68);
+}
+
+.about__content {
+    padding-bottom: var(--spacing-128);
+}
+
+.about__content p {
+    font-family: var(--alternative-font);
+    font-weight: 500;
+    letter-spacing: .04em;
+    padding-top: var(--spacing-36);
+    color: var(--grey-solid);
+    font-size: var(--font-large);
+}

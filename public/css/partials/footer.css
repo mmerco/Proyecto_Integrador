@@ -7,3 +7,8 @@
     text-align: center;
     margin-top: var(--spacing-36);
 }
+
+.footer__links {
+    display: flex;
+    gap: var(--spacing-52);
+}
