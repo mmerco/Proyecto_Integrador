@@ -1,0 +1,110 @@
+const data = [
+    {
+        'product_id': 1,
+        'licence_name': 'Pokemon',
+        'category_name': 'Funkos',
+        'product_name': 'Pidgeotto',
+        'product_description': 'Figura coleccionable Funko de Pidgeotto de Pokemon',
+        'product_price': 1799.99,
+        'dues': 10,
+        'product_sku': 'PKM001003',
+        'img_front': '/img/pokemon/pidgeotto-1.webp',
+        'img_back': '/img/pokemon/pidgeotto-box.webp'
+    },
+    {
+        'product_id': 2,
+        'licence_name': 'Star Wars',
+        'category_name': 'Funkos',
+        'product_name': 'Baby Yoda Blueball',
+        'product_description': 'Figura coleccionable Funko de Baby Yoda Blueball de Star Wars',
+        'product_price': 1799.99,
+        'dues': 10,
+        'product_sku': 'STW001001',
+        'img_front': '/img/star-wars/baby-yoda-1.webp',
+        'img_back': '/img/star-wars/baby-yoda-box.webp'
+    },
+    {
+        'product_id': 3,
+        'licence_name': 'Harry Potter',
+        'category_name': 'Funkos',
+        'product_name': 'Harry Potter & Hegwid',
+        'product_description': 'Figura coleccionable Funko de Harry Potter & Hegwid de Harry Potter',
+        'product_price': 1799.99,
+        'dues': 10,
+        'product_sku': 'HPT001001',
+        'img_front': '/img/harry-potter/harry-1.webp',
+        'img_back': '/img/harry-potter/harry-box.webp'
+    },
+    {
+        'product_id': 4,
+        'licence_name': 'Naruto Shippuden',
+        'category_name': 'Funkos',
+        'product_name': 'Kakashi Hatake',
+        'product_description': 'Figura Funko coleccionable de Kakashi Hatake de la saga Naruto Shipudden',
+        'product_price': 1799.99,
+        'dues': 10,
+        'product_sku': 'NAR001012',
+        'img_front': '/img/naruto-shippuden/kakashi_hatake_front.png',
+        'img_back': '/img/naruto-shippuden/kakashi_hatake_front.png'
+    },
+    {
+        'product_id': 5,
+        'licence_name': 'Star Wars',
+        'category_name': 'Funkos',
+        'product_name': 'Luke Skywalker & Grogu',
+        'product_description': 'Figura coleccionable Funko de Luke Skywalker & Grogu de Star Wars',
+        'product_price': 1799.99,
+        'dues': 10,
+        'product_sku': 'STW001003',
+        'img_front': '/img/pokemon/luke-1.webp',
+        'img_back': '/img/pokemon/luke-box.webp'
+    },
+    {
+        'product_id': 6,
+        'licence_name': 'Harry Potter',
+        'category_name': 'Funkos',
+        'product_name': 'Herminione Ball Dress',
+        'product_description': 'Figura coleccionable Funko de Herminione Ball Dress de Harry Potter',
+        'product_price': 1799.99,
+        'dues': 10,
+        'product_sku': 'HPT001002',
+        'img_front': '/img/pokemon/hermione-1.webp',
+        'img_back': '/img/pokemon/hermione-box.webp'
+    },
+    {
+        'product_id': 7,
+        'licence_name': 'Star Wars',
+        'category_name': 'Funkos',
+        'product_name': 'Boba Fett Fighter',
+        'product_description': 'Figura coleccionable Funko de Boba Fett Fighter de Star Wars',
+        'product_price': 1799.99,
+        'dues': 10,
+        'product_sku': 'STW001002',
+        'img_front': '/img/pokemon/bobbafeth-1.webp',
+        'img_back': '/img/pokemon/bobbafeth-box.webp'
+    },
+    {
+        'product_id': 8,
+        'licence_name': 'Pokemon',
+        'category_name': 'Funkos',
+        'product_name': 'Charmander Smiley',
+        'product_description': 'Figura coleccionable Funko de Charmander Smiley de Pokemon',
+        'product_price': 1799.99,
+        'dues': 10,
+        'product_sku': 'PKM001001',
+        'img_front': '/img/pokemon/charmander-1.webp',
+        'img_back': '/img/pokemon/charmander-box.webp'
+    },
+    {
+        'product_id': 9,
+        'licence_name': 'Pokemon',
+        'category_name': 'Funkos',
+        'product_name': 'Dragonite Hi!',
+        'product_description': 'Figura coleccionable Funko de Dragonite Hi! de Pokemon',
+        'product_price': 1799.99,
+        'dues': 10,
+        'product_sku': 'PKM001002',
+        'img_front': '/img/pokemon/dragonite-1.webp',
+        'img_back': '/img/pokemon/dragonite-box.webp'
+    }
+]

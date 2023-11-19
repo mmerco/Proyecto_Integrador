@@ -7,8 +7,17 @@ import adminRoutes from './src/routes/adminRoutes.js'
 const PORT = 4000;
 const app = express();
 
+
+// STATIC FOLDER
 app.use(express.static('public'));
 
+
+// ENGINE
+app.set('views', './src/views');
+app.set('view engine', 'ejs');
+
+
+// ROUTES
 app.use('/', mainRoutes);
 app.use('/auth', authRoutes);
 app.use('/shop', shopRoutes);
