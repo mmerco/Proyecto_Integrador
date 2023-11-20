@@ -108,3 +108,6 @@ const data = [
         'img_back': '/img/pokemon/dragonite-box.webp'
     }
 ]
+
+
+export default data;
