@@ -35,17 +35,20 @@
     flex-direction: column;
     gap: var(--spacing-12);
     padding: var(--spacing-16);
+    text-transform: uppercase;
 }
 
 .card-item__collection {
     font-size: var(--font-xsmall);
     font-weight: 500;
     color: var(--dark-900);
+    text-transform: uppercase;
 }
 
 .card-item__name {
     font-size: var(--font-medium);
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .card-item__price {
@@ -58,4 +61,5 @@
     color: var(--secondary-solid);
     font-size: var(--font-xxsmall);
     font-weight: 700;
+    text-transform: uppercase;
 }
