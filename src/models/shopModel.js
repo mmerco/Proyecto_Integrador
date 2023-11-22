@@ -7,7 +7,7 @@ const shopItems = () => {
     //let filterData = data.filter(item => item.category_name == 'funkos'); // Para v1 y v4
     let rows = Math.ceil(data.length / 3); // Para v2, v3
     //let rows = Math.ceil(filterData.length / 3); // Para v4
-    let newData = []
+    let newData = [];
     let start = 0;
     let end = 3;
 
@@ -23,10 +23,10 @@ const shopItems = () => {
          let found = randomData.find(item => item.product_id == id);
  
          if (!found) {
-             let product = filterData.filter(item => item.product_id == id);
+             let [product] = filterData.filter(item => item.product_id == id);
  
              if (product.length) {
-                 randomData.push(product[0]);
+                 randomData.push(product);
              } else {
                  i--;
              }
@@ -58,9 +58,9 @@ const shopItems = () => {
         let found = randomData.find(item => item.product_id == id);
 
         if (!found) {
-            let product = data.filter(item => item.product_id == id)
+            let [product] = data.filter(item => item.product_id == id)
 
-            randomData.push(product[0]);
+            randomData.push(product);
         } else {
             i--;
         }
@@ -118,10 +118,10 @@ const shopItems = () => {
         let found = randomData.find(item => item.product_id == id);
 
         if (!found) {
-            let product = filterData.filter(item => item.product_id == id);
+            let [product] = filterData.filter(item => item.product_id == id);
 
             if (product.length) {
-                randomData.push(product[0]);
+                randomData.push(product);
             } else {
                 i--;
             }
