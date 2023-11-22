@@ -4,9 +4,173 @@
 
   <body>
     <%- include('partials/header-shop') %>
-    <main>
-      <h1>prueba shop</h1>
+
+    <main class="shop__main container">
+      <aside class="shop__aside">
+        <form action="" method="get" class="aside__form">
+          <div class="aside-form__section">
+            <label for="search" class="aside-form__label">BUSCAR</label>
+            <input
+              type="text"
+              class="aside-form__input"
+              name="search"
+              placeholder="item o categoria"
+            />
+          </div>
+          <div class="aside-form__section">
+            <label for="order" class="aside-form__label">ORDENAR POR</label>
+            <div class="stylized-select">
+              <select name="order">
+                <option value="mayor" selected>Mayor Precio</option>
+                <option value="menor">Menor Precio</option>
+                <option value="alfa">Alfabeticamente</option>
+              </select>
+              <div class="stylized-select__arrow">
+                <iconify-icon
+                  icon="iconamoon:arrow-down-2-fill"
+                  width="30px"
+                  height="30px"
+                ></iconify-icon>
+              </div>
+            </div>
+          </div>
+          <div class="aside-form__section">
+            <label for="price" class="aside-form__label">PRECIO</label>
+            <div id="price" class="aside-form__price">
+              <div class="form-price__section">
+                <label for="min" class="form-price__label">MIN</label>
+                <input
+                  type="number"
+                  class="form-price__input"
+                  name="min"
+                  min="0"
+                  placeholder="0"
+                />
+              </div>
+              <p class="form-price__divider">-</p>
+              <div class="form-price__section">
+                <label for="max" class="form-price__label">MAX</label>
+                <input
+                  type="number"
+                  class="form-price__input"
+                  name="max"
+                  min="0"
+                  placeholder="0"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="aside-form__section">
+            <label for="filter" class="aside-form__label">FILTRAR</label>
+            <div id="filter" class="aside-form__checkbox">
+              <div class="form-checkbox__section">
+                <input
+                  class="form-checkbox__input"
+                  type="checkbox"
+                  value="new"
+                  name="new"
+                />
+                <label class="form-checkbox__label" for="new">NUEVOS</label>
+              </div>
+              <div class="form-checkbox__section">
+                <input
+                  class="form-checkbox__input"
+                  type="checkbox"
+                  value="off"
+                  name="off"
+                />
+                <label class="form-checkbox__label" for="off">OFERTAS</label>
+              </div>
+              <div class="form-checkbox__section">
+                <input
+                  class="form-checkbox__input"
+                  type="checkbox"
+                  value="special"
+                  name="special"
+                />
+                <label class="form-checkbox__label" for="special"
+                  >EDICIÓN ESPECIAL</label
+                >
+              </div>
+              <div class="form-checkbox__section">
+                <input
+                  class="form-checkbox__input"
+                  type="checkbox"
+                  value="fav"
+                  name="fav"
+                />
+                <label class="form-checkbox__label" for="fav">FAVORITOS</label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </aside>
+      <section class="shop__content">
+        <% for( let i = 0; i < data[1]; i++ ) { %>
+        <article class="shop-content__article">
+          <ul class="slider__items shop__items">
+            <% data[0][i].forEach(item => { %>
+            <li class="slider__item">
+              <article class="card-item">
+                <a
+                  class="card-item__link"
+                  href="/shop/item/<%= item.product_id %>"
+                >
+                  <picture class="card-item__cover">
+                    <img
+                      class="card-item__img--front"
+                      src="<%= item.img_front %>"
+                      alt="<%= item.product_description %>"
+                    />
+                    <img
+                      class="card-item__img--back"
+                      src="<%= item.img_back %>"
+                      alt="<%= item.product_description %>"
+                    />
+                    <span class="card-item__tag">Nuevo</span>
+                  </picture>
+                  <div class="card-item__content">
+                    <p class="card-item__collection">
+                      <%= item.licence_name %>
+                    </p>
+                    <h4 class="card-item__name"><%= item.product_name %></h4>
+                    <p class="card-item__price">$ <%= item.product_price %></p>
+                    <p class="card-item__promo">
+                      <%= item.dues %> CUOTAS SIN INTERÉS
+                    </p>
+                  </div>
+                </a>
+              </article>
+            </li>
+            <% }) %>
+          </ul>
+        </article>
+        <% } %>
+
+        <article class="shop-content__article">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </article>
+      </section>
     </main>
+
     <%- include('partials/footer') %>
 
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>

@@ -1,9 +1,9 @@
-import data from '../data/itemsData.js';
+import shopItems from '../models/shopModel.js'
 
 
 const shopControllers = {
     shop: (req, res) => res.render('shop', {
-        data: data,
+        data: shopItems(),
         title: 'Shop | Funkoshop'
     }),
     item: (req, res) => res.send(`Route for Item ${req.params.id} View`),
