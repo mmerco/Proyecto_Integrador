@@ -1,9 +1,13 @@
-import shopItems from '../models/shopModel.js'
+import { getItems, getCategory } from '../models/shopModel.js'
 
 
 const shopControllers = {
-    shop: (req, res) => res.render('shop', {
-        data: shopItems(),
+    all: (req, res) => res.render('shop', {
+        data: getItems(),
+        title: 'Shop | Funkoshop'
+    }),
+    category: (req, res) => res.render('shop', {
+        data: getCategory(req.params.category),
         title: 'Shop | Funkoshop'
     }),
     item: (req, res) => res.send(`Route for Item ${req.params.id} View`),

@@ -2,7 +2,7 @@ import data from '../data/itemsData.js';
 
 
 
-const shopItems = () => {
+export const getItems = () => {
     let randomData = []; // Para v1, v3 y v4
     //let filterData = data.filter(item => item.category_name == 'funkos'); // Para v1 y v4
     let rows = Math.ceil(data.length / 3); // Para v2, v3
@@ -147,4 +147,22 @@ const shopItems = () => {
 }
 
 
-export default shopItems;
+export const getCategory = (category) => {
+    let filterData = data.filter(item => item.category_name == category);
+    let rows = Math.ceil(filterData.length / 3);
+    let newData = [];
+    let start = 0;
+    let end = 3;
+
+    for (let i = 0; i < rows; i++) {
+        let items = filterData.slice(start, end);
+
+        start += 3;
+        end += 3;
+
+
+        newData.push(items)
+    }
+
+    return [newData, rows];
+}
