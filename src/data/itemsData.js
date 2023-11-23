@@ -277,13 +277,13 @@ const data = [
     },
     {
         'product_id': 24,
-        'licence_name': 'Mercedes AMG Petronas',
+        'licence_name': 'Mercedes AMG',
         'category_name': 'funkos',
         'product_name': 'Rides Lewis Hamilton',
-        'product_description': 'Figura coleccionable Funko Rides Lewis Hamilton de Mercedes AMG Petronas',
+        'product_description': 'Figura coleccionable Funko Rides Lewis Hamilton de Mercedes AMG',
         'product_price': 1799.99,
         'dues': 3,
-        'product_sku': 'MAP001001',
+        'product_sku': 'MAM001001',
         'img_front': '/img/f1/hamilton-1.webp',
         'img_back': '/img/f1/hamilton-box.webp'
     },
