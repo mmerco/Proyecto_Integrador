@@ -43,7 +43,7 @@ const data = [
         'product_description': 'Figura Funko coleccionable Kakashi Hatake de la saga Naruto Shipudden',
         'product_price': 1799.99,
         'dues': 10,
-        'product_sku': 'NAR001012',
+        'product_sku': 'NAR001001',
         'img_front': '/img/naruto-shippuden/kakashi-1.webp',
         'img_back': '/img/naruto-shippuden/kakashi-box.webp'
     },
@@ -586,6 +586,114 @@ const data = [
         'product_sku': 'STW001015',
         'img_front': '/img/star-wars/r2-d2-tee-1.webp',
         'img_back': '/img/star-wars/r2-d2-tee-box.webp'
+    },
+    {
+        'product_id': 50,
+        'licence_name': 'Dragon Ball Z',
+        'category_name': 'llaveros',
+        'product_name': 'Funko Keychain Gohan Whit Sword',
+        'product_description': 'Llavero Funko Gohan Whit Sword de Dragon Ball Z',
+        'product_price': 899.99,
+        'dues': 3,
+        'product_sku': 'DBZ001006',
+        'img_front': '/img/dragon-ball-z/gohan-key-1.webp',
+        'img_back': '/img/dragon-ball-z/gohan-key-box.webp'
+    },
+    {
+        'product_id': 51,
+        'licence_name': 'Dragon Ball Z',
+        'category_name': 'llaveros',
+        'product_name': 'Funko Keychain Super Saiyan Trunks with Sword',
+        'product_description': 'Llavero Funko Super Saiyan Trunks with Sword de Dragon Ball Z',
+        'product_price': 899.99,
+        'dues': 3,
+        'product_sku': 'DBZ001007',
+        'img_front': '/img/dragon-ball-z/trunks-key-1.webp',
+        'img_back': '/img/dragon-ball-z/trunks-key-box.webp'
+    },
+    {
+        'product_id': 52,
+        'licence_name': 'Dragon Ball Z',
+        'category_name': 'remeras',
+        'product_name': 'Funko & Tee Majin Vegeta',
+        'product_description': 'Remera y figura coleccionable Funko Majin Vegeta de Dragon Ball Z',
+        'product_price': 5499.99,
+        'dues': 6,
+        'product_sku': 'DBZ001008',
+        'img_front': '/img/dragon-ball-z/vegeta-tee-1.webp',
+        'img_back': '/img/dragon-ball-z/vegeta-tee-box.webp'
+    },
+    {
+        'product_id': 53,
+        'licence_name': 'Dragon Ball Z',
+        'category_name': 'remeras',
+        'product_name': 'Goku Kamehameha Boxed Tee',
+        'product_description': 'Remera Goku Kamehameha de Dragon Ball Z',
+        'product_price': 2699.99,
+        'dues': 6,
+        'product_sku': 'DBZ001009',
+        'img_front': '/img/dragon-ball-z/goku-tee-1.webp',
+        'img_back': '/img/dragon-ball-z/goku-tee-box.webp'
+    },
+    {
+        'product_id': 54,
+        'licence_name': 'Dragon Ball Z',
+        'category_name': 'remeras',
+        'product_name': 'Trunks Boxed Tee',
+        'product_description': 'Remera Trunks de Dragon Ball Z',
+        'product_price': 2699.99,
+        'dues': 6,
+        'product_sku': 'DBZ001010',
+        'img_front': '/img/dragon-ball-z/trunks-tee-1.webp',
+        'img_back': '/img/dragon-ball-z/trunks-tee-box.webp'
+    },
+    {
+        'product_id': 55,
+        'licence_name': 'Naruto Shippuden',
+        'category_name': 'remeras',
+        'product_name': 'Naruto vs Pain Boxed Tee',
+        'product_description': 'Remera Naruto vs Pain de Naruto Shippuden',
+        'product_price': 2699.99,
+        'dues': 6,
+        'product_sku': 'NAR001002',
+        'img_front': '/img/naruto-shippuden/naruto-tee-1.webp',
+        'img_back': '/img/naruto-shippuden/naruto-tee-box.webp'
+    },
+    {
+        'product_id': 56,
+        'licence_name': 'Naruto Shippuden',
+        'category_name': 'remeras',
+        'product_name': 'Might Guy Eight Gates Boxed Tee',
+        'product_description': 'Might Guy Eight Gates de Naruto Shippuden',
+        'product_price': 2699.99,
+        'dues': 6,
+        'product_sku': 'NAR001003',
+        'img_front': '/img/naruto-shippuden/might-guy-tee-1.webp',
+        'img_back': '/img/naruto-shippuden/might-guy-box.webp'
+    },
+    {
+        'product_id': 57,
+        'licence_name': 'Naruto Shippuden',
+        'category_name': 'llaveros',
+        'product_name': 'Funko Keychain Itachi Uchiha',
+        'product_description': 'Llavero Funko Itachi Uchiha de Naruto Shippuden',
+        'product_price': 899.99,
+        'dues': 3,
+        'product_sku': 'NAR001004',
+        'img_front': '/img/naruto-shippuden/itachi-key-1.webp',
+        'img_back': '/img/naruto-shippuden/itachi-key-box.webp'
+    },
+    {
+        'product_id': 58,
+        'licence_name': 'Naruto Shippuden',
+        'category_name': 'llaveros',
+        'product_name': 'Funko Keychain Pain',
+        'product_description': 'Llavero Funko Pain de Naruto Shippuden',
+        'product_price': 899.99,
+        'dues': 3,
+        'product_sku': 'NAR001005',
+        'img_front': '/img/naruto-shippuden/pain-key-1.webp',
+        'img_back': '/img/naruto-shippuden/pain-key-box.webp'
     }
 ]
 
