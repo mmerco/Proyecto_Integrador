@@ -147,7 +147,7 @@ export const getItems = () => {
 }
 
 
-export const getCategory = (category) => {
+export const categoryItems = (category) => {
     let filterData = data.filter(item => item.category_name == category);
     let rows = Math.ceil(filterData.length / 3);
     let newData = [];
@@ -165,4 +165,32 @@ export const getCategory = (category) => {
     }
 
     return [newData, rows];
+}
+
+
+export const capitalize = (text) => {
+
+    return text.charAt(0).toLocaleUpperCase() + text.slice(1);
+}
+
+
+export const getItem = (id) => {
+    let [product] = data.filter(item => item.product_id == id);
+
+    return product;
+}
+
+
+export const getTitle = (id) => {
+    let [product] = data.filter(item => item.product_id == id);
+
+    return product.product_name;
+}
+
+
+export const relatedItems = (id) => {
+    let [product] = data.filter(item => item.product_id == id);
+    let relatedItems = data.filter(item => item.licence_name == product.licence_name);
+
+    return relatedItems;
 }

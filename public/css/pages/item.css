@@ -41,11 +41,13 @@
 .item__collection {
     font-weight: 500;
     font-size: var(--font-small);
+    text-transform: uppercase;
 }
 
 .item__name {
     font-size: var(--font-jumbo);
     font-weight: 700;
+    text-transform: uppercase;  
 }
 
 .item__description {

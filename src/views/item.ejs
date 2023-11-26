@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+
+  <body>
+    <%- include('partials/header-shop') %>
+
+    <main class="item__main">
+      <section class="item container">
+        <picture class="item__cover">
+          <img
+            class="item__cover--front"
+            src="<%= item.img_front %>"
+            alt="<%= item.product_description %>"
+          />
+          <img
+            class="item__cover--back"
+            src="<%= item.img_back %>"
+            alt="<%= item.product_description %> en caja"
+          />
+        </picture>
+        <article class="item__content">
+          <p class="item__collection"><%= item.licence_name %></p>
+          <h3 class="item__name"><%= item.product_name %></h3>
+          <p class="item__description"><%= item.product_description %></p>
+          <p class="item__price">$ <%= item.product_price %></p>
+          <div class="item__quantity">
+            <div class="quantity__value">
+              <input
+                class="value"
+                id="one"
+                type="number"
+                min="1"
+                max="100"
+                step="1"
+                value="1"
+              />
+              <button class="add" name="one">+</button>
+              <button class="subtract" name="one">-</button>
+            </div>
+            <button class="quantity__add">Agregar al Carrito</button>
+          </div>
+          <p class="item__promo">
+            <a class="promo__link" href="">Ver métodos de pago</a> -
+            <%=item.dues %> CUOTAS SIN INTERÉS
+          </p>
+        </article>
+      </section>
+
+      <%- include('partials/slider') %>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script src="../../js/inputNumber.js"></script>
+    <script src="../../js/glide.js"></script>
+  </body>
+</html>
