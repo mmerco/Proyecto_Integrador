@@ -21,7 +21,9 @@ const mainControllers = {
         link_text: 'SHOP',
         slider_title: 'últimos lanzamientos'
     }),
-    faqs: (req, res) => res.send('Route for Faqs View')
+    faqs: (req, res) => res.render('faqs', {
+        title: 'Faqs | Funkoshop'
+    })
 }
 
 
