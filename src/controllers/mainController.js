@@ -10,7 +10,9 @@ const mainControllers = {
         link_text: 'SHOP',
         slider_title: 'últimos lanzamientos'
     }),
-    contact: (req, res) => res.send('Route for Contact View'),
+    contact: (req, res) => res.render('contact', {
+        title: 'Contact | Funkoshop'
+    }),
     about: (req, res) => res.send('Route for About View'),
     faqs: (req, res) => res.send('Route for Faqs View')
 }
