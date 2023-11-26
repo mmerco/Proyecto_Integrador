@@ -17,7 +17,9 @@ const shopControllers = {
         items: relatedItems(req.params.id)
     }),
     addItem: (req, res) => res.send('Route for add item View POST'),
-    cart: (req, res) => res.send('Route for Cart View'),
+    cart: (req, res) => res.render('cart', {
+        title: 'Cart | Funkoshop'
+    }),
     cartPost: (req, res) => res.send('Route for Cart View POST')
 }
 
