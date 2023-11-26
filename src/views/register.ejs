@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+
+  <body>
+    <%- include('partials/header-shop') %>
+
+    <main class="register__main container">
+      <h1 class="login__title">crea tu cuenta</h1>
+      <p class="register__subtitle">
+        Completa el formulario para ser parte del mundo de los Funkos
+      </p>
+      <form class="login__form register__form" method="post" action="">
+        <section class="login__data">
+          <div class="login-data__section">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" placeholder="John" required />
+          </div>
+          <div class="login-data__section">
+            <label for="lastname">Apellido</label>
+            <input type="text" name="lastname" placeholder="Doe" required />
+          </div>
+          <div class="login-data__section">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="johndoe@correo.com"
+              pattern="^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+              required
+            />
+          </div>
+          <div class="login-data__section">
+            <label for="pass">Contraseña:</label>
+            <input
+              type="password"
+              name="pass"
+              placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"
+              minlength="8"
+              pattern="^[^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$"
+              required
+            />
+          </div>
+          <div class="login-data__section">
+            <label for="repeat-pass">Repita Contraseña:</label>
+            <input
+              type="password"
+              name="repeat-pass"
+              placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"
+              minlength="8"
+              pattern="^[^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$"
+              required
+            />
+          </div>
+        </section>
+        <section class="login__submit">
+          <button type="submit">Registrar</button>
+          <div class="login__remember">
+            <input
+              type="checkbox"
+              name="checkbox"
+              class="login__checkbox"
+              required
+            />
+            <label for="checkbox">
+              Acepto <a href="" class="terms">Términos y Condiciones</a>
+            </label>
+          </div>
+        </section>
+      </form>
+    </main>
+
+    <%- include('partials/footer') %>
+  </body>
+</html>
