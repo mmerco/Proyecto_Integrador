@@ -13,7 +13,14 @@ const mainControllers = {
     contact: (req, res) => res.render('contact', {
         title: 'Contact | Funkoshop'
     }),
-    about: (req, res) => res.send('Route for About View'),
+    about: (req, res) => res.render('about', {
+        items: data,
+        title: 'About Us | Funkoshop',
+        banner_title: 'nuevos ingresos',
+        banner_text: 'Descubri el próximo Funko Pop de tu colección',
+        link_text: 'SHOP',
+        slider_title: 'últimos lanzamientos'
+    }),
     faqs: (req, res) => res.send('Route for Faqs View')
 }
 
