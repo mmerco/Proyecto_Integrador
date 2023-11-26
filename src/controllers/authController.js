@@ -1,5 +1,7 @@
 const authControllers = {
-    login: (req, res) => res.send('Route for Login View'),
+    login: (req, res) => res.render('login', {
+        title: 'Login | Funkoshop'
+    }),
     loginPost: (req, res) => res.send('Route for Login View POST'),
     register: (req, res) => res.send('Route for Register View'),
     registerPost: (req, res) => res.send('Route for Register View POST'),
