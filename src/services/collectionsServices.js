@@ -2,10 +2,17 @@ import { pool } from 'mysql2/promise';
 
 
 
-const getCollectionsFromDB = () => {
+const getCollectionsFromDB = async () => {
     try {
-        let collections = 
-    } catch (error) {
+        let [rows] = await pool.query('SELECT * FROM license');
 
+        return rows;
+    } catch (error) {
+        console.log('Error al traer informacion de la base de datos:', error);
+
+        throw error;
     }
 }
+
+
+export default getCollectionsFromDB;
