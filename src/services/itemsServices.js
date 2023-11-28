@@ -4,9 +4,9 @@ import { pool } from 'mysql2/promise'
 
 export const getAllItemsFromDB = async () => {
     try {
-        let items = await pool.query('SELECT * FROM product');
+        let [rows] = await pool.query('SELECT * FROM product');
 
-        return items;
+        return rows;
     } catch (error) {
         console.log('Error al traer informacion de la base de datos:', error);
 
@@ -18,9 +18,9 @@ export const getAllItemsFromDB = async () => {
 
 export const getItemsFromDB = async (params) => {
     try {
-        let items = await pool.query('SELECT * FROM product WHERE ?', params);
+        let [rows] = await pool.query('SELECT * FROM product WHERE ?', params);
 
-        return items;
+        return rows;
     } catch (error) {
         console.log('Error al traer informacion de la base de datos:', error);
 
