@@ -1,11 +1,33 @@
-import { getItem, capitalize } from '../models/shopModel.js'
+import {
+    getItem,
+    capitalize,
+    getAllItems,
+    getItemsFormat,
+    getRows
+} from '../models/shopModel.js'
 
 
-const shopControllers = {
-    all: (req, res) => res.render('shop', {
-        data: 'ss',
-        title: 'Shop | Funkoshop'
-    }),
+
+export const shopController = async (req, res) => {
+    try {
+        let itemsData = await getAllItems();
+        let rows = getRows(itemsData);
+        let itemsFormat = await getItemsFormat(rows);
+
+        res.render('shop', {
+            title: 'Shop | Funkoshop',
+            data: [itemsFormat, rows]
+        });
+
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
+}
+
+
+export const shopControllers = {
     category: (req, res) => res.render('shop', {
         data: 'ss',
         title: `${capitalize(req.params.category)} | Funkoshop`
@@ -23,5 +45,3 @@ const shopControllers = {
     cartPost: (req, res) => res.send('Route for Cart View POST')
 }
 
-
-export default shopControllers;
