@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: var(--spacing-52);
     margin-bottom: var(--spacing-128);
-    margin-top: var(--spacing-20);
+    margin-top: var(--spacing-128);
 }
 
 .slider__title {

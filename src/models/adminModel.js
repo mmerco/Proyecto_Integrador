@@ -1,5 +1,4 @@
-import data from '../data/itemsData.js';
-
+const data = [1, 2]
 
 // Devuelve todos los items ordenados por codigo de producto A-Z
 export const getItems = () => {

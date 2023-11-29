@@ -1,10 +1,15 @@
-import { pool } from 'mysql2/promise'
+import pool from '../config/conn.js'
 
 
 
 export const getAllItemsFromDB = async () => {
     try {
-        let [rows] = await pool.query('SELECT * FROM product');
+        let [rows] = await pool.query(
+            'SELECT * FROM product ' +
+            'INNER JOIN license ' +
+            'ON product.license_id = license.license_id ' +
+            'ORDER BY RAND()'
+        );
 
         return rows;
     } catch (error) {
@@ -12,7 +17,6 @@ export const getAllItemsFromDB = async () => {
 
         throw error;
     }
-
 }
 
 

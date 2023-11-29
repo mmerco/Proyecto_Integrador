@@ -1,4 +1,4 @@
-import { pool } from 'mysql2/promise';
+import pool from '../config/conn.js';
 
 
 
