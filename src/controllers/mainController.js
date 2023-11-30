@@ -1,5 +1,5 @@
 import getCollections from '../models/mainModel.js';
-import { getAllItems } from '../models/shopModel.js';
+import { getAllItems } from '../models/itemsModel.js';
 
 
 

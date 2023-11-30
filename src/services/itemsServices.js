@@ -2,6 +2,10 @@ import pool from '../config/conn.js'
 
 
 
+
+/* Relaciona los datos de las tablas Product y License y devuelve todos
+    los items en orden aleatorio
+*/
 export const getAllItemsFromDB = async () => {
     try {
         let [rows] = await pool.query(
@@ -20,6 +24,10 @@ export const getAllItemsFromDB = async () => {
 }
 
 
+
+/* Relaciona los datos de las tablas Product, License y Category y devuelve 
+    los items que cumplan el parametro pasado
+*/
 export const getItemsByParamsFromDB = async (params) => {
     try {
         let [rows] = await pool.query(

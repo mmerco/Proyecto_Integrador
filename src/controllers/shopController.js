@@ -1,12 +1,13 @@
 import {
-    getItem,
     capitalize,
-    getAllItems,
     getShopItemsFormat,
     getRows,
+} from '../models/shopModel.js';
+import {
+    getAllItems,
     getItemsByParams,
     getRelatedItems
-} from '../models/shopModel.js'
+} from '../models/itemsModel.js'
 
 
 
@@ -90,16 +91,6 @@ export const itemController = async (req, res) => {
 
 
 export const shopControllers = {
-    category: (req, res) => res.render('shop', {
-        data: 'ss',
-        title: `${capitalize(req.params.category)} | Funkoshop`
-    }),
-    item: (req, res) => res.render(`item`, {
-        item: getItem(req.params.id),
-        title: `title | Funkoshop`,
-        slider_title: 'productos relacionados',
-        items: 'ss'
-    }),
     addItem: (req, res) => res.send('Route for add item View POST'),
     cart: (req, res) => res.render('cart', {
         title: 'Cart | Funkoshop'

@@ -2,6 +2,8 @@ import pool from '../config/conn.js';
 
 
 
+
+/* Trae los datos de la tabla License */
 const getCollectionsFromDB = async () => {
     try {
         let [rows] = await pool.query('SELECT * FROM license');

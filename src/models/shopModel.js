@@ -1,53 +1,4 @@
-import {
-    getAllItemsFromDB,
-    getItemsByParamsFromDB
-} from '../services/itemsServices.js';
-
-
-
-export const getAllItems = async () => {
-    try {
-        let items = await getAllItemsFromDB();
-
-        return items;
-    } catch (error) {
-        console.log('Se produjo un error al conseguir los productos: ', error);
-
-        throw error;
-    }
-}
-
-
-export const getItemsByParams = async (params) => {
-    try {
-        let items = await getItemsByParamsFromDB(params);
-
-        return items;
-    } catch (error) {
-        console.log('Se produjo un error al conseguir los productos: ', error);
-
-        throw error;
-    }
-}
-
-
-export const getRelatedItems = async (item) => {
-    try {
-        let id = item.product_id;
-        let license = item.license_name;
-        let relatedItems = await getItemsByParamsFromDB({ license_name: license });
-
-        relatedItems = relatedItems.filter(item => item.product_id != id);
-
-        return relatedItems;
-    } catch (error) {
-        console.log('Se produjo un error al conseguir los productos: ', error);
-
-        throw error;
-    }
-}
-
-
+/* Calcula la cantidad de filas necesarias para renderizar los items */
 export const getRows = (data) => {
     let rows = Math.ceil(data.length / 3);
 
@@ -55,6 +6,7 @@ export const getRows = (data) => {
 }
 
 
+/* Da formato a los datos para renderizar el shop con filas de 3 items */
 export const getShopItemsFormat = (data, rows) => {
     try {
         let newData = [];
@@ -86,9 +38,3 @@ export const capitalize = (text) => {
     return text.charAt(0).toLocaleUpperCase() + text.slice(1);
 }
 
-
-export const getItem = (params) => {
-    let product = params;
-
-    return product;
-}
