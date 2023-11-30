@@ -48,6 +48,25 @@ export const categoryController = async (req, res) => {
 }
 
 
+export const collectionController = async (req, res) => {
+    try {
+        let collection = req.params.collection;
+        let itemsData = await getItemsByParams({ license_name: collection });
+        let rows = getRows(itemsData);
+
+        res.render('shop', {
+            title: `${collection} | Funkoshop`,
+            data: getShopItemsFormat(itemsData, rows)
+        });
+
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
+}
+
+
 export const shopControllers = {
     category: (req, res) => res.render('shop', {
         data: 'ss',
