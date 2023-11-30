@@ -1,4 +1,6 @@
-const data = [1, 2]
+import adminSearchFromDB from '../services/adminServices.js'
+
+
 
 // Devuelve todos los items ordenados por codigo de producto A-Z
 export const getItems = () => {
@@ -14,6 +16,13 @@ export const getItems = () => {
     });
 
     return sortData;
+}
+
+
+export const adminSearch = async (searchValue) => {
+    let searchResult = await adminSearchFromDB(searchValue);
+
+    return searchResult;
 }
 
 

@@ -44,9 +44,9 @@
             <% data.forEach(item => { %>
             <tr class="table__row">
               <td class="table__id"><%= item.product_id %></td>
-              <td class="table__code"><%= item.product_sku %></td>
+              <td class="table__code"><%= item.sku %></td>
               <td class="table__product"><%= item.product_name %></td>
-              <td class="table__category"><%= item.licence_name %></td>
+              <td class="table__category"><%= item.license_name %></td>
               <td class="table__edit">
                 <a class="table__link" href="/admin/edit/<%= item.product_id %>"
                   ><img

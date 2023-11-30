@@ -1,10 +1,14 @@
 import express from "express";
-import adminControllers from "../controllers/adminController.js";
+import {
+    adminController,
+    adminControllers,
+    searchController
+} from "../controllers/adminController.js";
 
 const router = express.Router();
 
-router.get('/', adminControllers.admin);
-router.get('/search', adminControllers.search);
+router.get('/', adminController);
+router.get('/search', searchController);
 router.get('/create', adminControllers.create);
 router.post('/create', adminControllers.createPost);
 router.get('/edit/:id', adminControllers.edit);
