@@ -31,6 +31,23 @@ export const getItemsByParams = async (params) => {
 }
 
 
+export const getRelatedItems = async (item) => {
+    try {
+        let id = item.product_id;
+        let license = item.license_name;
+        let relatedItems = await getItemsByParamsFromDB({ license_name: license });
+
+        relatedItems = relatedItems.filter(item => item.product_id != id);
+
+        return relatedItems;
+    } catch (error) {
+        console.log('Se produjo un error al conseguir los productos: ', error);
+
+        throw error;
+    }
+}
+
+
 export const getRows = (data) => {
     let rows = Math.ceil(data.length / 3);
 

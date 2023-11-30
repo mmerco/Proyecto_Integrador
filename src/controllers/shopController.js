@@ -4,7 +4,8 @@ import {
     getAllItems,
     getShopItemsFormat,
     getRows,
-    getItemsByParams
+    getItemsByParams,
+    getRelatedItems
 } from '../models/shopModel.js'
 
 
@@ -57,6 +58,27 @@ export const collectionController = async (req, res) => {
         res.render('shop', {
             title: `${collection} | Funkoshop`,
             data: getShopItemsFormat(itemsData, rows)
+        });
+
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
+}
+
+
+export const itemController = async (req, res) => {
+    try {
+        let id = req.params.id;
+        let [itemData] = await getItemsByParams({ product_id: id });
+
+
+        res.render('item', {
+            title: `${itemData.product_name} | Funkoshop`,
+            item: itemData,
+            slider_title: 'productos relacionados',
+            slider_items: await getRelatedItems(itemData)
         });
 
     } catch (error) {
