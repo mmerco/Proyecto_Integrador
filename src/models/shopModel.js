@@ -1,10 +1,26 @@
-import { getAllItemsFromDB } from '../services/itemsServices.js';
+import {
+    getAllItemsFromDB,
+    getItemsByParamsFromDB
+} from '../services/itemsServices.js';
 
 
 
 export const getAllItems = async () => {
     try {
         let items = await getAllItemsFromDB();
+
+        return items;
+    } catch (error) {
+        console.log('Se produjo un error al conseguir los productos: ', error);
+
+        throw error;
+    }
+}
+
+
+export const getItemsByParams = async (params) => {
+    try {
+        let items = await getItemsByParamsFromDB(params);
 
         return items;
     } catch (error) {
@@ -22,9 +38,8 @@ export const getRows = (data) => {
 }
 
 
-export const getItemsFormat = async (rows) => {
+export const getShopItemsFormat = (data, rows) => {
     try {
-        let data = await getAllItemsFromDB();
         let newData = [];
         let start = 0;
         let end = 3;
@@ -40,7 +55,7 @@ export const getItemsFormat = async (rows) => {
             newData.push(items)
         }
 
-        return newData;
+        return [newData, rows];
     } catch (error) {
         console.log('Se produjo un error al conseguir los productos: ', error);
 

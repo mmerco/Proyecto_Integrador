@@ -2,8 +2,9 @@ import {
     getItem,
     capitalize,
     getAllItems,
-    getItemsFormat,
-    getRows
+    getShopItemsFormat,
+    getRows,
+    getItemsByParams
 } from '../models/shopModel.js'
 
 
@@ -12,11 +13,31 @@ export const shopController = async (req, res) => {
     try {
         let itemsData = await getAllItems();
         let rows = getRows(itemsData);
-        let itemsFormat = await getItemsFormat(rows);
 
         res.render('shop', {
             title: 'Shop | Funkoshop',
-            data: [itemsFormat, rows]
+            data: getShopItemsFormat(itemsData, rows)
+        });
+
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
+}
+
+
+export const categoryController = async (req, res) => {
+    try {
+        let category = req.params.category;
+        let itemsData = await getItemsByParams({ category_name: category });
+        let rows = getRows(itemsData);
+
+        category = capitalize(category);
+
+        res.render('shop', {
+            title: `${category} | Funkoshop`,
+            data: getShopItemsFormat(itemsData, rows)
         });
 
     } catch (error) {

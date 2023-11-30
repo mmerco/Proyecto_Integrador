@@ -20,9 +20,16 @@ export const getAllItemsFromDB = async () => {
 }
 
 
-export const getItemsFromDB = async (params) => {
+export const getItemsByParamsFromDB = async (params) => {
     try {
-        let [rows] = await pool.query('SELECT * FROM product WHERE ?', params);
+        let [rows] = await pool.query(
+            'SELECT * FROM product ' +
+            'INNER JOIN license ' +
+            'ON product.license_id = license.license_id ' +
+            'INNER JOIN category ' +
+            'ON product.category_id = category.category_id ' +
+            'WHERE ?', params
+        );
 
         return rows;
     } catch (error) {
