@@ -8,28 +8,22 @@ export const getRows = (data) => {
 
 /* Da formato a los datos para renderizar el shop con filas de 3 items */
 export const getShopItemsFormat = (data, rows) => {
-    try {
-        let newData = [];
-        let start = 0;
-        let end = 3;
+    let newData = [];
+    let start = 0;
+    let end = 3;
 
 
-        for (let i = 0; i < rows; i++) {
-            let items = data.slice(start, end);
+    for (let i = 0; i < rows; i++) {
+        let items = data.slice(start, end);
 
-            start += 3;
-            end += 3;
+        start += 3;
+        end += 3;
 
 
-            newData.push(items)
-        }
-
-        return [newData, rows];
-    } catch (error) {
-        console.log('Se produjo un error al conseguir los productos: ', error);
-
-        throw error;
+        newData.push(items)
     }
+
+    return [newData, rows];
 }
 
 

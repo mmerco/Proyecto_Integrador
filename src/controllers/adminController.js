@@ -10,34 +10,53 @@ import {
 
 
 export const adminController = async (req, res) => {
+    try {
+        res.render('admin', {
+            data: await getAllItems(),
+            title: 'Admin | Funkoshop'
+        });
 
-    res.render('admin', {
-        data: await getAllItems(),
-        title: 'Admin | Funkoshop'
-    });
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
 }
 
 
 export const searchController = async (req, res) => {
+    try {
+        res.render('admin', {
+            data: await adminSearch(req.query.search_value),
+            title: 'Admin | Funkoshop'
+        });
 
-    res.render('admin', {
-        data: await adminSearch(req.query.search_value),
-        title: 'Admin | Funkoshop'
-    });
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
 }
 
 
 export const editController = async (req, res) => {
-    let [itemData] = await getItemsByParams({ product_id: req.params.id });
-    let [catData, licData, duesData] = await getEditData();
+    try {
+        let [itemData] = await getItemsByParams({ product_id: req.params.id });
+        let [catData, licData, duesData] = await getEditData();
 
-    res.render('edit', {
-        item: itemData,
-        title: `Edit ${itemData.product_name} | Funkoshop`,
-        categorys: catData,
-        licenses: licData,
-        dues: duesData
-    });
+        res.render('edit', {
+            item: itemData,
+            title: `Edit ${itemData.product_name} | Funkoshop`,
+            categorys: catData,
+            licenses: licData,
+            dues: duesData
+        });
+
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
 }
 
 

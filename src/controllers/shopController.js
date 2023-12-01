@@ -8,6 +8,7 @@ import {
     getItemsByParams,
     getRelatedItems
 } from '../models/itemsModel.js'
+import getCategorysFromDB from '../services/categorysServices.js';
 
 
 
@@ -18,6 +19,7 @@ export const shopController = async (req, res) => {
 
         res.render('shop', {
             title: 'Shop | Funkoshop',
+            submenu_data: await getCategorysFromDB(),
             data: getShopItemsFormat(itemsData, rows)
         });
 
@@ -39,6 +41,7 @@ export const categoryController = async (req, res) => {
 
         res.render('shop', {
             title: `${category} | Funkoshop`,
+            submenu_data: await getCategorysFromDB(),
             data: getShopItemsFormat(itemsData, rows)
         });
 
@@ -58,6 +61,7 @@ export const collectionController = async (req, res) => {
 
         res.render('shop', {
             title: `${collection} | Funkoshop`,
+            submenu_data: await getCategorysFromDB(),
             data: getShopItemsFormat(itemsData, rows)
         });
 
@@ -77,6 +81,7 @@ export const itemController = async (req, res) => {
 
         res.render('item', {
             title: `${itemData.product_name} | Funkoshop`,
+            submenu_data: await getCategorysFromDB(),
             item: itemData,
             slider_title: 'productos relacionados',
             slider_items: await getRelatedItems(itemData)
@@ -92,8 +97,9 @@ export const itemController = async (req, res) => {
 
 export const shopControllers = {
     addItem: (req, res) => res.send('Route for add item View POST'),
-    cart: (req, res) => res.render('cart', {
-        title: 'Cart | Funkoshop'
+    cart: async (req, res) => res.render('cart', {
+        title: 'Cart | Funkoshop',
+        submenu_data: await getCategorysFromDB()
     }),
     cartPost: (req, res) => res.send('Route for Cart View POST')
 }

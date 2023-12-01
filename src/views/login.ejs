@@ -1,47 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head') %>
+<%- include('partials/head') %>
 
-  <body>
-    <%- include('partials/header-shop') %>
+<body>
+  <%- include('partials/header-shop') %>
 
-    <main class="login__main container">
-      <h1 class="login__title">INGRESAR A MI CUENTA</h1>
-      <form class="login__form" method="post" action="">
-        <section class="login__data">
-          <div class="login-data__section">
-            <label for="email">Email:</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="johndoe@correo.com"
-              pattern="^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
-              required
-            />
-          </div>
-          <div class="login-data__section">
-            <label for="pass">Contraseña:</label>
-            <input
-              type="password"
-              name="pass"
-              placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"
-              minlength="8"
-              pattern="^[^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$"
-              required
-            />
-          </div>
-        </section>
-        <section class="login__submit">
-          <button type="submit">Ingresar</button>
-          <div class="login__remember">
-            <input type="checkbox" name="checkbox" class="login__checkbox" />
-            <label for="checkbox">Recordarme</label>
-          </div>
-        </section>
-      </form>
-      <a href="" class="reset__pass">Olvidé mi contraseña</a>
-    </main>
+  <main class="login__main container">
+    <h1 class="login__title">INGRESAR A MI CUENTA</h1>
+    <form class="login__form" method="post" action="">
+      <section class="login__data">
+        <div class="login-data__section">
+          <label for="email">Email:</label>
+          <input type="email" name="email" placeholder="johndoe@correo.com" pattern="^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required />
+        </div>
+        <div class="login-data__section">
+          <label for="pass">Contraseña:</label>
+          <input type="password" name="pass" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" minlength="8" pattern="^[^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$" required />
+        </div>
+      </section>
+      <section class="login__submit">
+        <button type="submit">Ingresar</button>
+        <div class="login__remember">
+          <input type="checkbox" name="checkbox" class="login__checkbox" />
+          <label for="checkbox">Recordarme</label>
+        </div>
+      </section>
+    </form>
+    <a href="" class="reset__pass">Olvidé mi contraseña</a>
+  </main>
 
-    <%- include('partials/footer') %>
-  </body>
+  <%- include('partials/footer') %>
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+
 </html>

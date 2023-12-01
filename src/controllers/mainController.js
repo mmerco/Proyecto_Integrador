@@ -1,5 +1,6 @@
 import getCollections from '../models/mainModel.js';
 import { getAllItems } from '../models/itemsModel.js';
+import getCategorysFromDB from '../services/categorysServices.js';
 
 
 
@@ -10,6 +11,7 @@ export const homeController = async (req, res) => {
 
         res.render('home', {
             title: 'Home | Funkoshop',
+            submenu_data: await getCategorysFromDB(),
             banner_title: 'nuevos ingresos',
             banner_text: 'Descubri el próximo Funko Pop de tu colección',
             banner_link_text: 'SHOP',
@@ -32,6 +34,7 @@ export const aboutController = async (req, res) => {
 
         res.render('about', {
             title: 'About Us | Funkoshop',
+            submenu_data: await getCategorysFromDB(),
             banner_title: 'nuevos ingresos',
             banner_text: 'Descubri el próximo Funko Pop de tu colección',
             banner_link_text: 'SHOP',
@@ -48,18 +51,21 @@ export const aboutController = async (req, res) => {
 
 
 export const mainControllers = {
-    contact: (req, res) => res.render('contact', {
-        title: 'Contact | Funkoshop'
+    contact: async (req, res) => res.render('contact', {
+        title: 'Contact | Funkoshop',
+        submenu_data: await getCategorysFromDB()
     }),
-    about: (req, res) => res.render('about', {
+    about: async (req, res) => res.render('about', {
         title: 'About Us | Funkoshop',
+        submenu_data: await getCategorysFromDB(),
         banner_title: 'nuevos ingresos',
         banner_text: 'Descubri el próximo Funko Pop de tu colección',
         banner_link_text: 'SHOP',
         slider_title: 'últimos lanzamientos'
     }),
-    faqs: (req, res) => res.render('faqs', {
-        title: 'Faqs | Funkoshop'
+    faqs: async (req, res) => res.render('faqs', {
+        title: 'Faqs | Funkoshop',
+        submenu_data: await getCategorysFromDB()
     })
 }
 
