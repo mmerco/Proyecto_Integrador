@@ -1,5 +1,11 @@
-import { adminSearch } from '../models/adminModel.js'
-import { getAllItems } from "../models/itemsModel.js";
+import {
+    adminSearch,
+    getEditData
+} from '../models/adminModel.js'
+import {
+    getAllItems,
+    getItemsByParams
+} from "../models/itemsModel.js";
 
 
 
@@ -21,10 +27,23 @@ export const searchController = async (req, res) => {
 }
 
 
+export const editController = async (req, res) => {
+    let [itemData] = await getItemsByParams({ product_id: req.params.id });
+    let [catData, licData, duesData] = await getEditData();
+
+    res.render('edit', {
+        item: itemData,
+        title: `Edit ${itemData.product_name} | Funkoshop`,
+        categorys: catData,
+        licenses: licData,
+        dues: duesData
+    });
+}
+
+
 export const adminControllers = {
     create: (req, res) => res.send('Route for Create View'),
     createPost: (req, res) => res.send('Route for Create View POST'),
-    edit: (req, res) => res.send(`Route for Edit item ${req.params.id} View`),
     editPut: (req, res) => res.send('Route for Edit View PUT'),
     delete: (req, res) => res.send('Route for Delete View')
 }

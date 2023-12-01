@@ -1,22 +1,11 @@
-import adminSearchFromDB from '../services/adminServices.js'
+import {
+    adminSearchFromDB,
+    getDuesFromDB
+} from '../services/adminServices.js'
+import getCategorysFromDB from '../services/categorysServices.js';
+import getCollectionsFromDB from '../services/collectionsServices.js';
 
 
-
-// Devuelve todos los items ordenados por codigo de producto A-Z
-export const getItems = () => {
-    const sortData = data.sort((a, b) => {
-        if (a.product_sku > b.product_sku) {
-            return 1;
-        }
-        if (a.product_sku < b.product_sku) {
-            return -1;
-        }
-
-        return 0;
-    });
-
-    return sortData;
-}
 
 
 export const adminSearch = async (searchValue) => {
@@ -26,20 +15,11 @@ export const adminSearch = async (searchValue) => {
 }
 
 
-export const searchItems = (searchValue) => {
-    let filterData = data.filter(item => {
-        let code = item.product_sku.toLocaleLowerCase();
-        let name = item.product_name.toLocaleLowerCase();
-        let category = item.licence_name.toLocaleLowerCase();
+export const getEditData = async () => {
+    let categorys = await getCategorysFromDB();
+    let licenses = await getCollectionsFromDB();
+    let dues = await getDuesFromDB();
 
-        searchValue = searchValue.toLocaleLowerCase();
 
-        if (code.includes(searchValue) || name.includes(searchValue) || category.includes(searchValue)) {
-            return true;
-        }
-
-        return false;
-    });
-
-    return filterData;
+    return [categorys, licenses, dues];
 }

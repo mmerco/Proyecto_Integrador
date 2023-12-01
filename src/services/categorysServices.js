@@ -3,12 +3,12 @@ import pool from '../config/conn.js';
 
 
 
-/* Trae los datos de la tabla License ordenados alfabeticamente por nombre */
-const getCollectionsFromDB = async () => {
+/* Trae los datos de la tabla category ordenados alfabeticamente por nombre */
+const getCategorysFromDB = async () => {
     try {
         let [rows] = await pool.query(
-            'SELECT * FROM license ' +
-            'ORDER BY license_name'
+            'SELECT * FROM category ' +
+            'ORDER BY category_name'
         );
 
         return rows;
@@ -20,4 +20,4 @@ const getCollectionsFromDB = async () => {
 }
 
 
-export default getCollectionsFromDB;
+export default getCategorysFromDB;
