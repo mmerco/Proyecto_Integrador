@@ -4,24 +4,17 @@ import {
     getRows,
 } from '../models/shopModel.js';
 import {
-    getAllItems,
     getItemsByParams,
     getRelatedItems
-} from '../models/itemsModel.js'
+} from '../models/itemsModel.js';
 import getCategorysFromDB from '../services/categorysServices.js';
+import { shopMainModel } from '../models/shopModel.js';
 
 
 
 export const shopController = async (req, res) => {
     try {
-        let itemsData = await getAllItems();
-        let rows = getRows(itemsData);
-
-        res.render('shop', {
-            title: 'Shop | Funkoshop',
-            submenu_data: await getCategorysFromDB(),
-            data: getShopItemsFormat(itemsData, rows)
-        });
+        res.render('shop', await shopMainModel(req.query));
 
     } catch (error) {
         console.log('Se produjo un error: ', error);
@@ -42,6 +35,7 @@ export const categoryController = async (req, res) => {
         res.render('shop', {
             title: `${category} | Funkoshop`,
             submenu_data: await getCategorysFromDB(),
+            form_path: `/category/${category}`,
             data: getShopItemsFormat(itemsData, rows)
         });
 
@@ -62,6 +56,7 @@ export const collectionController = async (req, res) => {
         res.render('shop', {
             title: `${collection} | Funkoshop`,
             submenu_data: await getCategorysFromDB(),
+            form_path: `/collection/${collection}`,
             data: getShopItemsFormat(itemsData, rows)
         });
 
