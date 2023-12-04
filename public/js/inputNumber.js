@@ -2,8 +2,8 @@
 
 const add = (element) => {
 
-  let id = '#' + element.name;
-  let quantity = document.querySelector(id);
+  let id = element.dataset.id;
+  let quantity = document.querySelector(`input[name=${id}]`);
   let min = Number(quantity.min);
   let max = Number(quantity.max);
   let value = Number(quantity.value);
@@ -14,9 +14,9 @@ const add = (element) => {
 
   if (value >= max) {
     quantity.value = max;
-  
+
   } else {
-    
+
     if (value < min) {
       quantity.value = min;
     } else {
@@ -27,8 +27,8 @@ const add = (element) => {
 
 const subtract = (element) => {
 
-  let id = '#' + element.name;
-  let quantity = document.querySelector(id);
+  let id = element.dataset.id;
+  let quantity = document.querySelector(`input[name=${id}]`);
   let min = Number(quantity.min);
   let max = Number(quantity.max);
   let value = Number(quantity.value);
@@ -39,9 +39,9 @@ const subtract = (element) => {
 
   if (value <= min) {
     quantity.value = min;
-  
+
   } else {
-    
+
     if (value > max) {
       quantity.value = max;
     } else {
@@ -54,19 +54,19 @@ const subtract = (element) => {
 /* LISTENER */
 
 document.addEventListener('click', event => {
-  
+
   let element = event.target;
 
-  if ( !element.matches('.add') && !element.matches('.subtract') ) {
+  if (!element.matches('.add') && !element.matches('.subtract')) {
     return
-  
+
   } else {
 
-    if ( element.matches('.add') ) {
+    if (element.matches('.add')) {
       add(element);
     }
 
-    if ( element.matches('.subtract') ) {
+    if (element.matches('.subtract')) {
       subtract(element);
     }
   }
