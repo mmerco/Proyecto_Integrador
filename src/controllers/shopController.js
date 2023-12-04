@@ -1,14 +1,12 @@
 import {
-    capitalize,
-    getShopItemsFormat,
-    getRows,
+    shopMainModel,
+    shopCategoryModel,
+    shopCollectionModel,
+    itemModel
 } from '../models/shopModel.js';
-import {
-    getItemsByParams,
-    getRelatedItems
-} from '../models/itemsModel.js';
 import getCategorysFromDB from '../services/categorysServices.js';
-import { shopMainModel } from '../models/shopModel.js';
+
+
 
 
 
@@ -26,18 +24,7 @@ export const shopController = async (req, res) => {
 
 export const categoryController = async (req, res) => {
     try {
-        let category = req.params.category;
-        let itemsData = await getItemsByParams({ category_name: category });
-        let rows = getRows(itemsData);
-
-        category = capitalize(category);
-
-        res.render('shop', {
-            title: `${category} | Funkoshop`,
-            submenu_data: await getCategorysFromDB(),
-            form_path: `/category/${category}`,
-            data: getShopItemsFormat(itemsData, rows)
-        });
+        res.render('shop', await shopCategoryModel(req.params.category, req.query));
 
     } catch (error) {
         console.log('Se produjo un error: ', error);
@@ -49,16 +36,7 @@ export const categoryController = async (req, res) => {
 
 export const collectionController = async (req, res) => {
     try {
-        let collection = req.params.collection;
-        let itemsData = await getItemsByParams({ license_name: collection });
-        let rows = getRows(itemsData);
-
-        res.render('shop', {
-            title: `${collection} | Funkoshop`,
-            submenu_data: await getCategorysFromDB(),
-            form_path: `/collection/${collection}`,
-            data: getShopItemsFormat(itemsData, rows)
-        });
+        res.render('shop', await shopCollectionModel(req.params.collection, req.query));
 
     } catch (error) {
         console.log('Se produjo un error: ', error);
@@ -70,17 +48,7 @@ export const collectionController = async (req, res) => {
 
 export const itemController = async (req, res) => {
     try {
-        let id = req.params.id;
-        let [itemData] = await getItemsByParams({ product_id: id });
-
-
-        res.render('item', {
-            title: `${itemData.product_name} | Funkoshop`,
-            submenu_data: await getCategorysFromDB(),
-            item: itemData,
-            slider_title: 'productos relacionados',
-            slider_items: await getRelatedItems(itemData)
-        });
+        res.render('item', await itemModel(req.params.id));
 
     } catch (error) {
         console.log('Se produjo un error: ', error);
