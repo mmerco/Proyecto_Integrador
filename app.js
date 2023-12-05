@@ -1,11 +1,12 @@
 import express from 'express';
 import session from 'express-session';
+import bodyParser from 'body-parser';
 import mainRoutes from './src/routes/mainRoutes.js';
 import authRoutes from './src/routes/authRoutes.js';
 import shopRoutes from './src/routes/shopRoutes.js';
 import adminRoutes from './src/routes/adminRoutes.js'
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 
@@ -25,6 +26,9 @@ app.use(express.static('public'));
 // ENGINE
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
+
+
+app.use(bodyParser.urlencoded({ extended: true }))
 
 
 // ROUTES
