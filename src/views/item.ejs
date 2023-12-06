@@ -1,60 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head') %>
+<%- include('partials/head') %>
 
-  <body>
-    <%- include('partials/header-shop') %>
+<body>
+  <%- include('partials/header-shop') %>
 
-    <main class="item__main">
-      <section class="item container">
-        <picture class="item__cover">
-          <img
-            class="item__cover--front"
-            src="<%= item.image_front %>"
-            alt="<%= item.product_description %>"
-          />
-          <img
-            class="item__cover--back"
-            src="<%= item.image_back %>"
-            alt="<%= item.product_description %> en caja"
-          />
-        </picture>
-        <article class="item__content">
-          <p class="item__collection"><%= item.license_name %></p>
-          <h3 class="item__name"><%= item.product_name %></h3>
-          <p class="item__description"><%= item.product_description %></p>
-          <p class="item__price">$ <%= item.price %></p>
-          <div class="item__quantity">
-            <div class="quantity__value">
-              <input
-                class="value"
-                id="one"
-                type="number"
-                min="1"
-                max="100"
-                step="1"
-                value="1"
-              />
-              <button class="add" name="one">+</button>
-              <button class="subtract" name="one">-</button>
-            </div>
-            <button class="quantity__add">Agregar al Carrito</button>
+  <main class="item__main">
+    <section class="item container">
+      <picture class="item__cover">
+        <img class="item__cover--front" src="<%= item.image_front %>" alt="<%= item.product_description %>" />
+        <img class="item__cover--back" src="<%= item.image_back %>" alt="<%= item.product_description %> en caja" />
+      </picture>
+      <article class="item__content">
+        <p class="item__collection"><%= item.license_name %></p>
+        <h3 class="item__name"><%= item.product_name %></h3>
+        <p class="item__description"><%= item.product_description %></p>
+        <p class="item__price">$ <%= item.price %></p>
+        <div class="item__quantity">
+          <div class="quantity__value">
+            <input class="quantity" name="<%= item.sku %>" type="number" min="1" max="<%= item.stock %>" step="1" value="<%= item_quantity %>" />
+            <button class="add" data-id="<%= item.sku %>">+</button>
+            <button class="subtract" data-id="<%= item.sku %>">-</button>
           </div>
-          <p class="item__promo">
-            <a class="promo__link" href="">Ver métodos de pago</a> -
-            <%=item.dues %> CUOTAS SIN INTERÉS
-          </p>
-        </article>
-      </section>
+          <button class="quantity__add" name="<%= item.sku %>" data-id="<%= item.product_id %>">Agregar al Carrito</button>
+        </div>
+        <p class="item__promo">
+          <a class="promo__link" href="">Ver métodos de pago</a> -
+          <%=item.dues %> CUOTAS SIN INTERÉS
+        </p>
+      </article>
+    </section>
 
-      <%- include('partials/slider') %>
-    </main>
+    <%- include('partials/slider') %>
+  </main>
 
-    <%- include('partials/footer') %>
+  <%- include('partials/footer') %>
 
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-    <script src="../../js/inputNumber.js"></script>
-    <script src="../../js/glide.js"></script>
-  </body>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script src="../../js/itemQuantityManage.js"></script>
+  <script src="../../js/glide.js"></script>
+</body>
+
 </html>

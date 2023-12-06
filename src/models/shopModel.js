@@ -177,7 +177,7 @@ export const sortAlpha = (data, asc = true) => {
 /* Devuelve los parametros de carga de la pagina shop, dependiendo si hay o no querys del
     form. Si hay querys, filtra los datos correspondientes segun las opciones del form
 */
-export const shopMainModel = async (query) => {
+export const shopMainModel = async (query, session) => {
     try {
         let itemsData = await getAllItems();
 
@@ -218,6 +218,7 @@ export const shopMainModel = async (query) => {
                 title: 'Shop | Funkoshop',
                 submenu_data: await getCategorysFromDB(),
                 form_path: '',
+                cart_number: session.cart ? session.cart.length : 0,
                 query: query,
                 data: getShopItemsFormat(filterData, rows)
             }
@@ -229,6 +230,7 @@ export const shopMainModel = async (query) => {
                 title: 'Shop | Funkoshop',
                 submenu_data: await getCategorysFromDB(),
                 form_path: '',
+                cart_number: session.cart ? session.cart.length : 0,
                 query: {},
                 data: getShopItemsFormat(itemsData, rows)
             }
@@ -247,7 +249,7 @@ export const shopMainModel = async (query) => {
 /* Devuelve los parametros de carga de la pagina shop/category, dependiendo si hay o no querys del
     form. Si hay querys, filtra los datos correspondientes segun las opciones del form
 */
-export const shopCategoryModel = async (category, query) => {
+export const shopCategoryModel = async (category, query, session) => {
     try {
         let itemsData = await getItemsByParams({ category_name: category });
 
@@ -290,6 +292,7 @@ export const shopCategoryModel = async (category, query) => {
                 title: `${category} | Funkoshop`,
                 submenu_data: await getCategorysFromDB(),
                 form_path: `/category/${category}`,
+                cart_number: session.cart ? session.cart.length : 0,
                 query: query,
                 data: getShopItemsFormat(filterData, rows)
             }
@@ -300,6 +303,7 @@ export const shopCategoryModel = async (category, query) => {
                 title: `${category} | Funkoshop`,
                 submenu_data: await getCategorysFromDB(),
                 form_path: `/category/${category}`,
+                cart_number: session.cart ? session.cart.length : 0,
                 query: {},
                 data: getShopItemsFormat(itemsData, rows)
             }
@@ -317,7 +321,7 @@ export const shopCategoryModel = async (category, query) => {
 /* Devuelve los parametros de carga de la pagina shop/collection, dependiendo si hay o no querys del
     form. Si hay querys, filtra los datos correspondientes segun las opciones del form
 */
-export const shopCollectionModel = async (collection, query) => {
+export const shopCollectionModel = async (collection, query, session) => {
     try {
         let itemsData = await getItemsByParams({ license_name: collection });
 
@@ -358,6 +362,7 @@ export const shopCollectionModel = async (collection, query) => {
                 title: `${collection} | Funkoshop`,
                 submenu_data: await getCategorysFromDB(),
                 form_path: `/collection/${collection}`,
+                cart_number: session.cart ? session.cart.length : 0,
                 query: query,
                 data: getShopItemsFormat(filterData, rows)
             }
@@ -368,6 +373,7 @@ export const shopCollectionModel = async (collection, query) => {
                 title: `${collection} | Funkoshop`,
                 submenu_data: await getCategorysFromDB(),
                 form_path: `/collection/${collection}`,
+                cart_number: session.cart ? session.cart.length : 0,
                 query: {},
                 data: getShopItemsFormat(itemsData, rows)
             }
@@ -384,7 +390,7 @@ export const shopCollectionModel = async (collection, query) => {
 
 /* Devuelve los parametros de carga de la pagina shop/item
 */
-export const itemModel = async (id) => {
+export const itemModel = async (id, session) => {
     try {
         let [itemData] = await getItemsByParams({ product_id: id });
 
@@ -392,6 +398,53 @@ export const itemModel = async (id) => {
             title: `${itemData.product_name} | Funkoshop`,
             submenu_data: await getCategorysFromDB(),
             item: itemData,
+            item_quantity: 1,
+            cart_number: session.cart ? session.cart.length : 0,
+            slider_title: 'productos relacionados',
+            slider_items: await getRelatedItems(itemData)
+        }
+
+    } catch (error) {
+        console.log('Se produjo un error al conseguir los datos: ', error);
+
+        throw error;
+    }
+}
+
+
+
+/* Devuelve los parametros de carga de la pagina shop/item despues de agregar
+    un item al carrito
+*/
+export const addItemModel = async (id, body, session) => {
+    try {
+        let [itemData] = await getItemsByParams({ product_id: id });
+        let stock = itemData.stock;
+        let addedQuantity = Number(body.quantity);
+
+        if (stock - addedQuantity > 0) {
+            session.cart = session.cart || [];
+
+            let index = session.cart.findIndex(item => item.product_id == id);
+
+            if (index != -1) {
+                session.cart[index].quantity += addedQuantity;
+
+            } else {
+                session.cart.push({ product_id: itemData.product_id, quantity: addedQuantity });
+
+            }
+
+        } else {
+
+        }
+
+        return {
+            title: `${itemData.product_name} | Funkoshop`,
+            submenu_data: await getCategorysFromDB(),
+            item: itemData,
+            item_quantity: addedQuantity,
+            cart_number: session.cart.length,
             slider_title: 'productos relacionados',
             slider_items: await getRelatedItems(itemData)
         }
