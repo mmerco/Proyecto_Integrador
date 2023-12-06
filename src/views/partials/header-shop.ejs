@@ -25,8 +25,13 @@
         <a class="navbar__link" href="/auth/login">LOGIN</a>
       </li>
       <li class="navbar__item">
-        <a class="navbar__cart" href="/shop/cart">
+        <a class="navbar__cart whith-tag" href="/shop/cart">
           <img src="/img/icons/cart-icon.svg" alt="Icono Carrito" />
+
+          <% if (cart_number != 0) { %>
+          <span class="cart__tag"><%= cart_number %></span>
+          <% } %>
+
         </a>
       </li>
     </ul>

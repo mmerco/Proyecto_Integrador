@@ -16,6 +16,7 @@ export const homeController = async (req, res) => {
             banner_text: 'Descubri el próximo Funko Pop de tu colección',
             banner_link_text: 'SHOP',
             collections: collectionsData,
+            cart_number: req.session.cart ? req.session.cart.length : 0,
             slider_title: 'últimos lanzamientos',
             slider_items: itemsData
 
@@ -38,6 +39,7 @@ export const aboutController = async (req, res) => {
             banner_title: 'nuevos ingresos',
             banner_text: 'Descubri el próximo Funko Pop de tu colección',
             banner_link_text: 'SHOP',
+            cart_number: req.session.cart ? req.session.cart.length : 0,
             slider_title: 'últimos lanzamientos',
             slider_items: itemsData
 
@@ -51,21 +53,19 @@ export const aboutController = async (req, res) => {
 
 
 export const mainControllers = {
-    contact: async (req, res) => res.render('contact', {
-        title: 'Contact | Funkoshop',
-        submenu_data: await getCategorysFromDB()
-    }),
-    about: async (req, res) => res.render('about', {
-        title: 'About Us | Funkoshop',
-        submenu_data: await getCategorysFromDB(),
-        banner_title: 'nuevos ingresos',
-        banner_text: 'Descubri el próximo Funko Pop de tu colección',
-        banner_link_text: 'SHOP',
-        slider_title: 'últimos lanzamientos'
-    }),
-    faqs: async (req, res) => res.render('faqs', {
-        title: 'Faqs | Funkoshop',
-        submenu_data: await getCategorysFromDB()
-    })
+    contact: async (req, res) => {
+        res.render('contact', {
+            title: 'Contact | Funkoshop',
+            cart_number: req.session.cart ? req.session.cart.length : 0,
+            submenu_data: await getCategorysFromDB()
+        })
+    },
+    faqs: async (req, res) => {
+        res.render('faqs', {
+            title: 'Faqs | Funkoshop',
+            cart_number: req.session.cart ? req.session.cart.length : 0,
+            submenu_data: await getCategorysFromDB()
+        })
+    }
 }
 
