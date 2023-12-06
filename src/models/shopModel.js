@@ -456,3 +456,35 @@ export const addItemModel = async (id, body, session) => {
     }
 }
 
+
+/* Devuelve los parametros de carga de la pagina shop/cart dependiendo si hay
+    items en el carrito o no. Si hay items, procesa la informacion a cargar.
+*/
+export const cartModel = async (session) => {
+    try {
+        if (session.cart) {
+            const [cartItems, cartSummary] = await getCartData();
+        } else {
+
+        }
+
+        return {
+            title: `${itemData.product_name} | Funkoshop`,
+            submenu_data: await getCategorysFromDB(),
+            item: itemData,
+            item_quantity: addedQuantity,
+            cart_number: session.cart.length,
+            slider_title: 'productos relacionados',
+            slider_items: await getRelatedItems(itemData)
+        }
+
+    } catch (error) {
+        console.log('Se produjo un error al conseguir los datos: ', error);
+
+        throw error;
+    }
+}
+
+
+
+

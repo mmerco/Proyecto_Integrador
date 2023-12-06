@@ -61,11 +61,29 @@ export const itemController = async (req, res) => {
 
 export const addItemController = async (req, res) => {
     try {
-        await addItemModel(req.params.id, req.body, req.session)
+        await addItemModel(req.params.id, req.body, req.session);
 
-        res.redirect(`/shop/item/${req.params.id}`)
+        res.redirect(`/shop/item/${req.params.id}`);
 
 
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
+}
+
+
+export const cartController = async (req, res) => {
+    try {
+        if (req.session.cart) {
+            res.render('cart', await shopCategoryModel());
+        } else {
+            res.render('cart', {
+                title: 'Cart | Funkoshop',
+                submenu_data: await getCategorysFromDB()
+            });
+        }
     } catch (error) {
         console.log('Se produjo un error: ', error);
 
