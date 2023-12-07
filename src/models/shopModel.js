@@ -1,4 +1,5 @@
 import getCategorysFromDB from '../services/categorysServices.js';
+import getCartDataFromDB from '../services/cartServices.js';
 import {
     getAllItems,
     getItemsByParams,
@@ -436,7 +437,7 @@ export const addItemModel = async (id, body, session) => {
             }
 
         } else {
-
+            console.log('Se produjo un error: Producto sin stock necesario para la solicitud');
         }
 
         return {
@@ -462,22 +463,26 @@ export const addItemModel = async (id, body, session) => {
 */
 export const cartModel = async (session) => {
     try {
+
         if (session.cart) {
-            const [cartItems, cartSummary] = await getCartData();
+            const [cartItems, cartSummary] = await getCartDataFromDB(session.cart);
+
+            return {
+                title: `Cart | Funkoshop`,
+                submenu_data: await getCategorysFromDB(),
+                cart_items: cartItems,
+                cart_summary: cartSummary,
+                cart_number: session.cart.length
+            }
         } else {
-
+            return {
+                title: `Cart | Funkoshop`,
+                submenu_data: await getCategorysFromDB(),
+                cart_items: false,
+                cart_summary: false,
+                cart_number: 0
+            }
         }
-
-        return {
-            title: `${itemData.product_name} | Funkoshop`,
-            submenu_data: await getCategorysFromDB(),
-            item: itemData,
-            item_quantity: addedQuantity,
-            cart_number: session.cart.length,
-            slider_title: 'productos relacionados',
-            slider_items: await getRelatedItems(itemData)
-        }
-
     } catch (error) {
         console.log('Se produjo un error al conseguir los datos: ', error);
 

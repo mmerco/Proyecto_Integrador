@@ -69,7 +69,7 @@
           <p class="summary__header">SUBTOTAL</p>
 
           <% if (cart_summary) { %>
-          <p class="summary__data"><%= cart_summary.subtotal %></p>
+          <p class="summary__data">$ <%= cart_summary.subtotal %></p>
           <% } else { %>
           <p class="summary__data">$ 0,00</p>
           <% } %>
@@ -79,7 +79,7 @@
           <p class="summary__header">ENVIO</p>
 
           <% if (cart_summary) { %>
-          <p class="summary__data"><%= cart_summary.shipment %></p>
+          <p class="summary__data">$ <%= cart_summary.shipment %></p>
           <% } else { %>
           <p class="summary__data">$ 0,00</p>
           <% } %>
@@ -89,7 +89,7 @@
           <p class="summary__header">TOTAL</p>
 
           <% if (cart_summary) { %>
-          <p class="summary__data"><%= cart_summary.total %></p>
+          <p class="summary__data">$ <%= cart_summary.total %></p>
           <% } else { %>
           <p class="summary__data">$ 0,00</p>
           <% } %>

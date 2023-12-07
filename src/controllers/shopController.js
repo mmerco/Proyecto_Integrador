@@ -3,7 +3,8 @@ import {
     shopCategoryModel,
     shopCollectionModel,
     itemModel,
-    addItemModel
+    addItemModel,
+    cartModel
 } from '../models/shopModel.js';
 import getCategorysFromDB from '../services/categorysServices.js';
 
@@ -65,7 +66,6 @@ export const addItemController = async (req, res) => {
 
         res.redirect(`/shop/item/${req.params.id}`);
 
-
     } catch (error) {
         console.log('Se produjo un error: ', error);
 
@@ -76,14 +76,8 @@ export const addItemController = async (req, res) => {
 
 export const cartController = async (req, res) => {
     try {
-        if (req.session.cart) {
-            res.render('cart', await shopCategoryModel());
-        } else {
-            res.render('cart', {
-                title: 'Cart | Funkoshop',
-                submenu_data: await getCategorysFromDB()
-            });
-        }
+        res.render('cart', await cartModel(req.session));
+
     } catch (error) {
         console.log('Se produjo un error: ', error);
 

@@ -5,12 +5,13 @@ import {
     categoryController,
     collectionController,
     itemController,
-    addItemController
+    addItemController,
+    cartController
 } from '../controllers/shopController.js';
 
 const router = express.Router();
 
-router.get('/cart', shopControllers.cart);
+router.get('/cart', cartController);
 router.post('/cart', shopControllers.cartPost);
 router.get('/category/:category', categoryController);
 router.get('/collection/:collection', collectionController);
