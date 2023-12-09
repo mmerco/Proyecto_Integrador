@@ -35,3 +35,16 @@ export const getEditData = async () => {
         throw error;
     }
 }
+
+
+export const getCreateModel = async () => {
+    let categorysData = await getCategorysFromDB();
+    let licensesData = await getCollectionsFromDB();
+
+    return {
+        title: `Create | Funkoshop`,
+        categorys: categorysData,
+        licenses: licensesData
+    }
+}
+

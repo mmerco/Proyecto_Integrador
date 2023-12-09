@@ -7,23 +7,23 @@
 
   <main class="create__main container">
     <h1 class="admin__title">EDITAR ITEM</h1>
-    <form method="POST" class="admin-form" action="/admin/edit/<%= item.product_id %>">
+    <form method="POST" class="admin-form" action="/admin/edit/<%= item.product_id %>?_method=PUT" enctype="multipart/form-data">
       <section class="admin-form__section space-between">
         <div class="admin-form__select">
-          <label for="category" class="light-label">Categoría:</label>
+          <label for="category_id" class="light-label">Categoría:</label>
           <div class="stylized-select">
-            <select name="category" id="category">
+            <select name="category_id" id="category">
               <% categorys.forEach(category => { %>
 
               <% if (category.category_name == item.category_name) { %>
 
-              <option selected value="<%= category.category_name %>">
+              <option selected value="<%= category.category_id %>">
                 <%= category.category_name %>
               </option>
 
               <% } else { %>
 
-              <option value="<%= category.category_name %>">
+              <option value="<%= category.category_id %>">
                 <%= category.category_name %>
               </option>
 
@@ -36,20 +36,20 @@
           </div>
         </div>
         <div class="admin-form__select">
-          <label for="license" class="light-label">Licencia:</label>
+          <label for="license_id" class="light-label">Licencia:</label>
           <div class="stylized-select">
-            <select name="license" id="license">
+            <select name="license_id" id="license">
               <% licenses.forEach(license => { %>
 
               <% if (license.license_name == item.license_name) { %>
 
-              <option selected value="<%= license.license_name %>">
+              <option selected value="<%= license.license_id %>">
                 <%= license.license_name %>
               </option>
 
               <% } else { %>
 
-              <option value="<%= license.license_name %>">
+              <option value="<%= license.license_id %>">
                 <%= license.license_name %>
               </option>
 
@@ -64,17 +64,17 @@
       </section>
       <section class="admin-form__section">
         <div class="admin-form__text">
-          <label for="name">Nombre del Producto:</label>
-          <input type="text" name="name" class="input-text__large" value="<%= item.product_name %>" required />
+          <label for="product_name">Nombre del Producto:</label>
+          <input type="text" name="product_name" class="input-text__large" value="<%= item.product_name %>" required />
         </div>
       </section>
       <section class="admin-form__section">
-        <textarea name="description" id="description" placeholder="Descripción del producto" required><%= item.product_description %></textarea>
+        <textarea name="product_description" id="description" placeholder="Descripción del producto" required><%= item.product_description %></textarea>
       </section>
       <section class="admin-form__section">
         <div class="admin-form__text">
-          <label for="code">SKU:</label>
-          <input type="text" name="code" class="input-text__medium" pattern="^[A-Z]{3}\d{6}$" value="<%= item.sku %>" required />
+          <label for="sku">SKU:</label>
+          <input type="text" name="sku" class="input-text__medium" pattern="^[A-Z]{3}\d{6}$" value="<%= item.sku %>" required />
         </div>
         <div class="admin-form__text">
           <label for="price">Precio: $</label>
@@ -87,14 +87,14 @@
       </section>
       <section class="admin-form__section">
         <div class="admin-form__text">
-          <label for="off">Descuento:</label>
-          <input type="text" name="off" class="input-text__small off" pattern="^\d+$" placeholder="0" value="<%= item.discount %>" />
+          <label for="discount">Descuento:</label>
+          <input type="text" name="discount" class="input-text__small off" pattern="^\d+$" placeholder="0" value="<%= item.discount %>" />
           <label for="off">%</label>
         </div>
         <div class="admin-form__select">
-          <label for="payment">Cuotas:</label>
+          <label for="dues">Cuotas:</label>
           <div class="stylized-select">
-            <select name="payment" id="payment">
+            <select name="dues" id="payment">
               <% dues.forEach(row => { %>
 
               <% if (row.dues == item.dues) { %>
@@ -116,12 +116,12 @@
       </section>
       <section class="admin-form__section admin-files__section">
         <div class="admin-form__file">
-          <label for="images">Imágen Frente:</label>
-          <input type="file" accept="image/*" name="images" class="admin-file__front" required />
+          <label for="image_front">Imágen Frente:</label>
+          <input type="file" accept="image/*" name="image_front" class="admin-file__front" />
         </div>
         <div class="admin-form__file">
-          <label for="images">Imágen Dorso:</label>
-          <input type="file" accept="image/*" name="images" class="admin-file__back" required />
+          <label for="image_back">Imágen Dorso:</label>
+          <input type="file" accept="image/*" name="image_back" class="admin-file__back" />
         </div>
       </section>
       <section class="admin-form__section">

@@ -1,10 +1,13 @@
 import {
     adminSearch,
-    getEditData
+    getEditData,
+    getCreateModel
 } from '../models/adminModel.js'
 import {
     getAllItems,
-    getItemsByParams
+    getItemsByParams,
+    createItem,
+    editItem
 } from "../models/itemsModel.js";
 
 
@@ -46,7 +49,8 @@ export const editController = async (req, res) => {
 
         res.render('edit', {
             item: itemData,
-            title: `Edit ${itemData.product_name} | Funkoshop`,
+            //title: `Edit ${itemData.product_name} | Funkoshop`,
+            title: `Edit | Funkoshop`,
             categorys: catData,
             licenses: licData,
             dues: duesData
@@ -60,9 +64,48 @@ export const editController = async (req, res) => {
 }
 
 
+export const editControllerPUT = async (req, res) => {
+    try {
+        await editItem(req.params, req.body, req.files);
+
+        res.redirect('/admin');
+
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
+}
+
+
+export const createController = async (req, res) => {
+    try {
+        res.render('create', await getCreateModel());
+
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
+}
+
+
+export const createControllerPOST = async (req, res) => {
+    try {
+        console.log(req.body);
+        await createItem(req.body);
+
+        res.redirect('/admin');
+
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
+}
+
+
 export const adminControllers = {
-    create: (req, res) => res.send('Route for Create View'),
-    createPost: (req, res) => res.send('Route for Create View POST'),
     editPut: (req, res) => res.send('Route for Edit View PUT'),
     delete: (req, res) => res.send('Route for Delete View')
 }
