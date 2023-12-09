@@ -7,7 +7,7 @@ import authRoutes from './src/routes/authRoutes.js';
 import shopRoutes from './src/routes/shopRoutes.js';
 import adminRoutes from './src/routes/adminRoutes.js'
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 const app = express();
 
 
@@ -33,10 +33,22 @@ app.set('view engine', 'ejs');
 
 
 // ROUTES
-app.use('/', mainRoutes);
 app.use('/auth', authRoutes);
 app.use('/shop', shopRoutes);
 app.use('/admin', adminRoutes);
+app.use('/', mainRoutes);
+
+
+// INVALID ROUTES
+app.use('/', (req, res) => {
+  let response = {
+    error: true,
+    code: 404,
+    msj: '<h1>URL invalida</h1>'
+  }
+
+  res.status(response.code).send(response.msj);
+})
 
 
 // PORT
