@@ -11,7 +11,6 @@ const form = document.querySelector('.admin-form');
 /** 
  * LISTENERS PARA LOS INPUT DE LAS IMAGENES
  */
-
 inputFront.addEventListener('change', () => {
     let archivos = inputFront.files;
 
@@ -47,10 +46,11 @@ inputBack.addEventListener('change', () => {
 /** 
  * LISTENER PARA FORM RESET
  */
+if (clearButton) {
+    clearButton.addEventListener('click', () => {
+        form.reset();
 
-clearButton.addEventListener('click', () => {
-    form.reset();
-
-    figureFront.style.display = "none";
-    figureBack.style.display = "none";
-});
+        figureFront.style.display = "none";
+        figureBack.style.display = "none";
+    });
+}

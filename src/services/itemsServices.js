@@ -59,7 +59,7 @@ export const createItemIntoDB = async (formData) => {
             'INSERT INTO product ' +
             'SET ?', formData
         );
-        console.log(resultData);
+
         return resultData;
     } catch (error) {
         console.log('Error al traer informacion de la base de datos:', error);
@@ -70,10 +70,10 @@ export const createItemIntoDB = async (formData) => {
 
 
 
-/* Inserta un item en la tabla product con los datos tomados del formulario de
-    create
+/* Edita el item con id pasado como parametro en la tabla product.
+    Se cargan los nuevos datos pasados como parametro desde el form edit
 */
-export const editItemFromDB = async (formData, params) => {
+export const editItemFromDB = async (params, formData) => {
     try {
         await pool.query(
             'UPDATE product ' +
@@ -81,7 +81,26 @@ export const editItemFromDB = async (formData, params) => {
             'WHERE ? ', [formData, params]
         );
 
-        return
+        return true;
+    } catch (error) {
+        console.log('Error al traer informacion de la base de datos:', error);
+
+        throw error;
+    }
+}
+
+
+
+/* Elimina el item con id pasado como parametro de tabla product.
+*/
+export const deleteItemFromDB = async (params) => {
+    try {
+        await pool.query(
+            'DELETE FROM product ' +
+            'WHERE ? ', params
+        );
+
+        return true;
     } catch (error) {
         console.log('Error al traer informacion de la base de datos:', error);
 

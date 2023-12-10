@@ -7,7 +7,8 @@ import {
     getAllItems,
     getItemsByParams,
     createItem,
-    editItem
+    editItem,
+    deleteItem
 } from "../models/itemsModel.js";
 
 
@@ -18,7 +19,6 @@ export const adminController = async (req, res) => {
             data: await getAllItems(),
             title: 'Admin | Funkoshop'
         });
-
     } catch (error) {
         console.log('Se produjo un error: ', error);
 
@@ -33,7 +33,6 @@ export const searchController = async (req, res) => {
             data: await adminSearch(req.query.search_value),
             title: 'Admin | Funkoshop'
         });
-
     } catch (error) {
         console.log('Se produjo un error: ', error);
 
@@ -44,7 +43,8 @@ export const searchController = async (req, res) => {
 
 export const editController = async (req, res) => {
     try {
-        let [itemData] = await getItemsByParams({ product_id: req.params.id });
+        let productId = { product_id: req.params.id };
+        let [itemData] = await getItemsByParams(productId);
         let [catData, licData, duesData] = await getEditData();
 
         res.render('edit', {
@@ -55,7 +55,6 @@ export const editController = async (req, res) => {
             licenses: licData,
             dues: duesData
         });
-
     } catch (error) {
         console.log('Se produjo un error: ', error);
 
@@ -66,10 +65,17 @@ export const editController = async (req, res) => {
 
 export const editControllerPUT = async (req, res) => {
     try {
-        await editItem(req.params, req.body, req.files);
+        let editedItem = await editItem(req.params, req.body, req.files);
 
-        res.redirect('/admin');
-
+        if (editedItem) {
+            res.redirect('/admin' +
+                `?msj=Se edito el item ${editedItem.prduct_name} con ID ${editedItem.product_id} correctamente`
+            );
+        } else {
+            res.redirect('/admin' +
+                `?msj=Se produjo un error. Item no editado`
+            );
+        }
     } catch (error) {
         console.log('Se produjo un error: ', error);
 
@@ -92,11 +98,17 @@ export const createController = async (req, res) => {
 
 export const createControllerPOST = async (req, res) => {
     try {
-        console.log(req.body);
-        await createItem(req.body);
+        let [createdItem] = await createItem(req.body, req.files);
 
-        res.redirect('/admin');
-
+        if (createdItem) {
+            res.redirect('/admin' +
+                `?msj=Se creo el item ${createdItem.product_name} con ID ${createdItem.product_id} correctamente`
+            );
+        } else {
+            res.redirect('/admin' +
+                `?msj=Se produjo un error. Item no creado`
+            );
+        }
     } catch (error) {
         console.log('Se produjo un error: ', error);
 
@@ -105,7 +117,23 @@ export const createControllerPOST = async (req, res) => {
 }
 
 
-export const adminControllers = {
-    editPut: (req, res) => res.send('Route for Edit View PUT'),
-    delete: (req, res) => res.send('Route for Delete View')
+export const deleteController = async (req, res) => {
+    try {
+        let deletedItem = await deleteItem(req.params);
+
+        if (deletedItem) {
+            res.redirect('/admin' +
+                `?msj=Se elimino el item ${deletedItem.prduct_name} con ID ${deletedItem.product_id} correctamente`
+            );
+        } else {
+            res.redirect('/admin' +
+                `?msj=Se produjo un error. Item no eliminado`
+            );
+        }
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
 }
+

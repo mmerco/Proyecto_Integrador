@@ -1,77 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head') %>
+<%- include('partials/head') %>
 
-  <body>
-    <%- include('partials/header-admin') %>
+<body>
+  <%- include('partials/header-admin') %>
 
-    <main class="admin__main container">
-      <section class="admin__search-product">
-        <form class="search-product__form" action="/admin/search" method="get">
-          <button class="search-product__button" type="submit">
-            <img
-              src="/img/icons/search_icon.svg"
-              alt="Icono de lupa de busqueda"
-            />
-          </button>
-          <input
-            class="search-product__input"
-            type="search"
-            name="search_value"
-            placeholder="código, nombre o licencia"
-          />
-        </form>
-      </section>
-      <section class="admin__products-list">
-        <div class="products-list__section">
-          <h2 class="products-list__title">LISTADO DE PRODUCTOS</h2>
-          <div class="products-list__add">
-            <h3 class="add__title">AGREGAR</h3>
-            <a class="add__link" href="/admin/create">
-              <button>+</button>
-            </a>
-          </div>
+  <main class="admin__main container">
+    <section class="admin__search-product">
+      <form class="search-product__form" action="/admin/search" method="get">
+        <button class="search-product__button" type="submit">
+          <img src="/img/icons/search_icon.svg" alt="Icono de lupa de busqueda" />
+        </button>
+        <input class="search-product__input" type="search" name="search_value" placeholder="código, nombre o licencia" />
+      </form>
+    </section>
+    <section class="admin__products-list">
+      <div class="products-list__section">
+        <h2 class="products-list__title">LISTADO DE PRODUCTOS</h2>
+        <div class="products-list__add">
+          <h3 class="add__title">AGREGAR</h3>
+          <a class="add__link" href="/admin/create">
+            <button>+</button>
+          </a>
         </div>
-        <div class="products-list__section">
-          <table class="products-list__table">
-            <thead>
-              <th class="table__header table__id">ID</th>
-              <th class="table__header table__code">Código</th>
-              <th class="table__header table__product">Nombre del Producto</th>
-              <th class="table__header table__category">Licencia</th>
-            </thead>
+      </div>
+      <div class="products-list__section">
+        <table class="products-list__table">
+          <thead>
+            <th class="table__header table__id">ID</th>
+            <th class="table__header table__code">Código</th>
+            <th class="table__header table__product">Nombre del Producto</th>
+            <th class="table__header table__category">Licencia</th>
+          </thead>
 
-            <% data.forEach(item => { %>
-            <tr class="table__row">
-              <td class="table__id"><%= item.product_id %></td>
-              <td class="table__code"><%= item.sku %></td>
-              <td class="table__product"><%= item.product_name %></td>
-              <td class="table__category"><%= item.license_name %></td>
-              <td class="table__edit">
-                <a class="table__link" href="/admin/edit/<%= item.product_id %>"
-                  ><img
-                    class="table__img"
-                    src="/img/icons/edit_pencil.svg"
-                    alt="Icono lapiz"
-                /></a>
-              </td>
-              <td class="table__delete">
-                <a
-                  class="table__link"
-                  href="/admin/delete/<%= item.product_id %>"
-                  ><img
-                    class="table__img"
-                    src="/img/icons/delete_trash.svg"
-                    alt="Icono basura"
-                /></a>
-              </td>
-            </tr>
-            <% }) %>
-          </table>
-        </div>
-      </section>
-    </main>
+          <% data.forEach(item => { %>
+          <tr class="table__row">
+            <td class="table__id"><%= item.product_id %></td>
+            <td class="table__code"><%= item.sku %></td>
+            <td class="table__product"><%= item.product_name %></td>
+            <td class="table__category"><%= item.license_name %></td>
+            <td class="table__edit">
+              <a class="table__link" href="/admin/edit/<%= item.product_id %>"><img class="table__img" src="/img/icons/edit_pencil.svg" alt="Icono lapiz" /></a>
+            </td>
+            <td class="table__delete">
+              <a class="table__link" href="#"><img class="table__img delete__button" src="/img/icons/delete_trash.svg" alt="Icono basura" data-id="<%= item.product_id %>" /></a>
+            </td>
+          </tr>
+          <% }) %>
+        </table>
+      </div>
+    </section>
+  </main>
 
-    <%- include('partials/footer') %>
-  </body>
+  <%- include('partials/footer') %>
+
+  <script src="../../js/deleteItem.js"></script>
+</body>
+
 </html>
