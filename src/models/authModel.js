@@ -14,6 +14,7 @@ const getUser = async (body, session) => {
 
             userData.role_name == 'admin' ? session.admin = true : session.admin = false;
             userData.role_name == 'mod' ? session.mod = true : session.mod = false;
+            userData.role_name == 'usuario' ? session.user = true : session.user = false;
 
             session.name = userData.name;
 

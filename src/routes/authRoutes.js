@@ -6,10 +6,16 @@ import {
 
 const router = express.Router();
 
+
+// ROUTES
 router.get('/login', authControllers.login);
+
 router.post('/login', loginPostController);
+
 router.get('/register', authControllers.register);
+
 router.post('/register', authControllers.registerPost);
+
 router.get('/logout', authControllers.logout);
 
 

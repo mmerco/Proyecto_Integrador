@@ -11,7 +11,7 @@ export const adminAuth = (req, res, next) => {
             res.redirect('/auth/login' + '?msj=Debe estar logueado para ingresar');
         } else {
 
-            res.redirect('/home' + '?msj=No tiene los permisos de admin para ingresar');
+            res.redirect('/admin' + '?msj=No tiene los permisos de admin para ingresar');
         }
     } else {
         next();

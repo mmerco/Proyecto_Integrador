@@ -1,6 +1,10 @@
 import express from "express";
 import upload from "../middlewares/upload.js";
 import {
+    adminAuth,
+    modAuth
+} from '../middlewares/auth.js'
+import {
     adminController,
     searchController,
     editController,
@@ -15,19 +19,19 @@ const router = express.Router();
 
 
 // ROUTES
-router.get('/', adminController);
+router.get('/', modAuth, adminController);
 
-router.get('/search', searchController);
+router.get('/search', modAuth, searchController);
 
-router.get('/create', createController);
+router.get('/create', adminAuth, createController);
 
-router.post('/create', upload, createControllerPOST);
+router.post('/create', adminAuth, upload, createControllerPOST);
 
-router.get('/edit/:id', editController);
+router.get('/edit/:id', modAuth, editController);
 
-router.put('/edit/:id', upload, editControllerPUT);
+router.put('/edit/:id', modAuth, upload, editControllerPUT);
 
-router.delete('/delete/:id', deleteController);
+router.delete('/delete/:id', adminAuth, deleteController);
 
 
 
