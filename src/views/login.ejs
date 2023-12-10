@@ -7,7 +7,12 @@
 
   <main class="login__main container">
     <h1 class="login__title">INGRESAR A MI CUENTA</h1>
-    <form class="login__form" method="post" action="">
+
+    <% if (msj) { %>
+    <h2><%= msj %></h2>
+    <% } %>
+
+    <form class="login__form" method="post" action="/auth/login">
       <section class="login__data">
         <div class="login-data__section">
           <label for="email">Email:</label>
@@ -15,7 +20,7 @@
         </div>
         <div class="login-data__section">
           <label for="pass">Contraseña:</label>
-          <input type="password" name="pass" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" minlength="8" pattern="^[^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$" required />
+          <input type="password" name="pass" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" minlength="6" pattern="^[^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$" required />
         </div>
       </section>
       <section class="login__submit">
