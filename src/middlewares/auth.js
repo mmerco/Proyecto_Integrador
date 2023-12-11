@@ -11,7 +11,7 @@ export const adminAuth = (req, res, next) => {
             res.redirect('/auth/login' + '?msg=Debe estar logueado para ingresar');
         } else {
 
-            res.redirect('/admin' + '?msg=No tiene los permisos de admin para crear o eliminar items');
+            res.redirect('/admin' + '?msg_err=No tiene los permisos de admin para crear o eliminar items');
         }
     } else {
         next();

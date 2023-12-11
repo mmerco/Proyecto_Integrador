@@ -14,6 +14,12 @@
 
   <main class="home__main container">
 
+    <% if (msg) { %>
+    <div class="msg__error">
+      <h2 class="msg"><%= msg %></h2>
+    </div>
+    <% } %>
+
     <% collections.forEach(collection => { %>
     <section class="collection">
       <article class="collection__info">

@@ -61,7 +61,7 @@ export const createUser = async (formData, session) => {
                     submenu_data: await getCategorysFromDB(),
                     session_name: session.name ? session.name : false,
                     cart_number: session.cart ? session.cart.length : 0,
-                    msg: `Ya existe un usuario registrado con el e-mail ${formData.email}`
+                    msg: `Ya existe un usuario registrado con el email ${formData.email}`
                 }
             }
         } else {
@@ -77,6 +77,25 @@ export const createUser = async (formData, session) => {
         }
     } catch (error) {
         console.log('Se produjo un error al crear el usuario: ', error);
+
+        throw error;
+    }
+}
+
+
+
+export const loginModel = async (query, session) => {
+    try {
+
+        return {
+            title: 'Login | Funkoshop',
+            submenu_data: await getCategorysFromDB(),
+            session_name: session.name ? session.name : false,
+            cart_number: session.cart ? session.cart.length : 0,
+            msg: query.msg ? query.msg : false
+        }
+    } catch (error) {
+        console.log('Se produjo un error al traer la informacion del usuario: ', error);
 
         throw error;
     }

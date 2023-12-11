@@ -1,7 +1,8 @@
 import getCategorysFromDB from "../services/categorysServices.js";
 import {
     getUser,
-    createUser
+    createUser,
+    loginModel
 } from "../models/authModel.js";
 
 
@@ -38,6 +39,13 @@ export const registerControllerPOST = async (req, res) => {
 
         res.render('register', response.data);
     }
+}
+
+
+
+export const loginController = async (req, res) => {
+
+    res.render('login', await loginModel(req.query, req.session));
 }
 
 

@@ -1,10 +1,10 @@
 import {
+    adminModel,
     adminSearch,
     getEditData,
     getCreateModel
 } from '../models/adminModel.js'
 import {
-    getAllItems,
     getItemsByParams,
     createItem,
     editItem,
@@ -15,11 +15,8 @@ import {
 
 export const adminController = async (req, res) => {
     try {
-        res.render('admin', {
-            data: await getAllItems(),
-            session_name: req.session.name,
-            title: 'Admin | Funkoshop'
-        });
+        res.render('admin', await adminModel(req.query, req.session));
+
     } catch (error) {
         console.log('Se produjo un error: ', error);
 
@@ -28,11 +25,13 @@ export const adminController = async (req, res) => {
 }
 
 
-export const searchController = async (req, res) => {
+export const adminSearchController = async (req, res) => {
     try {
         res.render('admin', {
             data: await adminSearch(req.query.search_value),
             session_name: req.session.name,
+            msg_err: false,
+            msg_ok: false,
             title: 'Admin | Funkoshop'
         });
     } catch (error) {
@@ -72,11 +71,11 @@ export const editControllerPUT = async (req, res) => {
 
         if (editedItem) {
             res.redirect('/admin' +
-                `?msg=Se edito el item ${editedItem.prduct_name} con ID ${editedItem.product_id} correctamente`
+                `?msg_ok=Se edito el item ${editedItem.prduct_name} con ID ${editedItem.product_id} correctamente`
             );
         } else {
             res.redirect('/admin' +
-                `?msg=Se produjo un error. Item no editado`
+                `?msg_err=Se produjo un error. Item no editado`
             );
         }
     } catch (error) {
@@ -105,11 +104,11 @@ export const createControllerPOST = async (req, res) => {
 
         if (createdItem) {
             res.redirect('/admin' +
-                `?msg=Se creo el item ${createdItem.product_name} con ID ${createdItem.product_id} correctamente`
+                `?msg_ok=Se creo el item ${createdItem.product_name} con ID ${createdItem.product_id} correctamente`
             );
         } else {
             res.redirect('/admin' +
-                `?msg=Se produjo un error. Item no creado`
+                `?msg_err=Se produjo un error. Item no creado`
             );
         }
     } catch (error) {
@@ -126,11 +125,11 @@ export const deleteController = async (req, res) => {
 
         if (deletedItem) {
             res.redirect('/admin' +
-                `?msg=Se elimino el item ${deletedItem.prduct_name} con ID ${deletedItem.product_id} correctamente`
+                `?msg_ok=Se elimino el item ${deletedItem.prduct_name} con ID ${deletedItem.product_id} correctamente`
             );
         } else {
             res.redirect('/admin' +
-                `?msg=Se produjo un error. Item no eliminado`
+                `?msg_err=Se produjo un error. Item no eliminado`
             );
         }
     } catch (error) {

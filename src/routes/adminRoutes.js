@@ -6,7 +6,7 @@ import {
 } from '../middlewares/auth.js'
 import {
     adminController,
-    searchController,
+    adminSearchController,
     editController,
     createController,
     createControllerPOST,
@@ -21,7 +21,7 @@ const router = express.Router();
 // ROUTES
 router.get('/', modAuth, adminController);
 
-router.get('/search', modAuth, searchController);
+router.get('/search', modAuth, adminSearchController);
 
 router.get('/create', adminAuth, createController);
 

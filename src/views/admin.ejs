@@ -6,6 +6,19 @@
   <%- include('partials/header-admin') %>
 
   <main class="admin__main container">
+
+    <% if (msg_err) { %>
+    <div class="msg__error">
+      <h2 class="msg"><%= msg_err %></h2>
+    </div>
+    <% } %>
+
+    <% if (msg_ok) { %>
+    <div class="msg__success">
+      <h2 class="msg"><%= msg_ok %></h2>
+    </div>
+    <% } %>
+
     <section class="admin__search-product">
       <form class="search-product__form" action="/admin/search" method="get">
         <button class="search-product__button" type="submit">

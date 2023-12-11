@@ -2,9 +2,43 @@ import {
     adminSearchFromDB,
     getDuesFromDB
 } from '../services/adminServices.js'
+import { getAllItems } from './itemsModel.js';
 import getCategorysFromDB from '../services/categorysServices.js';
 import getCollectionsFromDB from '../services/collectionsServices.js';
 
+
+
+
+export const adminModel = async (query, session) => {
+    try {
+        if (!query.msg_ok && !query.msg_err) {
+
+            return {
+                data: await getAllItems(),
+                session_name: session.name,
+                msg_err: false,
+                msg_ok: false,
+                title: 'Admin | Funkoshop'
+            }
+        } else {
+            let msgOk = query.msg_ok ? query.msg_ok : false;
+            let msgErr = query.msg_err ? query.msg_err : false;
+
+
+            return {
+                data: await getAllItems(),
+                session_name: session.name,
+                msg_err: msgErr,
+                msg_ok: msgOk,
+                title: 'Admin | Funkoshop'
+            }
+        }
+    } catch (error) {
+        console.log('Se produjo un error: ', error);
+
+        throw error;
+    }
+}
 
 
 
