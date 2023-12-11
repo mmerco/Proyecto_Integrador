@@ -14,7 +14,7 @@ document.addEventListener('click', event => {
                 'Content-Type': 'application/x-www-form-urlencoded',
             }
         })
-            .then(() => window.location.reload(true));
+            .then(response => window.location.replace(response.url));
     }
 });
 

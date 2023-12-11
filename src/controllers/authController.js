@@ -51,15 +51,6 @@ export const loginController = async (req, res) => {
 
 
 export const authControllers = {
-    login: async (req, res) => {
-        res.render('login', {
-            title: 'Login | Funkoshop',
-            submenu_data: await getCategorysFromDB(),
-            session_name: req.session.name ? req.session.name : false,
-            cart_number: req.session.cart ? req.session.cart.length : 0,
-            msg: false
-        });
-    },
     register: async (req, res) => {
         res.render('register', {
             title: 'Register | Funkoshop',
