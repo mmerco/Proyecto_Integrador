@@ -1,3 +1,7 @@
+.card-item {
+    min-height: 45rem;
+}
+
 .card-item__cover {
     display: flex;
     position: relative;
@@ -5,6 +9,8 @@
 
 .card-item__cover img {
     animation: fade .7s;
+    width: 350px;
+    height: 350px;
 }
 
 .card-item__img--back {
@@ -49,6 +55,7 @@
     font-size: var(--font-medium);
     font-weight: 700;
     text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 .card-item__price {

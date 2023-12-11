@@ -1,14 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head') %>
 
-  <body>
-    <%- include('partials/header-shop') %>
-    <main>
-      <h1>prueba shop</h1>
-    </main>
-    <%- include('partials/footer') %>
+<%- include('partials/head') %>
 
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-  </body>
+<body>
+
+  <% if (admin_header) { %>
+  <%- include('partials/header-admin') %>
+  <% } else { %>
+  <%- include('partials/header-shop') %>
+  <% } %>
+
+  <main class="shop__main container">
+
+    <% if (query.search != undefined) { %>
+    <%- include('partials/aside-query') %>
+    <% } else { %>
+    <%- include('partials/aside') %>
+    <% } %>
+
+    <section class="shop__content">
+      <% for( let i = 0; i < data[1]; i++ ) { %>
+      <article class="shop-content__article">
+        <ul class="slider__items shop__items">
+          <% data[0][i].forEach(item => { %>
+          <li class="slider__item">
+            <article class="card-item">
+              <a class="card-item__link" href="/shop/item/<%= item.product_id %>">
+                <picture class="card-item__cover">
+                  <img class="card-item__img--front" src="<%= item.image_front %>" alt="<%= item.product_description %>" />
+                  <img class="card-item__img--back" src="<%= item.image_back %>" alt="<%= item.product_description %>" />
+                  <span class="card-item__tag">Nuevo</span>
+                </picture>
+                <div class="card-item__content">
+                  <p class="card-item__collection">
+                    <%= item.license_name %>
+                  </p>
+                  <h4 class="card-item__name"><%= item.product_name %></h4>
+                  <p class="card-item__price">$ <%= item.price %></p>
+                  <p class="card-item__promo">
+                    <%= item.dues %> CUOTAS SIN INTERÉS
+                  </p>
+                </div>
+              </a>
+            </article>
+          </li>
+          <% }) %>
+        </ul>
+      </article>
+      <% } %>
+
+      <article class="shop-content__article">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </article>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+
 </html>

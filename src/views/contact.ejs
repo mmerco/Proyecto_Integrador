@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+
+<body>
+
+  <% if (admin_header) { %>
+  <%- include('partials/header-admin') %>
+  <% } else { %>
+  <%- include('partials/header-shop') %>
+  <% } %>
+
+  <main class="contact__main container">
+    <form class="contact__form" action="" method="post">
+      <h2 class="form__header">CONTACTENOS</h2>
+      <div class="form__item">
+        <label class="item__label" for="name"> Nombre <span>*</span> </label>
+        <input class="item__input" type="text" name="name" required />
+      </div>
+      <div class="form__item">
+        <label class="item__label" for="email"> Email <span>*</span> </label>
+        <input class="item__input" type="email" name="email" required />
+      </div>
+      <div class="form__item">
+        <label class="item__label" for="phone"> Teléfono </label>
+        <input class="item__input" type="text" name="phone" />
+      </div>
+      <div class="form__item">
+        <label class="item__label" for="msj"> Mensaje <span>*</span> </label>
+        <textarea class="item__textarea" name="msj" cols="30" rows="5" required></textarea>
+      </div>
+      <div class="form__submit">
+        <input class="submit__button" type="submit" value="ENVIAR" />
+      </div>
+    </form>
+    <section class="contact__info">
+      <article class="info__links">
+        <a class="info__link" href="">
+          <iconify-icon icon="entypo-social:facebook-with-circle" style="color: var(--dark-bg-900)" ; width="60" height="60"></iconify-icon>
+        </a>
+        <a class="info__link" href="">
+          <iconify-icon icon="entypo-social:instagram-with-circle" style="color: var(--dark-bg-900)" ; width="60" height="60"></iconify-icon>
+        </a>
+        <a class="info__link" href="">
+          <iconify-icon icon="entypo-social:pinterest-with-circle" style="color: var(--dark-bg-900)" ; width="60" height="60"></iconify-icon>
+        </a>
+        <a class="info__link" href="">
+          <iconify-icon icon="entypo-social:twitter-with-circle" style="color: var(--dark-bg-900)" ; width="60" height="60">
+          </iconify-icon>
+        </a>
+      </article>
+      <article class="info__content">
+        <h4 class="content__title">TELEFONO</h4>
+        <p class="content__data">(011) 4555-3333</p>
+      </article>
+      <article class="info__content">
+        <h4 class="content__title">EMAIL</h4>
+        <div class="info__subcontent">
+          <h6 class="content__subtitle">CONSULTAS</h6>
+          <p class="content__data">consultas@funkoshop.com.ar</p>
+        </div>
+        <div class="info__subcontent">
+          <h6 class="content__subtitle">VENTAS</h6>
+          <p class="content__data">ventas@funkoshop.com.ar</p>
+        </div>
+        <div class="info__subcontent">
+          <h6 class="content__subtitle">PEDIDOS</h6>
+          <p class="content__data">pedidos@funkoshop.com.ar</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+
+</html>

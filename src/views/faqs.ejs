@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+
+<body>
+
+  <% if (admin_header) { %>
+  <%- include('partials/header-admin') %>
+  <% } else { %>
+  <%- include('partials/header-shop') %>
+  <% } %>
+
+  <main class="faqs__main container">
+    <h1 class="admin__title">preguntas frecuentes</h1>
+    <section class="faqs__section">
+      <ul class="faqs__topic">
+        <li>
+          <a class="faqs-topic__link faqs-topic__title" href="">pedir en Funkoshop</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Necesito una cuenta para comprar?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Puedo cancelar mi pedido?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Puedo cambiar la dirección de entrega de mi pedido?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Puedo agregar o eliminar productos a mi pedido realizado?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Cuanto demoran los reembolsos?</a>
+        </li>
+      </ul>
+      <ul class="faqs__topic">
+        <li>
+          <a class="faqs-topic__link faqs-topic__title" href="">envíos</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Cómo recibo envío gratis en Funkoshop?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Qué tan pronto se enviará mi pedido?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Cómo hago el seguimiento de mi pedido de Funkoshop?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">Mi seguimiento no se ha actualizado. ¿Está perdido?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">Mi pedido aparece entregado, pero aún no lo he recibido</a>
+        </li>
+      </ul>
+    </section>
+    <section class="faqs__section">
+      <ul class="faqs__topic">
+        <li>
+          <a class="faqs-topic__link faqs-topic__title" href="">Pagos y facturación</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Mi información de pago está segura en Funkoshop?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Cuándo se cobra el pago de mi pedido?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Por qué se rechazó mi pago?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Puedo cambiar mi dirección de facturación en un pedido?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Puedo cambiar mi pago antes de que se envíe mi pedido?</a>
+        </li>
+      </ul>
+      <ul class="faqs__topic">
+        <li>
+          <a class="faqs-topic__link faqs-topic__title" href="">devoluciones</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Cuál es la política de devoluciones de Funkoshop?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Cómo solicito una devolución en Funkoshop?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Cuál es la tarifa de devolución?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">Mi pedido llegó dañado, ¿puedo pedir un cambio?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">Mi pedido es incorrecto, ¿cómo puedo recibir mis artículos?</a>
+        </li>
+      </ul>
+    </section>
+    <section class="faqs__section">
+      <ul class="faqs__topic">
+        <li>
+          <a class="faqs-topic__link faqs-topic__title" href="">productos y disponibilidad</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Que significa "C/Variante"?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Cuándo se lanzan los Funkos exclusivos de Funkoshop?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Se encuentran en tiendas los Funkos exclusivos Funkoshop?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Por qué se agotó un artículo antes de completar el pago?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Reponen artículos agotados?</a>
+        </li>
+      </ul>
+      <ul class="faqs__topic">
+        <li>
+          <a class="faqs-topic__link faqs-topic__title" href="">Pop! personalizados</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Cuántos Pop! personalizados puedo ordenar en un pedido?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Que es un Pop! personalizado?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Cuánto cuesta un Pop! personalizado?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Cuánto demora el envío de un Pop! personalizado?</a>
+        </li>
+        <li>
+          <a class="faqs-topic__link" href="">¿Puedo cancelar o cambiar una oden de Pop! personalizado?</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</body>
+
+</html>

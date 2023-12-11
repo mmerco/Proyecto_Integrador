@@ -1,0 +1,23 @@
+.msg__error {
+    background-color: var(--primary-300);
+    padding: var(--spacing-12);
+    margin-top:  var(--spacing-28);
+    text-align: center;
+    border: 2px solid var(--primary-300);
+    filter: drop-shadow(0 0 .4rem rgba(0, 0, 0, 0.10));
+}
+
+.msg__success {
+    background-color: var(--secondary-300);
+    padding: var(--spacing-20);
+    margin-top:  var(--spacing-28);
+    text-align: center;
+    border: 2px solid var(--secondary-300);
+    filter: drop-shadow(0 0 .4rem rgba(0, 0, 0, 0.10));
+}
+
+.msg {
+    font-size: var(--font-medium);
+    font-weight: 600;
+    letter-spacing: .04em;
+}

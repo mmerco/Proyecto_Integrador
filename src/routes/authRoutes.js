@@ -1,12 +1,23 @@
 import express from 'express';
-import authControllers from '../controllers/authController.js'
+import {
+    authControllers,
+    loginController,
+    loginControllerPOST,
+    registerControllerPOST
+} from '../controllers/authController.js'
 
 const router = express.Router();
 
-router.get('/login', authControllers.login);
-router.post('/login', authControllers.loginPost);
+
+// ROUTES
+router.get('/login', loginController);
+
+router.post('/login', loginControllerPOST);
+
 router.get('/register', authControllers.register);
-router.post('/register', authControllers.registerPost);
+
+router.post('/register', registerControllerPOST);
+
 router.get('/logout', authControllers.logout);
 
 

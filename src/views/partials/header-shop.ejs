@@ -2,38 +2,49 @@
   <nav class="navbar container">
     <picture class="navbar__logo">
       <a href="/home">
-        <img
-          src="/img/branding/logo_light_horizontal.svg"
-          alt="Logo Funkoshop"
-        />
+        <img src="/img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop" />
       </a>
     </picture>
     <ul class="navbar__menu">
       <li class="navbar__item whith-submenu">
-        <a class="navbar__link whith-icon" href="/shop"
-          >SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon
-        ></a>
+        <a class="navbar__link whith-icon" href="/shop">SHOP<iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
         <ul class="submenu">
+
+          <% submenu_data.forEach(category => { %>
           <li class="submenu__item">
-            <a href="" class="submenu__link">Funkos</a>
+            <a href="/shop/category/<%= category.category_name %>" class="submenu__link"><%= category.category_name %></a>
           </li>
-          <li class="submenu__item">
-            <a href="" class="submenu__link">Remeras</a>
-          </li>
-          <li class="submenu__item">
-            <a href="" class="submenu__link">Llaveros</a>
-          </li>
+          <% }) %>
+
         </ul>
       </li>
       <li class="navbar__item">
         <a class="navbar__link" href="/contact">CONTACTO</a>
       </li>
+
+      <% if (!session_name) { %>
       <li class="navbar__item">
         <a class="navbar__link" href="/auth/login">LOGIN</a>
       </li>
+      <% } else { %>
+      <li class="navbar__item whith-submenu">
+        <a class="navbar__link whith-icon" href=""><%= session_name %><iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+        <ul class="submenu">
+          <li class="submenu__item">
+            <a href="/auth/logout" class="submenu__link">Salir</a>
+          </li>
+        </ul>
+      </li>
+      <% } %>
+
       <li class="navbar__item">
-        <a class="navbar__cart" href="/cart">
+        <a class="navbar__cart whith-tag" href="/shop/cart">
           <img src="/img/icons/cart-icon.svg" alt="Icono Carrito" />
+
+          <% if (cart_number != 0) { %>
+          <span class="cart__tag"><%= cart_number %></span>
+          <% } %>
+
         </a>
       </li>
     </ul>

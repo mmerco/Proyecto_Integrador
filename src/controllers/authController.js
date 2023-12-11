@@ -1,10 +1,69 @@
-const authControllers = {
-    login: (req, res) => res.send('Route for Login View'),
-    loginPost: (req, res) => res.send('Route for Login View POST'),
-    register: (req, res) => res.send('Route for Register View'),
-    registerPost: (req, res) => res.send('Route for Register View POST'),
-    logout: (req, res) => res.send('Route for Logout View')
+import getCategorysFromDB from "../services/categorysServices.js";
+import {
+    getUser,
+    createUser,
+    loginModel
+} from "../models/authModel.js";
+
+
+
+export const loginControllerPOST = async (req, res) => {
+
+    let response = await getUser(req.body, req.session);
+
+    if (response.status) {
+
+        if (req.session.admin || req.session.mod) {
+
+            res.redirect('/admin');
+        } else {
+
+            res.redirect('/home');
+        }
+    } else {
+
+        res.render('login', response.data);
+    }
 }
 
 
-export default authControllers;
+
+export const registerControllerPOST = async (req, res) => {
+
+    let response = await createUser(req.body, req.session);
+
+    if (response.status) {
+
+        res.redirect('/home');
+    } else {
+
+        res.render('register', response.data);
+    }
+}
+
+
+
+export const loginController = async (req, res) => {
+
+    res.render('login', await loginModel(req.query, req.session));
+}
+
+
+
+export const authControllers = {
+    register: async (req, res) => {
+        res.render('register', {
+            title: 'Register | Funkoshop',
+            submenu_data: await getCategorysFromDB(),
+            session_name: req.session.name ? req.session.name : false,
+            cart_number: req.session.cart ? req.session.cart.length : 0,
+            msg: false
+
+        });
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+
+        res.redirect('login');
+    }
+}

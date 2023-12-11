@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+
+<body>
+
+  <% if (admin_header) { %>
+  <%- include('partials/header-admin') %>
+  <% } else { %>
+  <%- include('partials/header-shop') %>
+  <% } %>
+
+  <main class="cart__main container">
+    <section class="cart-products">
+      <h2 class="cart-products__title underlined">CARRITO DE COMPRAS</h2>
+      <div class="cart-products__detail">
+        <div class="cart-product cart-products__header">
+          <p class="header__category">DETALLE DE PRODUCTO</p>
+          <p class="header__category">CANTIDAD</p>
+          <p class="header__category">TOTAL</p>
+        </div>
+
+        <% if (cart_items) { %>
+        <% cart_items.forEach(item => { %>
+        <div class="cart-product">
+          <div class="cart-product__section item__section">
+            <a href="/shop/item/<%= item.product_id %>" class="cart-product__link">
+              <picture class="item__cover">
+                <img class="item__cover--front" src="<%= item.image_front %>" alt="<%= item.product_description %>" />
+                <img class="item__cover--back" src="<%= item.image_back %>" alt="<%= item.product_description %> en caja" />
+              </picture>
+            </a>
+            <div class="item__content">
+              <h4 class="cart-item__name"><%= item.product_name %></h4>
+              <p class="cart-item__collection"><%= item.license_name %></p>
+              <p class="cart-item__price">Precio unitario: $ <%= item.price %></p>
+            </div>
+          </div>
+          <div class="cart-product__section">
+            <div class="quantity__value">
+              <input class="value" name="<%= item.sku %>" type="number" min="1" max="<%= item.stock %>" step="1" value="<%= item.quantity %>" />
+              <button class="add" data-id="<%= item.sku %>">+</button>
+              <button class="subtract" data-id="<%= item.sku %>">-</button>
+            </div>
+          </div>
+          <div class="cart-product__section">
+            <p class="cart-product__total">$ <%= item.total_price %></p>
+          </div>
+          <div class="cart-product__section">
+            <button class="cart-product__delete">
+              <iconify-icon class="cart-product__delete--icon" icon="tabler:playstation-x" width="28px" height="28px"></iconify-icon>
+            </button>
+          </div>
+        </div>
+        <% }) %>
+        <% } %>
+
+      </div>
+    </section>
+    <section class="cart-summary">
+      <h2 class="cart-summary__title underlined">RESUMEN</h2>
+      <div class="cart-summary__detail">
+        <div class="cart-summary__section">
+          <p class="summary__header">CANTIDAD DE ELEMENTOS</p>
+
+          <% if (cart_summary) { %>
+          <p class="summary__data"><%= cart_summary.items %></p>
+          <% } else { %>
+          <p class="summary__data">0</p>
+          <% } %>
+
+        </div>
+        <div class="cart-summary__section">
+          <p class="summary__header">SUBTOTAL</p>
+
+          <% if (cart_summary) { %>
+          <p class="summary__data">$ <%= cart_summary.subtotal %></p>
+          <% } else { %>
+          <p class="summary__data">$ 0,00</p>
+          <% } %>
+
+        </div>
+        <div class="cart-summary__section">
+          <p class="summary__header">ENVIO</p>
+
+          <% if (cart_summary) { %>
+          <p class="summary__data">$ <%= cart_summary.shipment %></p>
+          <% } else { %>
+          <p class="summary__data">$ 0,00</p>
+          <% } %>
+
+        </div>
+        <div class="cart-summary__section cart-summary__total">
+          <p class="summary__header">TOTAL</p>
+
+          <% if (cart_summary) { %>
+          <p class="summary__data">$ <%= cart_summary.total %></p>
+          <% } else { %>
+          <p class="summary__data">$ 0,00</p>
+          <% } %>
+
+        </div>
+      </div>
+      <div class="cart-summary__pay">
+        <button class="pay__button">IR A PAGAR</button>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="../../js/itemQuantityManage.js"></script>
+</body>
+
+</html>

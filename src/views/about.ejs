@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+<body>
+  <% if (admin_header) { %>
+  <%- include('partials/header-admin') %>
+  <% } else { %>
+  <%- include('partials/header-shop') %>
+  <% } %>
+
+  <%- include('partials/banner') %>
+
+  <main class="about__main container">
+    <h1 class="admin__title underlined">acerca de nosotros</h1>
+    <section class="about__content">
+      <p>
+        Fundada en 1998 por Mike Becker, la empresa fue concebida
+        originalmente por Becker como un pequeño proyecto para recuperar
+        varios juguetes de baja tecnología y con temática nostálgica en el
+        mundo de alta tecnología de hoy. El primer muñeco fabricado por Funko
+        fue el del ícono publicitario de restaurantes Big Boy. Vendido en
+        2005, Funko LLC ahora está dirigido por Brian Mariotti como
+        presidente. Desde 2005, la empresa ha ampliado el alcance de sus
+        líneas de juguetes exclusivas y ha firmado acuerdos de licencia con
+        WWE, Lucasfilm, Marvel, Hasbro, Elvis Presley, CBS, FOX, Warner Bros,
+        Disney, Microsoft, HBO, etc.
+      </p>
+      <p>
+        Funko es una empresa de juguetes centrada en la cultura pop con
+        licencia y ubicada en Everett, WA. Funko posee actualmente más de 150
+        licencias que incluyen, entre otras; Lucas Films, Marvel, Hasbro, The
+        Walking Dead, Juego de Tronos, DC Comics, NBA, Sanrio y Disney.
+      </p>
+      <p>
+        La empresa que puso el Pop! en la cultura pop ha viajado al corazón de
+        la industria del entretenimiento. La segunda ubicación física de
+        Funko, Funko Hollywood, tiene 40,000 pies cuadrados de fantasía,
+        aventuras, diversión, oportunidades fotográficas increíbles y
+        escenarios inmersivos inspirados en tus mundos, personajes y momentos
+        favoritos. Disfrute de una experiencia de venta minorista diferente a
+        todo lo que haya experimentado antes.
+      </p>
+    </section>
+
+    <%- include('partials/slider') %>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script src="../../js/glide.js"></script>
+</body>
+
+</html>

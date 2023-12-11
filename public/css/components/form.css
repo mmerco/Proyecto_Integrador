@@ -152,3 +152,21 @@
 .admin-form__figure {
     display: none;
 }
+
+.file__button {
+    border: none;
+    border-radius: 25px;
+    width: 16.5rem;
+    background-color: var(--secondary-900);
+    padding: var(--spacing-8) 0;
+    font-family: var(--base-font);
+    color: var(--light-font-solid);
+    font-weight: 600;
+    font-size: var(--font-xsmall);
+    transition: background .3s ease-in-out;
+}
+
+.file__button:hover {
+    cursor: pointer;
+    background-color: var(--primary-900);
+}

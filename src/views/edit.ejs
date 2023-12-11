@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+<body>
+  <%- include('partials/header-admin') %>
+
+  <main class="create__main container">
+    <h1 class="admin__title">EDITAR ITEM</h1>
+    <form method="POST" class="admin-form" action="/admin/edit/<%= item.product_id %>?_method=PUT" enctype="multipart/form-data">
+      <section class="admin-form__section space-between">
+        <div class="admin-form__select">
+          <label for="category_id" class="light-label">Categoría:</label>
+          <div class="stylized-select">
+            <select name="category_id" id="category">
+              <% categorys.forEach(category => { %>
+
+              <% if (category.category_name == item.category_name) { %>
+
+              <option selected value="<%= category.category_id %>">
+                <%= category.category_name %>
+              </option>
+
+              <% } else { %>
+
+              <option value="<%= category.category_id %>">
+                <%= category.category_name %>
+              </option>
+
+              <% } %>
+              <% }) %>
+            </select>
+            <div class="stylized-select__arrow">
+              <iconify-icon icon="iconamoon:arrow-down-2-fill" width="30px" height="30px"></iconify-icon>
+            </div>
+          </div>
+        </div>
+        <div class="admin-form__select">
+          <label for="license_id" class="light-label">Licencia:</label>
+          <div class="stylized-select">
+            <select name="license_id" id="license">
+              <% licenses.forEach(license => { %>
+
+              <% if (license.license_name == item.license_name) { %>
+
+              <option selected value="<%= license.license_id %>">
+                <%= license.license_name %>
+              </option>
+
+              <% } else { %>
+
+              <option value="<%= license.license_id %>">
+                <%= license.license_name %>
+              </option>
+
+              <% } %>
+              <% }) %>
+            </select>
+            <div class="stylized-select__arrow">
+              <iconify-icon icon="iconamoon:arrow-down-2-fill" width="30px" height="30px"></iconify-icon>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="admin-form__section">
+        <div class="admin-form__text">
+          <label for="product_name">Nombre del Producto:</label>
+          <input type="text" name="product_name" class="input-text__large" value="<%= item.product_name %>" required />
+        </div>
+      </section>
+      <section class="admin-form__section">
+        <textarea name="product_description" id="description" placeholder="Descripción del producto" required><%= item.product_description %></textarea>
+      </section>
+      <section class="admin-form__section">
+        <div class="admin-form__text">
+          <label for="sku">SKU:</label>
+          <input type="text" name="sku" class="input-text__medium" pattern="^[A-Z]{3}\d{6}$" value="<%= item.sku %>" required />
+        </div>
+        <div class="admin-form__text">
+          <label for="price">Precio: $</label>
+          <input type="text" name="price" class="input-text__medium price" pattern="^\d+(\.\d+)?$" value="<%= item.price %>" required />
+        </div>
+        <div class="admin-form__text">
+          <label for="stock">Stock:</label>
+          <input type="text" name="stock" class="input-text__small" pattern="^\d+$" value="<%= item.stock %>" required />
+        </div>
+      </section>
+      <section class="admin-form__section">
+        <div class="admin-form__text">
+          <label for="discount">Descuento:</label>
+          <input type="text" name="discount" class="input-text__small off" pattern="^\d+$" placeholder="0" value="<%= item.discount %>" />
+          <label for="off">%</label>
+        </div>
+        <div class="admin-form__select">
+          <label for="dues">Cuotas:</label>
+          <div class="stylized-select">
+            <select name="dues" id="payment">
+              <% dues.forEach(row => { %>
+
+              <% if (row.dues == item.dues) { %>
+
+              <option value="<%= row.dues %>" selected><%= row.dues %> Cuotas sin interés</option>
+
+              <% } else { %>
+
+              <option value="<%= row.dues %>"><%= row.dues %> Cuotas sin interés</option>
+
+              <% } %>
+              <% }) %>
+            </select>
+            <div class="stylized-select__arrow">
+              <iconify-icon icon="iconamoon:arrow-down-2-fill" width="30px" height="30px"></iconify-icon>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="admin-form__section admin-files__section">
+        <div class="admin-form__file">
+          <label for="image_front">Imágen Frente:</label>
+          <input type="file" accept="image/*" name="image_front" class="admin-file__front hidden" required />
+          <button type="button" class="file__button img-front__button">Seleccionar Archivo</button>
+        </div>
+        <div class="admin-form__file">
+          <label for="image_back">Imágen Dorso:</label>
+          <input type="file" accept="image/*" name="image_back" class="admin-file__back hidden" required />
+          <button type="button" class="file__button img-back__button">Seleccionar Archivo</button>
+        </div>
+      </section>
+      <section class="admin-form__section">
+        <figure class="admin-form__figure--edit admin-figure__front">
+          <img src="<%= item.image_front %>" alt="" class="admin-img__front" />
+          <figcaption>Frente</figcaption>
+        </figure>
+        <figure class="admin-form__figure--edit admin-figure__back">
+          <img src="<%= item.image_back %>" alt="" class="admin-img__back" />
+          <figcaption>Dorso</figcaption>
+        </figure>
+      </section>
+      <section class="admin-form__section">
+        <div class="admin-form__buttons">
+          <button type="submit" class="admin__button">
+            Modificar Producto
+          </button>
+        </div>
+      </section>
+    </form>
+  </main>
+
+  <%- include('partials/footer') %>
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script src="../../js/adminForm.js"></script>
+</body>
+
+</html>

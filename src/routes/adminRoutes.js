@@ -1,14 +1,38 @@
 import express from "express";
-import adminControllers from "../controllers/adminController.js";
+import upload from "../middlewares/upload.js";
+import {
+    adminAuth,
+    modAuth
+} from '../middlewares/auth.js'
+import {
+    adminController,
+    adminSearchController,
+    editController,
+    createController,
+    createControllerPOST,
+    editControllerPUT,
+    deleteController
+} from "../controllers/adminController.js";
+
 
 const router = express.Router();
 
-router.get('/', adminControllers.admin);
-router.get('/create', adminControllers.create);
-router.post('/create', adminControllers.createPost);
-router.get('/edit/:id', adminControllers.edit);
-router.put('/edit/:id', adminControllers.editPut);
-router.delete('/delete/:id', adminControllers.delete);
+
+// ROUTES
+router.get('/', modAuth, adminController);
+
+router.get('/search', modAuth, adminSearchController);
+
+router.get('/create', adminAuth, createController);
+
+router.post('/create', adminAuth, upload, createControllerPOST);
+
+router.get('/edit/:id', modAuth, editController);
+
+router.put('/edit/:id', modAuth, upload, editControllerPUT);
+
+router.delete('/delete/:id', adminAuth, deleteController);
+
 
 
 export default router;
