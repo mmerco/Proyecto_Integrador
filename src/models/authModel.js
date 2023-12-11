@@ -30,6 +30,7 @@ export const getUser = async (body, session) => {
                 data: {
                     title: 'Login | Funkoshop',
                     submenu_data: await getCategorysFromDB(),
+                    session_name: session.name ? session.name : false,
                     cart_number: session.cart ? session.cart.length : 0,
                     msj: 'Usuario o contraseña invalido. Intente nuevamente'
                 }
@@ -56,8 +57,9 @@ export const createUser = async (formData, session) => {
             return {
                 status: false,
                 data: {
-                    title: 'Login | Funkoshop',
+                    title: 'Register | Funkoshop',
                     submenu_data: await getCategorysFromDB(),
+                    session_name: session.name ? session.name : false,
                     cart_number: session.cart ? session.cart.length : 0,
                     msj: `Ya existe un usuario registrado con el e-mail ${formData.email}`
                 }
