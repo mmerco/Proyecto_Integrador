@@ -87,10 +87,6 @@ export const cartController = async (req, res) => {
 
 
 export const shopControllers = {
-    cart: async (req, res) => res.render('cart', {
-        title: 'Cart | Funkoshop',
-        submenu_data: await getCategorysFromDB()
-    }),
     cartPost: (req, res) => res.send('Route for Cart View POST')
 }
 

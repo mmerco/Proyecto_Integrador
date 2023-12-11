@@ -13,6 +13,7 @@ export const homeController = async (req, res) => {
             title: 'Home | Funkoshop',
             admin_header: req.session.admin || req.session.mod ? true : false,
             submenu_data: await getCategorysFromDB(),
+            session_name: req.session.name ? req.session.name : false,
             banner_title: 'nuevos ingresos',
             banner_text: 'Descubri el próximo Funko Pop de tu colección',
             banner_link_text: 'SHOP',
@@ -38,6 +39,7 @@ export const aboutController = async (req, res) => {
             title: 'About Us | Funkoshop',
             admin_header: req.session.admin || req.session.mod ? true : false,
             submenu_data: await getCategorysFromDB(),
+            session_name: req.session.name ? req.session.name : false,
             banner_title: 'nuevos ingresos',
             banner_text: 'Descubri el próximo Funko Pop de tu colección',
             banner_link_text: 'SHOP',
@@ -60,7 +62,8 @@ export const mainControllers = {
             title: 'Contact | Funkoshop',
             admin_header: req.session.admin || req.session.mod ? true : false,
             cart_number: req.session.cart ? req.session.cart.length : 0,
-            submenu_data: await getCategorysFromDB()
+            submenu_data: await getCategorysFromDB(),
+            session_name: req.session.name ? req.session.name : false,
         })
     },
     faqs: async (req, res) => {
@@ -68,7 +71,8 @@ export const mainControllers = {
             title: 'Faqs | Funkoshop',
             admin_header: req.session.admin || req.session.mod ? true : false,
             cart_number: req.session.cart ? req.session.cart.length : 0,
-            submenu_data: await getCategorysFromDB()
+            submenu_data: await getCategorysFromDB(),
+            session_name: req.session.name ? req.session.name : false,
         })
     }
 }

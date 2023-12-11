@@ -47,6 +47,7 @@ export const authControllers = {
         res.render('login', {
             title: 'Login | Funkoshop',
             submenu_data: await getCategorysFromDB(),
+            session_name: req.session.name ? req.session.name : false,
             cart_number: req.session.cart ? req.session.cart.length : 0,
             msj: false
         });
@@ -55,10 +56,15 @@ export const authControllers = {
         res.render('register', {
             title: 'Register | Funkoshop',
             submenu_data: await getCategorysFromDB(),
+            session_name: req.session.name ? req.session.name : false,
             cart_number: req.session.cart ? req.session.cart.length : 0,
             msj: false
 
         });
     },
-    logout: (req, res) => res.send('Route for Logout View')
+    logout: (req, res) => {
+        req.session.destroy();
+
+        res.redirect('login');
+    }
 }

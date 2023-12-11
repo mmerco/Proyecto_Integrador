@@ -2,10 +2,7 @@
   <nav class="navbar container">
     <picture class="navbar__logo">
       <a href="/home">
-        <img
-          src="/img/branding/logo_light_horizontal.svg"
-          alt="Logo Funkoshop"
-        />
+        <img src="/img/branding/logo_light_horizontal.svg" alt="Logo Funkoshop" />
       </a>
     </picture>
     <ul class="navbar__menu">
@@ -15,8 +12,13 @@
       <li class="navbar__item">
         <a class="navbar__link" href="/admin">admin</a>
       </li>
-      <li class="navbar__item">
-        <a class="navbar__link" href="/auth/login">salir</a>
+      <li class="navbar__item whith-submenu">
+        <a class="navbar__link whith-icon" href=""><%= session_name %><iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+        <ul class="submenu">
+          <li class="submenu__item">
+            <a href="/auth/logout" class="submenu__link">Salir</a>
+          </li>
+        </ul>
       </li>
     </ul>
   </nav>

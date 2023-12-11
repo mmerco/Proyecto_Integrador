@@ -37,12 +37,13 @@ export const getEditData = async () => {
 }
 
 
-export const getCreateModel = async () => {
+export const getCreateModel = async (session) => {
     let categorysData = await getCategorysFromDB();
     let licensesData = await getCollectionsFromDB();
 
     return {
         title: `Create | Funkoshop`,
+        session_name: session.name,
         categorys: categorysData,
         licenses: licensesData
     }

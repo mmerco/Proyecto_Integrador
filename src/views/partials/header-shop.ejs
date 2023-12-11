@@ -21,9 +21,22 @@
       <li class="navbar__item">
         <a class="navbar__link" href="/contact">CONTACTO</a>
       </li>
+
+      <% if (!session_name) { %>
       <li class="navbar__item">
         <a class="navbar__link" href="/auth/login">LOGIN</a>
       </li>
+      <% } else { %>
+      <li class="navbar__item whith-submenu">
+        <a class="navbar__link whith-icon" href=""><%= session_name %><iconify-icon icon="tabler:chevron-down"></iconify-icon></a>
+        <ul class="submenu">
+          <li class="submenu__item">
+            <a href="/auth/logout" class="submenu__link">Salir</a>
+          </li>
+        </ul>
+      </li>
+      <% } %>
+
       <li class="navbar__item">
         <a class="navbar__cart whith-tag" href="/shop/cart">
           <img src="/img/icons/cart-icon.svg" alt="Icono Carrito" />

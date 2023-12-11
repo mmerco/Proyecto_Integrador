@@ -17,6 +17,7 @@ export const adminController = async (req, res) => {
     try {
         res.render('admin', {
             data: await getAllItems(),
+            session_name: req.session.name,
             title: 'Admin | Funkoshop'
         });
     } catch (error) {
@@ -31,6 +32,7 @@ export const searchController = async (req, res) => {
     try {
         res.render('admin', {
             data: await adminSearch(req.query.search_value),
+            session_name: req.session.name,
             title: 'Admin | Funkoshop'
         });
     } catch (error) {
@@ -49,8 +51,9 @@ export const editController = async (req, res) => {
 
         res.render('edit', {
             item: itemData,
-            //title: `Edit ${itemData.product_name} | Funkoshop`,
-            title: `Edit | Funkoshop`,
+            title: `Edit ${itemData.product_name} | Funkoshop`,
+            //title: `Edit | Funkoshop`,
+            session_name: req.session.name,
             categorys: catData,
             licenses: licData,
             dues: duesData
@@ -86,7 +89,7 @@ export const editControllerPUT = async (req, res) => {
 
 export const createController = async (req, res) => {
     try {
-        res.render('create', await getCreateModel());
+        res.render('create', await getCreateModel(req.session));
 
     } catch (error) {
         console.log('Se produjo un error: ', error);
