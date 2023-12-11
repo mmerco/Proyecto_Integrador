@@ -217,6 +217,7 @@ export const shopMainModel = async (query, session) => {
 
             return {
                 title: 'Shop | Funkoshop',
+                admin_header: session.admin || session.mod ? true : false,
                 submenu_data: await getCategorysFromDB(),
                 form_path: '',
                 cart_number: session.cart ? session.cart.length : 0,
@@ -229,6 +230,7 @@ export const shopMainModel = async (query, session) => {
 
             return {
                 title: 'Shop | Funkoshop',
+                admin_header: session.admin || session.mod ? true : false,
                 submenu_data: await getCategorysFromDB(),
                 form_path: '',
                 cart_number: session.cart ? session.cart.length : 0,
@@ -291,6 +293,7 @@ export const shopCategoryModel = async (category, query, session) => {
 
             return {
                 title: `${category} | Funkoshop`,
+                admin_header: session.admin || session.mod ? true : false,
                 submenu_data: await getCategorysFromDB(),
                 form_path: `/category/${category}`,
                 cart_number: session.cart ? session.cart.length : 0,
@@ -302,6 +305,7 @@ export const shopCategoryModel = async (category, query, session) => {
 
             return {
                 title: `${category} | Funkoshop`,
+                admin_header: session.admin || session.mod ? true : false,
                 submenu_data: await getCategorysFromDB(),
                 form_path: `/category/${category}`,
                 cart_number: session.cart ? session.cart.length : 0,
@@ -361,6 +365,7 @@ export const shopCollectionModel = async (collection, query, session) => {
 
             return {
                 title: `${collection} | Funkoshop`,
+                admin_header: session.admin || session.mod ? true : false,
                 submenu_data: await getCategorysFromDB(),
                 form_path: `/collection/${collection}`,
                 cart_number: session.cart ? session.cart.length : 0,
@@ -372,6 +377,7 @@ export const shopCollectionModel = async (collection, query, session) => {
 
             return {
                 title: `${collection} | Funkoshop`,
+                admin_header: session.admin || session.mod ? true : false,
                 submenu_data: await getCategorysFromDB(),
                 form_path: `/collection/${collection}`,
                 cart_number: session.cart ? session.cart.length : 0,
@@ -397,6 +403,7 @@ export const itemModel = async (id, session) => {
 
         return {
             title: `${itemData.product_name} | Funkoshop`,
+            admin_header: session.admin || session.mod ? true : false,
             submenu_data: await getCategorysFromDB(),
             item: itemData,
             item_quantity: 1,
@@ -442,6 +449,7 @@ export const addItemModel = async (id, body, session) => {
 
         return {
             title: `${itemData.product_name} | Funkoshop`,
+            admin_header: session.admin || session.mod ? true : false,
             submenu_data: await getCategorysFromDB(),
             item: itemData,
             item_quantity: addedQuantity,
@@ -469,6 +477,7 @@ export const cartModel = async (session) => {
 
             return {
                 title: `Cart | Funkoshop`,
+                admin_header: session.admin || session.mod ? true : false,
                 submenu_data: await getCategorysFromDB(),
                 cart_items: cartItems,
                 cart_summary: cartSummary,
@@ -477,6 +486,7 @@ export const cartModel = async (session) => {
         } else {
             return {
                 title: `Cart | Funkoshop`,
+                admin_header: session.admin || session.mod ? true : false,
                 submenu_data: await getCategorysFromDB(),
                 cart_items: false,
                 cart_summary: false,

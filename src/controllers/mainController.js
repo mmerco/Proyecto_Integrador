@@ -11,6 +11,7 @@ export const homeController = async (req, res) => {
 
         res.render('home', {
             title: 'Home | Funkoshop',
+            admin_header: req.session.admin || req.session.mod ? true : false,
             submenu_data: await getCategorysFromDB(),
             banner_title: 'nuevos ingresos',
             banner_text: 'Descubri el próximo Funko Pop de tu colección',
@@ -35,6 +36,7 @@ export const aboutController = async (req, res) => {
 
         res.render('about', {
             title: 'About Us | Funkoshop',
+            admin_header: req.session.admin || req.session.mod ? true : false,
             submenu_data: await getCategorysFromDB(),
             banner_title: 'nuevos ingresos',
             banner_text: 'Descubri el próximo Funko Pop de tu colección',
@@ -56,6 +58,7 @@ export const mainControllers = {
     contact: async (req, res) => {
         res.render('contact', {
             title: 'Contact | Funkoshop',
+            admin_header: req.session.admin || req.session.mod ? true : false,
             cart_number: req.session.cart ? req.session.cart.length : 0,
             submenu_data: await getCategorysFromDB()
         })
@@ -63,6 +66,7 @@ export const mainControllers = {
     faqs: async (req, res) => {
         res.render('faqs', {
             title: 'Faqs | Funkoshop',
+            admin_header: req.session.admin || req.session.mod ? true : false,
             cart_number: req.session.cart ? req.session.cart.length : 0,
             submenu_data: await getCategorysFromDB()
         })
