@@ -51,3 +51,7 @@ img {
     border-bottom: 5px solid var(--primary-solid);
     width: fit-content;
 }
+
+.hidden {
+    display: none;
+}
