@@ -8,8 +8,10 @@
   <main class="register__main container">
     <h1 class="login__title">crea tu cuenta</h1>
 
-    <% if (msj) { %>
-    <h2><%= msj %></h2>
+    <% if (msg) { %>
+    <div class="msg__error">
+      <h2 class="msg"><%= msg %></h2>
+    </div>
     <% } %>
 
     <p class="register__subtitle">

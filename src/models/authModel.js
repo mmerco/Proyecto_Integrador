@@ -32,7 +32,7 @@ export const getUser = async (body, session) => {
                     submenu_data: await getCategorysFromDB(),
                     session_name: session.name ? session.name : false,
                     cart_number: session.cart ? session.cart.length : 0,
-                    msj: 'Usuario o contraseña invalido. Intente nuevamente'
+                    msg: 'Usuario o contraseña invalido. Intente nuevamente'
                 }
             }
         }
@@ -61,7 +61,7 @@ export const createUser = async (formData, session) => {
                     submenu_data: await getCategorysFromDB(),
                     session_name: session.name ? session.name : false,
                     cart_number: session.cart ? session.cart.length : 0,
-                    msj: `Ya existe un usuario registrado con el e-mail ${formData.email}`
+                    msg: `Ya existe un usuario registrado con el e-mail ${formData.email}`
                 }
             }
         } else {

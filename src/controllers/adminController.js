@@ -72,11 +72,11 @@ export const editControllerPUT = async (req, res) => {
 
         if (editedItem) {
             res.redirect('/admin' +
-                `?msj=Se edito el item ${editedItem.prduct_name} con ID ${editedItem.product_id} correctamente`
+                `?msg=Se edito el item ${editedItem.prduct_name} con ID ${editedItem.product_id} correctamente`
             );
         } else {
             res.redirect('/admin' +
-                `?msj=Se produjo un error. Item no editado`
+                `?msg=Se produjo un error. Item no editado`
             );
         }
     } catch (error) {
@@ -105,11 +105,11 @@ export const createControllerPOST = async (req, res) => {
 
         if (createdItem) {
             res.redirect('/admin' +
-                `?msj=Se creo el item ${createdItem.product_name} con ID ${createdItem.product_id} correctamente`
+                `?msg=Se creo el item ${createdItem.product_name} con ID ${createdItem.product_id} correctamente`
             );
         } else {
             res.redirect('/admin' +
-                `?msj=Se produjo un error. Item no creado`
+                `?msg=Se produjo un error. Item no creado`
             );
         }
     } catch (error) {
@@ -126,11 +126,11 @@ export const deleteController = async (req, res) => {
 
         if (deletedItem) {
             res.redirect('/admin' +
-                `?msj=Se elimino el item ${deletedItem.prduct_name} con ID ${deletedItem.product_id} correctamente`
+                `?msg=Se elimino el item ${deletedItem.prduct_name} con ID ${deletedItem.product_id} correctamente`
             );
         } else {
             res.redirect('/admin' +
-                `?msj=Se produjo un error. Item no eliminado`
+                `?msg=Se produjo un error. Item no eliminado`
             );
         }
     } catch (error) {

@@ -8,10 +8,10 @@ export const adminAuth = (req, res, next) => {
 
         if (!req.session.user && !req.session.mod) {
 
-            res.redirect('/auth/login' + '?msj=Debe estar logueado para ingresar');
+            res.redirect('/auth/login' + '?msg=Debe estar logueado para ingresar');
         } else {
 
-            res.redirect('/admin' + '?msj=No tiene los permisos de admin para ingresar');
+            res.redirect('/admin' + '?msg=No tiene los permisos de admin para crear o eliminar items');
         }
     } else {
         next();
@@ -29,10 +29,10 @@ export const modAuth = (req, res, next) => {
 
         if (!req.session.user) {
 
-            res.redirect('/auth/login' + '?msj=Debe estar logueado para ingresar');
+            res.redirect('/auth/login' + '?msg=Debe estar logueado para ingresar');
         } else {
 
-            res.redirect('/home' + '?msj=No tiene los permisos necesarios para ingresar');
+            res.redirect('/home' + '?msg=No tiene los permisos necesarios para ingresar');
         }
     } else {
         next();

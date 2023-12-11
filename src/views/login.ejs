@@ -8,8 +8,10 @@
   <main class="login__main container">
     <h1 class="login__title">INGRESAR A MI CUENTA</h1>
 
-    <% if (msj) { %>
-    <h2><%= msj %></h2>
+    <% if (msg) { %>
+    <div class="msg__error">
+      <h2 class="msg"><%= msg %></h2>
+    </div>
     <% } %>
 
     <form class="login__form" method="post" action="/auth/login">
